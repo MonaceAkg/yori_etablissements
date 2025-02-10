@@ -1,0 +1,114 @@
+<div *ngIf="currentRoute === '/espace'">
+    <div class="container">
+      <div class="top-bar">
+        <div class="logo">
+          <img src="assets/img/logo_bleu.png" alt="" height="70" width="100">
+        </div>
+        <div class="dropdown">
+          <button mat-button [matMenuTriggerFor]="menu" class="dropdown">
+            <div class="initial-circle">
+              {{ userName.charAt(0) }}
+            </div>
+            <span>{{ userName }}</span><br>
+            <span style="padding-left: 40px;"> {{info}} </span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/page1">Page 1</button>
+            <button mat-menu-item routerLink="/page2">Page 2</button>
+            <button mat-menu-item (click)="logout()">Déconnexion</button>
+          </mat-menu>
+        </div>
+
+      </div>
+
+      <header class="header">
+        <div class="content-left" style="color: white;">
+          <h4>
+              Optimisez vos revenus en offrant votre hébergement à des voyageurs venant des quatre coins du globe
+          </h4>
+          <p>
+              En publiant En affichant votre hébergement sur notre plateforme en ligne, vous profiterez d'une visibilité renforcée ainsi que d'une gestion simplifiée de vos réservations
+          </p>
+        </div>
+        <mat-card class="card">
+          <!-- Partie 1 : Titre et paragraphe -->
+          <mat-card-title class="sup">
+            <h3>Inscrivez-vous gratuitement</h3>
+            <p class="para">Rejoignez notre plateforme pour profiter de tous les avantages !</p>
+            <hr>
+          </mat-card-title>
+          <!-- Partie 2 : Bouton centré -->
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <button  color="primary" class="centered-button" [routerLink]="['/choix-etablissement']">Démarrer maintenant</button>
+          </mat-card-content>
+          <!-- Partie 3 : H5 et lien -->
+          <mat-divider></mat-divider>
+          <mat-card-footer>
+            <hr>
+            <h4>Vous avez déjà commencé une inscription ? </h4>
+            <a routerLink="/login" class="a-link">continuer l'inscription</a>
+          </mat-card-footer>
+        </mat-card>
+
+      </header>
+  </div>
+  </div>
+
+  <div *ngIf="currentRoute === '/list'">
+    <div class="container">
+      <div class="top-bar">
+        <div class="logo">
+          <img src="assets/img/logo_bleu.png" alt="" height="70" width="100">
+        </div>
+          <div>
+            <button type="button" [routerLink]="['/espace']" class="jus">
+                Ajoutez votre établissement
+            </button>
+          </div>   
+        <div class="dropdown">
+          <button mat-button [matMenuTriggerFor]="menu" class="dropdown">
+            <div class="initial-circle">
+              {{ userName.charAt(0) }}
+            </div>
+            <span>{{ userName }}</span><br>
+            <span style="padding-left: 40px;"> {{info}} </span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/page1">Page 1</button>
+            <button mat-menu-item routerLink="/page2">Page 2</button>
+            <button mat-menu-item (click)="logout()">Déconnexion</button>
+          </mat-menu>
+        </div>
+
+      </div>
+
+      <header class="header">
+        <div class="content-left" style="color: white; ;">
+          <h2>Mes établissements</h2>
+          <p>
+            L'ensemble de vos établissements apparaîtra ici.
+          </p>
+        </div>
+
+        <div class="card2">
+          <table>
+            <thead>
+              <p style="padding-left: 20px;">INSCRITS (6)</p>
+              <p style="padding-left: 20px;">Liste de tous de mes etablissements inscrits</p>
+              <mat-divider></mat-divider>
+            </thead>
+            <tbody>
+              <tr *ngFor="let nom of noms">
+                <td>{{ nom }}</td>
+                <td>
+                  <button class="premier1" (click)="onButtonClick(nom)">Se connecter</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </header>
+  </div>
+  </div>
