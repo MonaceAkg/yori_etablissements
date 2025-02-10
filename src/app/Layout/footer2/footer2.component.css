@@ -1,0 +1,43 @@
+.container {
+    background-color: white;
+    display: flex; /* Ajouté pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    padding: 20px; /* Ajout d'un padding pour éviter que le contenu touche les bords */
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Aligne les enfants en colonne */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte */
+    padding: 20px; /* Ajout d'un padding interne pour la carte */
+    border-radius: 8px; /* Coins arrondis pour la carte */
+}
+
+.bottom {
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px; /* Ajout d'un espace entre les sections */
+}
+
+a {
+    color: rgba(13, 13, 197, 0.8);
+    text-decoration: none;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Réduit le padding sur petits écrans */
+    }
+
+    .card {
+        padding: 15px; /* Réduit le padding interne pour la carte sur petits écrans */
+    }
+
+    .bottom {
+        margin-top: 5px; /* Réduit l'espace entre les sections sur petits écrans */
+        font-size: 14px; /* Ajuste la taille de police si nécessaire */
+    }
+}

@@ -1,0 +1,122 @@
+.home-container {
+    font-family: Arial, sans-serif;
+    margin: 1px;
+    padding: 1px;
+  }
+
+  .hero-section {
+    background-image: url('../../../../public/assets/img/hero-bg2.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+.text{
+  position: absolute;
+  bottom: 110px;
+  left: 50px;
+  margin: 0;
+}
+
+
+.text h1 {
+  margin: 0;
+  text-align: left;
+}
+
+
+  header h1{
+    color: white;
+    font-size: 50px;
+    text-align: left;
+  }
+
+
+  .premier{
+    background-color: rgba(13, 13, 197, 0.8);
+  }
+
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: -400px;
+  }
+
+  .logo-section img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+  }
+
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    padding: 10px;
+}
+
+
+
+  .initial-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(13, 13, 197, 0.8);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+
+
+  button {
+    padding: 10px 20px;
+    font-size: calc(12px + 0.5vw); 
+    border-radius: 10px;
+    background-color: rgba(254, 254, 254, 0.1); 
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  button:hover {
+    background-color: #e0e0e0; 
+    color: #000; 
+  }
+
+
+  @media (max-width: 768px) {
+    button {
+        padding: 8px 16px; 
+        font-size: calc(10px + 0.5vw); 
+        border-radius: 8px; 
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 6px 12px; 
+        font-size: calc(8px + 0.5vw); 
+        border-radius: 6px; 
+    }
+}
