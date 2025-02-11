@@ -1,39 +1,54 @@
 <section class="feature-cards-section">
-    <div class="feature-intro"> 
-      <h1>Inscrivez votre hébergement sur Yori.com et commencez
-        à recevoir des clients en un rien de temps!</h1>
-      <p>
-        Pour commencer, choisissez le type d'établissement que vous souhaitez inscrire sur Yori.
-      </p>
-    </div>
+  <div class="feature-intro">
+    <h1>
+      Inscrivez votre hébergement sur Yori.com et commencez à recevoir des
+      clients en un rien de temps!
+    </h1>
+    <p>
+      Pour commencer, choisissez le type d'établissement que vous souhaitez
+      inscrire sur Yori.
+    </p>
+  </div>
 
-    <div class="feature-card-wrapper">
-      <div class="feature-card">
-        <div class="feature-card-content">
-          <h1 class="feature-card-heading">Hotellerie</h1>
-          <p class="feature-card-description">
-            Établissements s'apparentan à des hôtels, B&B/chambres d'hôtes, maisons d'hôtes, auberges de jeunesse, appart'hôtels et bien plus encore.
-          </p>
-        </div>
-        <button class="feature-card-button" [routerLink]="['/ajout-hotel']">Ajoutez votre établissement</button>
+  <div class="feature-card-wrapper">
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <h1 class="feature-card-heading">Hotellerie</h1>
+        <p class="feature-card-description">
+          Établissements s'apparentan à des hôtels, B&B/chambres d'hôtes,
+          maisons d'hôtes, auberges de jeunesse, appart'hôtels et bien plus
+          encore.
+        </p>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-card-content">
-          <h1 class="feature-card-heading">Transport</h1>
-          <p class="feature-card-description">
-            Établissements s'apparentan à des hôtels, B&B/chambres d'hôtes, maisons d'hôtes,auberges de jeunesse,appart'hôtels et bien plus encore.
-          </p>
-        </div>
+      <a [routerLink]="['/ajout-hotel']">
         <button class="feature-card-button">Ajoutez votre établissement</button>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-card-content">
-          <h1 class="feature-card-heading">Tourisme</h1>
-          <p class="feature-card-description">Établissements s'apparentan à des hôtels, B&B/chambres d'hôtes, maisons d'hôtes,auberges de jeunesse,appart'hôtels et bien plus encore.</p>
-        </div>
-        <button class="feature-card-button" [routerLink]="['/ajout-tourism']">Ajoutez votre établissement</button>
-      </div>
+      </a>
     </div>
+
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <h1 class="feature-card-heading">Transport</h1>
+        <p class="feature-card-description">
+          Établissements s'apparentan à des hôtels, B&B/chambres d'hôtes,
+          maisons d'hôtes,auberges de jeunesse,appart'hôtels et bien plus
+          encore.
+        </p>
+      </div>
+      <button class="feature-card-button">Ajoutez votre établissement</button>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <h1 class="feature-card-heading">Tourisme</h1>
+        <p class="feature-card-description">
+          Établissements s'apparentan à des hôtels, B&B/chambres d'hôtes,
+          maisons d'hôtes,auberges de jeunesse,appart'hôtels et bien plus
+          encore.
+        </p>
+      </div>
+      <button class="feature-card-button" [routerLink]="['/ajout-tourism']">
+        Ajoutez votre établissement
+      </button>
+    </div>
+  </div>
 </section>
