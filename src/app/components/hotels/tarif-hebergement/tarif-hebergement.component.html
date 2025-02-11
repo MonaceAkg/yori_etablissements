@@ -1,0 +1,47 @@
+<div class="container">
+  <mat-card class="main-card" id="grand">
+    <mat-card-header>
+      <mat-card-title>Fixez un tarif par nuit pour cet hébergement</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <form (ngSubmit)="calculerPourcentage()">
+        <p style="font-weight: 500;">Combien souhaitez-vous facturer par nuit ?</p>
+        <div>
+          <input type="number" placeholder="CFA |" required [(ngModel)]="somme" name="tarif" (ngModelChange)="calculerPourcentage()">
+          <select [(ngModel)]="monnaie" (change)="calculerPourcentage()" name="monnaie" style="margin-left: 10px;">
+            <option value="FCFA">F CFA</option>
+            <option value="Euro">Euro</option>
+            <option value="Dollar">Dollar</option>
+          </select>
+        </div>
+      </form>
+      <p style="font-weight: 500;">Taxes, commission et frais compris</p>
+        <p style="margin: 40px 0 40px 0;">00% Commission sur Yori.com</p>
+        <p><mat-icon style="color: #77B5FE; margin: 10px 0 10px 0;">done</mat-icon> Gagnez du temps grâce à la confirmation automatique des
+          réservations</p>
+        <p><mat-icon style="color: #77B5FE; margin: 10px 0 10px 0;">done</mat-icon> Nous mettons en valeur votre établissement à l'échelle mondiale</p>
+      <mat-divider style="margin: 20px 0 20px 0;"></mat-divider>
+      <p>Nous percevons une commission de 15 % pour chaque réservation
+        effectuée sur l'application. Vous obtiendrez <strong>{{ pourcentage | number:'1.0-0' }} {{ monnaie }}</strong> par reservation</p>
+
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
+  <div class="sub-card">
+    <mat-card class="sub-card" id="haut">
+      <mat-card-header>
+        <mat-icon class="custom-icon" style="padding-right: 10;"> highlight</mat-icon>
+              <p>
+                Que faire si je ne suis pas sûr(e) de mon tarif ?
+              </p>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li>Pas d'inquiétude, vous pourrez le modifier à tout moment. Vous pourrez même appliquer des tarifs différents le week-end, en semaine ou en fonction de la saison pour garder le contrôle sur vos revenus.</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

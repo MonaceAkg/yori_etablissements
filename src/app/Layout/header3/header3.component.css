@@ -1,48 +1,77 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-  }
-  
-  .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Centrer verticalement les éléments */
-    height: 70px;
-    background-color: rgba(13, 13, 197, 0.8);;
-    padding: 0 20px; /* Ajout d'un padding horizontal */
-  }
-  
-  .logo {
-    padding: 10px;
-  }
-  
-  .dropdown {
-    margin: 10px;
-  }
-  
-  .icon {
-    color: white;
-  }
-  
-  /* Media Queries pour la responsivité */
-  @media (max-width: 768px) {
-    .top-bar {
-        flex-direction: column; /* Empile les éléments en colonne sur petits écrans */
-        align-items: flex-start; /* Aligne les éléments à gauche */
-        height: auto; /* Ajuste la hauteur pour s'adapter au contenu */
-        padding: 10px; /* Réduit le padding sur petits écrans */
-    }
-  
-    .logo {
-        padding: 5px; /* Réduit le padding pour le logo sur petits écrans */
-    }
-  
-    .dropdown {
-        margin: 5px; /* Réduit la marge pour le dropdown sur petits écrans */
-    }
-  
-    .icon {
-        font-size: 24px; /* Ajuste la taille de l'icône sur petits écrans */
-    }
-  }
+  /* Autres styles existants */
+
+  /* Ajouter l'ombre portée */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 0px 20px 0px 20px;
+}
+
+.top-bar {
+  margin-top: 3px;
+  display: flex;
+  justify-content: space-between; /* Aligne le logo et le dropdown aux extrémités */
+  align-items: center; /* Aligne les éléments verticalement au centre */
+  height: 80px; /* Hauteur fixe pour la barre supérieure */
+  /* Padding horizontal pour éviter que le contenu touche les bords */
+  background-color: #ffffff; /* Couleur de fond pour la barre supérieure */
+  margin-bottom: 25px;
+  /* border-bottom: 1px solid rgb(37, 36, 36); */
+}
+
+.logo {
+  text-align: left;
+}
+
+.dropdown {
+  position: relative; /* Positionne le menu déroulant par rapport au bouton */
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.initial-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(13, 13, 197, 0.8);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  display: none; /* Masque le menu par défaut */
+  /* position: absolute; */
+  top: 100%; /* Aligne le menu directement sous le bouton */
+  right: 0; /* Aligne le menu à droite du bouton */
+  background-color: #ffffff; /* Fond du menu déroulant */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée pour le menu */
+  border-radius: 4px; /* Coins arrondis pour le menu */
+  z-index: 1000; /* Assure que le menu s'affiche au-dessus des autres éléments */
+  white-space: nowrap; /* Empêche le texte de se couper */
+}
+
+.dropdown-menu a {
+  display: block; /* Assure que chaque lien occupe toute la largeur */
+  padding: 10px 20px; /* Padding pour les éléments du menu */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: #000000; /* Couleur du texte */
+  border-bottom: 1px solid #e0e0e0; /* Ligne de séparation entre les éléments */
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5; /* Couleur de fond au survol */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block; /* Affiche le menu déroulant au survol */
+}

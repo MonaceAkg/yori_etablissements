@@ -1,0 +1,52 @@
+<div class="container">
+  <!-- Première carte qui prend 60% de la largeur -->
+  <mat-card class="main-card" id="grand">
+    <mat-card-header>
+      <mat-card-title style="margin-bottom: 15px;">À quoi ressemble votre établissement ?</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p style="font-weight: 400;"><span style="font-weight: 500">Téléchargez au moins 6 photos de votre établissement.</span> Plus vous
+        téléchargez de photos, plus vous augmentez vos chances de recevoir
+        des réservations. Vous pouvez aussi en ajouter plus tard.</p>
+      <mat-card class="ma-div" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+        <img id="preview" src="assets/img/photo.png" alt="Aperçu" />
+        <p>Faire glisser ou</p>
+        <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*" hidden />
+        <button class="button" mat-raised-button color="primary" (click)="onUploadClick()">
+            <mat-icon>add_a_photo</mat-icon>
+            Télécharger les photos
+        </button> 
+        <i><p style="font-weight: 400;">pgj/Jpeg ou png 47 MB maximun par fichier.</p></i>
+      </mat-card>
+      <mat-divider style="margin: 20px 0 20px 0;"></mat-divider>
+      <p style="font-weight: 400;">Choississez une <b>photo d'acroche</b> qui donnera une excellente impression à votre hebergement</p>
+
+    <div class="image-list">
+        <div *ngFor="let image of images" class="image-frame">
+          <button class="delete-button" (click)="removeImage(image)">✖</button>
+            <img [src]="image" alt="Image" class="image-preview" />
+        </div>
+    </div>
+
+
+
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
+  <div class="sub-card">
+    <mat-card class="sub-card" id="haut">
+      <mat-card-header>
+        <p>
+          <mat-icon class="custom-icon"> highlight</mat-icon>
+          Que faire si je ne dispose pas de photos professionnelles ?
+        </p>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li>Pas de soucis ! Vous pouvez utiliser un smartphone ou un appareil photo numérique, à condition que les photos soient de qualité.</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

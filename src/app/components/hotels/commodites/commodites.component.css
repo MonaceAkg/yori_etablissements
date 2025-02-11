@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: initial;
+  padding: 20px 0 10px 0;
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+.main-card {
+  flex: 1 1 580px; 
+}
+
+.form{
+  background-color: white;
+  width: 100%;
+}
+
+.sub-card {
+  flex:1 320px; 
+}
+
+.haut {
+  margin-top: 0px;
+  background-color: rgb(255, 255, 255);
+  height: auto;
+}
+
+
+.custom-icon {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+    width: 95%;
+  }
+  .main-card, .sub-card {
+    flex: 1 1 100%; /* Prendre toute la largeur sur mobile */
+  }
+
+  .haut{
+    height: 100%;
+  }
+}

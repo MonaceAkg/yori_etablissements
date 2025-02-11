@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 20px 0px 0;
+  background-color: inherit;
+  width: 70%;
+}
+
+mat-label{
+  font-weight: 500;
+}
+
+
+.faq-item {
+  margin-bottom: 15px; /* Espace entre les questions */
+}
+
+.faq-item p {
+  display: flex;
+  align-items: center; /* Aligne verticalement l'image et le texte */
+}
+
+.paragraphe{
+  margin-left: 35px;
+}
+
+
+
+.faq-icon {
+  margin-right: 15px; /* Espace entre l'image et le texte */
+  width: 24px; /* Ajustez la taille de l'image si nécessaire */
+  height: auto; /* Maintient le ratio de l'image */
+}
+
+
+
+.main-card {
+  flex: 1 1 40%; /* Prend 60% de la largeur */
+  background-color: white;
+  /* margin-left: 20px; */
+}
+
+
+.title{
+  margin-bottom: 30px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+  }
+}

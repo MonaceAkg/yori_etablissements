@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="main-card" id="grand">
+    <mat-card-header>
+      <mat-card-title>Politique de l'établissement</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <label class="example-radio-group-label">Politique d'annulation</label><br>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="breakfastServed">
+        <mat-radio-button class="example-radio-button" value="Oui">Remboursable</mat-radio-button><br>
+        <div *ngIf="breakfastServed === 'Oui'">
+          <label class="example-radio-group-label">Écrivez une condition de remboursement</label>
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Message</mat-label>
+              <input matInput #message maxlength="256" placeholder="...">
+              <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+            </mat-form-field> 
+          </form>
+        </div>
+        <mat-radio-button class="example-radio-button" value="Non">Non remboursable</mat-radio-button>
+      </mat-radio-group>
+
+      <p>Quels sont vos horaires d'arrivée et de départ ?</p>
+      <div class="form-section">
+        <p>Arrivée</p>
+        <div class="time-selector">
+          <label for="arrival-start">De :</label>
+          <input type="time" id="arrival-start" name="arrival-start" min="06:00" max="12:00" placeholder="Ex: 08:00">
+          <label for="arrival-end">À :</label>
+          <input type="time" id="arrival-end" name="arrival-end" min="06:00" max="12:00" placeholder="Ex: 11:30">
+        </div>
+      </div>
+
+      <div class="form-section">
+        <p>Départ</p>
+        <div class="time-selector">
+          <label for="departure-start">De :</label>
+          <input type="time" id="departure-start" name="departure-start" min="18:00" max="23:00" placeholder="Ex: 19:00">
+          <label for="departure-end">À :</label>
+          <input type="time" id="departure-end" name="departure-end" min="18:00" max="23:00" placeholder="Ex: 22:30">
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <label class="example-radio-group-label">Acceptez-vous les enfants ?</label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="childrenAccepted"><br>
+        <mat-radio-button class="example-radio-button" value="Oui">Oui</mat-radio-button><br>
+        <mat-radio-button class="example-radio-button" value="Non">Non</mat-radio-button><br>
+      </mat-radio-group>
+
+      <label class="example-radio-group-label">Acceptez-vous les animaux domestiques ?</label><br>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="petsAccepted">
+        <mat-radio-button class="example-radio-button" value="Oui">Oui</mat-radio-button><br>
+        <mat-radio-button class="example-radio-button" value="Sur demande">Sur demande</mat-radio-button><br>
+        <mat-radio-button class="example-radio-button" value="Non">Non</mat-radio-button><br>
+      </mat-radio-group>
+    </mat-card-content>
+  </div>
+
+  <div class="sub-card">
+    <mat-card id="haut">
+      <mat-card-header>
+        <mat-icon class="custom-icon" style="padding-right: 10px;"> highlight</mat-icon>
+        <p>Comment modifier mes règles de mon hôtel ?</p>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li>Une fois votre inscription terminée, vous pourrez facilement personnaliser vos règles grâce aux options supplémentaires disponibles sur la page «Conditions» de votre extranet.</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

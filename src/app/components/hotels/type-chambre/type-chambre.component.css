@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0 10px 0;
+  width: 100%;
+}
+
+mat-label {
+  font-weight: 500;
+}
+
+.custom-icon {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.main-card {
+  background-color: white;
+  flex: 1 1 580px; 
+}
+
+.sub-card {
+  flex:1 320px; 
+}
+
+#haut{
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.example-card {
+  max-width: 100%;
+  margin: 10px 0;
+  background-color: inherit;
+}
+
+.lit-info {
+  display: flex;
+  align-items: center; /* Aligne verticalement l'image et le texte */
+  flex-wrap: wrap; /* Permet au contenu de se répartir sur plusieurs lignes si nécessaire */
+}
+
+.lit-image {
+  margin-bottom: 20px;
+  height: 40px; /* Hauteur fixe pour l'image */
+  width: 40px; /* Largeur fixe pour l'image */
+}
+
+.lit-details {
+  font-size: 14px; /* Taille du texte */
+  margin-left: 5px; /* Espace entre l'image et le texte */
+}
+
+.full-width {
+  width: 100%; /* S'assurer que les champs prennent toute la largeur */
+}
+
+.quantity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #a9a8a8;
+  padding: 3px;
+  height: 30px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  width: 40px;
+  height: 40px; /* Hauteur ajustée pour une meilleure interaction */
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-black {
+  background-color: inherit;
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.btn-blue {
+  background-color: inherit;
+  color: rgba(13, 13, 197, 0.8);
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.inputbox {
+  background-color: inherit;
+  width: 40px;
+  text-align: center;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.espace {
+  margin-top: 70px;
+  margin-left: 30px;
+  font-weight: 500;
+}
+
+ul {
+  margin-top: 50px;
+}
+
+/* Ajout de styles pour la responsivité */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+    width: 95%;
+  }
+  .main-card, .sub-card {
+    flex: 1 1 100%; /* Prendre toute la largeur sur mobile */
+  }
+
+  .haut{
+    height: 100%;
+  }
+}

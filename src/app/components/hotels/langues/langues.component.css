@@ -1,0 +1,30 @@
+.container {
+  display: flex; 
+  justify-content: center;
+  margin: 25px 25px 10px 0;
+  width: 60%;
+  max-width: 800px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.main-card {
+  flex: 1 1 100%; /* S'assure que la carte utilise toute la largeur disponible */
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px; /* Coins arrondis */
+}
+
+label {
+  margin-left: 10px; /* Espacement entre le checkbox et le label */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+  }
+
+}

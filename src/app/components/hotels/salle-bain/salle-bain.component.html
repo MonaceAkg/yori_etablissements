@@ -1,0 +1,56 @@
+<div class="container">
+  <!-- Première carte qui prend 60% de la largeur -->
+  <mat-card class="main-card" id="grand">
+    <mat-card-header>
+      <mat-card-title>Informations sur la salle de bains</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <div> 
+          <p style="margin-bottom: 25px;">La salle de bains est-elle privative?</p>
+          <div>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button><br>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+        <mat-divider style="margin-bottom: 20px;"></mat-divider>
+        <p style="font-weight: 500;">
+          Quels équipements de salle de bains sont disponibles dans cet hébergement ?
+        </p>
+        <div>
+          <label>Choisissez des options :</label>
+          <div *ngFor="let option of options" style="margin: 20px;">
+            <input
+              type="checkbox"
+              [value]="option"
+              (change)="onSelect(option, $event)"
+              id="{{option}}">
+            <label for="{{option}}">{{option}}</label>
+          </div>
+
+          <p>Options sélectionnées : {{selectedOptions.join(', ')}}</p>
+        </div>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
+  <div class="sub-card">
+    <mat-card id="haut">
+      <mat-card-header>
+        <mat-icon class="custom-icon" style="margin-top: 10px;"> highlight</mat-icon>
+              <p>
+                Proposez-vous d'autres couchages ?
+              </p>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li>Rassurez-vous, vous pourrez mettre à jour les équipements présents dans votre salle de bains plus tard.</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

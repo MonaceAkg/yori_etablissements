@@ -1,0 +1,114 @@
+.container {
+  display: flex; 
+  justify-content: center;
+  margin: 25px 25px 10px 0;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.paragraphe, .description{
+  width: 80%;
+}
+
+.selection{
+  width: 83%;
+}
+
+.main-card {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+  width: 582px;
+}
+
+.paragraphe{
+  margin-bottom: 20px;
+}
+
+.paragraphe p{
+
+  font-size: 12px;
+}
+
+.card-header h2 {
+  margin-bottom: 15px;
+}
+
+.card-content {
+  margin-bottom: 20px; 
+  width: 582px;
+}
+
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+
+label{
+  font-weight: 500;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%; /* Largeur 100% */
+  padding: 10px; /* Espacement intérieur */
+  border: 1px solid #ccc; /* Bordure légère */
+  border-radius: 4px; /* Coins arrondis */
+}
+
+textarea {
+  resize: vertical; 
+}
+
+.card-footer{
+  margin-top: 40px;
+}
+
+.card-footer label {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#labelF{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.radio-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* Espacement entre les boutons */
+}
+
+.star {
+  margin-left: 4px; /* Espacement entre le texte et les étoiles */
+}
+
+
+/* Styles pour les écrans plus petits */
+@media (max-width: 768px) {
+  .main-card {
+    padding: 15px; /* Réduire l'espacement interne sur mobile */
+    margin: auto; /* Centrer la carte sur mobile */
+    width: calc(100% - 40px); /* Ajuster la largeur pour inclure un peu d'espacement sur les bords */
+    max-width: none; /* Supprimer la largeur maximale pour permettre une meilleure adaptation */
+  }
+
+  .card-content{
+    width: 100%;
+  }
+
+
+}

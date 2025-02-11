@@ -1,0 +1,68 @@
+<div class="container">
+  <mat-card class="main-card" id="grand">
+    <mat-card-header style="margin-bottom: 20px;">
+      <mat-card-title style="font-weight: 500">Inscrivez votre etablissement</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p style="font-weight: 500; margin-bottom: 30px;">
+        Informations personnelles de la partie contractante
+      </p>
+      <form class="example-form">
+        <div class="form-field example-full-width custom-form-field">
+          <label for="full-name">Noms tel qu'indiqué sur sa pièce d'identité <span class="red">*</span></label><br>
+          <input type="text" id="full-name" placeholder="Entrez le nom" required>
+        </div>
+
+        <div class="form-field example-full-width">
+          <label for="first-name">Prénoms tel qu'indiqué sur sa pièce d'identité <span class="red">*</span></label><br>
+          <input type="text" id="first-name" placeholder="Entrez le prénom" required>
+        </div>
+
+        <div class="form-field example-full-width" style="margin-bottom: 10px;">
+          <label for="email">Email <span class="red">*</span></label><br>
+          <input type="email" id="email" placeholder="Ex. monace@example.com" required>
+          <span class="error" id="email-error"></span>
+        </div>
+ 
+        <div>
+          <label for="phone">Téléphone <span class="red">*</span></label><br>
+          <input matInput type="tel" id="phone" #phoneInput>
+        </div>
+
+        <mat-divider style="margin: 20px 0 20px 0;"></mat-divider>
+        <h3>Vous y êtes presque!</h3>
+        <P style="font-weight: 500;">Une fois votre inscription terminée, vous pourrez:</P>
+
+        <mat-card-content>
+          <div class="card-item">
+            <img src="assets/img/user3.png" alt="coche">
+            <p>Gérer votre hébergement à partir de votre tableau de bord</p>
+          </div>
+
+          <div class="card-item">
+            <img src="assets/img/user2.png" alt="eux">
+            <p class="joue">Recevoir des réservations des clients utilisant notre application et gagner de l'argent à distance</p>
+          </div>
+
+          <div class="card-item">
+            <img src="assets/img/user1.png" alt="calandar">
+            <p class="joue">Garder le contrôle de toutes vos réservations en ligne sur notre application</p>
+          </div>
+        </mat-card-content>
+
+        <mat-divider style="margin: 20px 0 20px 0;"></mat-divider>
+        <div>
+          <input type="checkbox" id="vehicle1" name="vehicle1" style="margin-right: 10px;"  value="Bike">
+          <label for="vehicle1"> Je certifie que l'activité d'hébergement est légale et détient toutes les
+            autorisations requises, pouvant être présentées sur demande. Mbolo.com
+            B.V. se réserve le droit de vérifier toutes les informations fournies lors de
+            cette inscription.</label><br>
+          <input type="checkbox" id="vehicle2" name="vehicle2" style="margin:30px 10px 0 0" value="Car">
+          <label for="vehicle2"> J'ai lu et j'accepte les <a href="">Conditions Génerales de Prestation</a></label><br>
+        </div>
+
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

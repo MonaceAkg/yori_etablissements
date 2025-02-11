@@ -1,0 +1,66 @@
+.container {
+  display: flex; 
+  justify-content: center;
+  margin: 25px 25px 10px 0;
+  width: 60%;
+  max-width: 800px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.form{
+  width: 100%;
+}
+
+.main-card {
+  background-color: white;
+  width: 582px;
+  border-radius: 10px;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px 0; /* Ajuste l'espacement vertical */
+}
+
+mat-card-header {
+  margin: 0; /* Retire les marges inutiles */
+}
+
+.example-radio-group-label {
+  margin: 10px 0; /* Ajuste les marges */
+  font-weight: 500;
+}
+
+mat-card-title {
+  font-weight: 500;
+}
+
+label {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+  }
+
+  .example-radio-group {
+    align-items: flex-start; /* Maintient l'alignement à gauche */
+  }
+  
+  .main-card{
+    border: none;
+    background-color: initial;
+  }
+}

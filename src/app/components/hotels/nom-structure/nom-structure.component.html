@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="main-card">
+    <div>
+      <div class="card-header">
+        <h3>Quel est le type de votre établissement?</h3>
+      </div>
+      <div class="card-content"> 
+        <div class="form">
+          <form >
+            <div class="selection">
+              <label for="property-type">Selectionnez le type de votre propriété</label>
+              <select id="property-type" required>
+                <option value="hotel">Hotel</option>
+                <option value="motel">Motel</option>
+                <option value="appartement">Appartement</option>
+              </select>
+            </div>
+            <div class="paragraphe">
+              <label for="establishment-name">Nom de l'établissement</label>
+              <input type="text" id="establishment-name" required>
+              <p>Il s'agit du nom que les clients verront lorsqu'ils rechercheront un hébergement.</p>
+            </div>
+            <div class="description">
+              <label for="description">Description de votre établissement</label>
+              <textarea ></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr>
+      <div class="card-footer">
+        <label id="labelF">Combien d'étoiles possède votre établissement ?</label>
+
+        <div class="radio-group">
+          <label class="radio-button">
+            <input type="radio" name="stars" value="na"> N/A
+          </label>
+          <label class="radio-button">
+            <input type="radio" name="stars" value="1"> 1 étoile <span class="star">⭐</span>
+          </label>
+          <label class="radio-button">
+            <input type="radio" name="stars" value="2"> 2 étoiles <span class="star">⭐⭐</span>
+          </label>
+          <label class="radio-button">
+            <input type="radio" name="stars" value="3"> 3 étoiles <span class="star">⭐⭐⭐</span>
+          </label>
+          <label class="radio-button">
+            <input type="radio" name="stars" value="4"> 4 étoiles <span class="star">⭐⭐⭐⭐</span>
+          </label>
+          <label class="radio-button">
+            <input type="radio" name="stars" value="5"> 5 étoiles <span class="star">⭐⭐⭐⭐⭐</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

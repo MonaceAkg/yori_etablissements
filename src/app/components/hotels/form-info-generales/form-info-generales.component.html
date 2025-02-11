@@ -1,0 +1,156 @@
+<ng-container *ngIf="currentRoute === '/ajout-hotel'">
+  <div class="container">
+    <!-- Première carte qui prend 60% de la largeur -->
+    <div class="main-card" id="grand">
+      <div class="card-header">
+        <h2>Où se situe l'établissement que vous inscrivez</h2>
+      </div>
+      <div class="card-content">
+        <form class="form">
+          <label class="full-width">
+            <span>Pays/Région <span class="red">*</span></span>
+            <select required>
+              <option value="pays1">Gabon</option>
+              <option value="pays2">Congo</option>
+              <option value="pays3">Sénégal</option>
+            </select>
+          </label>
+          <label class="full-width">
+            <span>Ville <span class="red">*</span></span>
+            <input type="text" placeholder="Entrez la ville" required>
+          </label>
+          <label class="full-width">
+            <span>Quartier <span class="red">*</span></span>
+            <input type="text" placeholder="Entrez le quartier" required>
+          </label>
+          <label class="full-width">
+            <span>Adresse <span class="red">*</span></span>
+            <input type="text" placeholder="Entrez l'adresse" required>
+          </label>
+          <label class="full-width">
+            <span>Téléphone (structure) <span class="red">*</span></span>
+            <input type="tel" placeholder="Entrez le numéro de téléphone" required>
+          </label>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="map-container">
+          <!-- <p>Map Placeholder</p> -->
+           <img src="assets/img/geographie.PNG" alt="" height="200" width="565">
+        </div>
+      </div>
+    </div>
+  
+    <!-- Conteneur pour les cartes superposées -->
+    <div class="sub-card-container">
+      <div class="sub-card" id="haut">
+        <div class="card-header">
+          <p><span class="custom-icon">👍</span> Que dois-je indiquer dans mon adresse?</p>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li>Indiquez le numéro et le nom de rue du bâtiment.</li>
+            <li>Le numéro de l'étage dans la deuxième ligne de l'adresse, le cas échéant</li>
+            <li>Vous pourrez communiquer plus tard les numéros d'appartement ou d'étage.</li>
+            <li>Le code postal</li>
+            <li>Veillez à utiliser l'orthographe exacte pour le nom de la rue</li>
+            <li>Utilisez l'adresse postale de votre hébergement et non celle de votre bureau ou de votre domicile</li>
+            <li>Point 7</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="sub-card" id="bas">
+        <div class="card-header">
+          <div class="icon-container">
+            <span class="custom-icon">💡</span>
+          </div>
+          <p>Pourquoi dois-je indiquer mon adresse?</p>
+        </div>
+        <div class="card-content">
+          <p>
+            Une fois qu'un client réserve votre <br> hébergement, cette adresse lui sera <br> fournie. Il est essentiel qu'elle soit correcte <br> afin que le client puisse trouver facilement <br> votre hébergement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="currentRoute === '/ajout-tourism'">
+  <div class="container">
+    <div class="main-card" id="grand">
+      <div class="card-header">
+        <h2>Où se situe l'établissement que vous inscrivez</h2>
+      </div>
+      <div class="card-content">
+        <form class="form">
+          <label class="full-width">
+            <span>Pays/Région <span class="red">*</span></span>
+            <select required>
+              <option value="pays1">Gabon</option>
+              <option value="pays2">Congo</option>
+              <option value="pays3">Sénégal</option>
+            </select>
+          </label>
+          <label class="full-width">
+            <span>Ville <span class="red">*</span></span>
+            <input type="text" placeholder="Entrez la ville" required>
+          </label>
+          <label class="full-width">
+            <span>Quartier <span class="red">*</span></span>
+            <input type="text" placeholder="Entrez le quartier" required>
+          </label>
+          <label class="full-width">
+            <span>Adresse <span class="red">*</span></span>
+            <input type="text" placeholder="Entrez l'adresse" required>
+          </label>
+          <label class="full-width">
+            <span>Téléphone (structure) <span class="red">*</span></span>
+            <input type="tel" placeholder="Entrez le numéro de téléphone" required>
+          </label>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="map-container">
+          <!-- <p>Map Placeholder</p> -->
+           <img src="assets/img/geographie.PNG" alt="" height="200" width="565">
+        </div>
+      </div>
+    </div>
+  
+    <!-- Conteneur pour les cartes superposées -->
+    <div class="sub-card-container">
+      <div class="sub-card" id="haut">
+        <div class="card-header">
+          <p><span class="custom-icon">👍</span> Que dois-je indiquer dans mon adresse?</p>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li>Indiquez le numéro et le nom de rue du bâtiment.</li>
+            <li>Le numéro de l'étage dans la deuxième ligne de l'adresse, le cas échéant</li>
+            <li>Vous pourrez communiquer plus tard les numéros d'appartement ou d'étage.</li>
+            <li>Le code postal</li>
+            <li>Veillez à utiliser l'orthographe exacte pour le nom de la rue</li>
+            <li>Utilisez l'adresse postale de votre hébergement et non celle de votre bureau ou de votre domicile</li>
+            <li>Point 7</li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="sub-card" id="bas">
+        <div class="card-header">
+          <div class="icon-container">
+            <span class="custom-icon">💡</span>
+          </div>
+          <p>Pourquoi dois-je indiquer mon adresse?</p>
+        </div>
+        <div class="card-content">
+          <p>
+            Une fois qu'un client réserve votre <br> hébergement, cette adresse lui sera <br> fournie. Il est essentiel qu'elle soit correcte <br> afin que le client puisse trouver facilement <br> votre hébergement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

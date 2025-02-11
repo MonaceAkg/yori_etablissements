@@ -1,0 +1,43 @@
+<div class="container">
+  <form class="form">
+    <div class="main-card" id="grand">
+      <mat-card-header>
+        <mat-card-title>Information petit déjeuner</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <label class="example-radio-group-label">Le petit-déjeuner est-il servi dans votre hébergement ?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="breakfastServed"
+          name="breakfastServed">
+          <mat-radio-button class="example-radio-button" value="Oui">Oui</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Non">Non</mat-radio-button>
+        </mat-radio-group>
+
+        <div *ngIf="breakfastServed === 'Oui'">
+          <label class="example-radio-group-label">Le petit-déjeuner est-il inclus dans le tarif payé par les clients?</label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+            [(ngModel)]="breakfastIncluded"
+            name="breakfastIncluded">
+            <mat-radio-button class="example-radio-button" value="Oui, il est inclus.">Oui, il est inclus.</mat-radio-button>
+            <mat-radio-button class="example-radio-button" value="Non, il est en supplément.">Non, il est en supplément.</mat-radio-button>
+          </mat-radio-group>
+          <mat-divider></mat-divider>
+          <label class="example-radio-group-label">Quel type de petit-déjeuner proposez-vous?</label>
+          <p class="example-radio-group-label">Vous pouvez sélectionner plusieurs réponses.</p>
+          <mat-chip-set aria-label="Fish selection">
+            <ng-container *ngFor="let chip of breakfastTypes; let i = index">
+              <mat-chip>{{chip}}</mat-chip>
+              <ng-container *ngIf="lineBreakIndices.includes(i)">
+                <br>
+              </ng-container>
+            </ng-container>
+          </mat-chip-set>
+        </div>
+      </mat-card-content>
+    </div>
+  </form>
+</div>

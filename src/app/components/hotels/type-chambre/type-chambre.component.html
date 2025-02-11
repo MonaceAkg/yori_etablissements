@@ -1,0 +1,110 @@
+<div class="container">
+  <!-- Première carte qui prend 60% de la largeur -->
+  <mat-card class="main-card" id="grand">
+    <mat-card-header>
+      <mat-card-title>Configurez votre type de chambre</mat-card-title><br>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <br>
+        <mat-form-field class="full-width" style="color: white;">
+          <mat-label>Selectionnez le nom de votre hébergement</mat-label>
+          <mat-select matNativeControl required>
+            <mat-option *ngFor="let option of options" [value]="option.value">
+              {{ option.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <mat-label>Combien d'hébergements de ce type (hébergement) <br> possédez-vous?</mat-label><br>
+          <input type="number" name="number" id="inputNumber" placeholder="0" style="margin: 10px 0 10px 0;">
+        </div>
+        <mat-divider style="margin-bottom: 20px;"></mat-divider>
+        <mat-label>Quels lits sont disponibles dans cette catégorie ?</mat-label><br><br>
+        <mat-card *ngFor="let lit of lits; let i = index" class="example-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>
+                <div class="lit-info">
+                  <img mat-card-sm-image src="assets/img/lit.png" class="lit-image">
+                  <span class="lit-details">{{ lit.name }} <br> {{ lit.size }}</span>
+                </div>
+              </mat-card-title>
+            </mat-card-title-group>
+            <div class="quantity-container">
+              <div class="quantity">
+                <button type="button" (click)="quantity('min', i)" class="btn btn-black" [disabled]="productQuantities[i] <= 1"><strong>-</strong></button>
+                <input class="inputbox" type="text" [value]="productQuantities[i]" id="" disabled>
+                <button type="button" (click)="quantity('max', i)" class="btn btn-blue"><strong>+</strong></button>
+              </div>
+            </div>
+          </mat-card-header>
+        </mat-card>
+        <div style="margin: 40px;">
+          <p>Combien de personnes peuvent séjourner dans cette
+            catégorie hébergement ?
+          </p>
+          <div class="quantity-container" style="width: 140px;">
+            <div class="quantity">
+              <button type="button" (click)="quantity1('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
+              <input class="inputbox" type="text" disabled [value]="productquantity" id="">
+              <button type="button" (click)="quantity1('max')" class="btn btn-blue"><strong>+</strong></button>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin: 40px;">
+          <p>
+            Quelle est la superficie de cet hébergement ?
+          </p>
+          <div>
+            <input type="number" name="" id="inputNumber" placeholder="0">
+            <!-- <label for="fruits">Choisissez un fruit :</label> -->
+            <select id="fruits" name="fruits">
+              <option value="apple">mètres carrés</option>
+              <option value="banana">pieds carrés</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div style="margin: 40px;">
+          <p>
+            Est-il possible de fumer dans cet hébergement ?
+          </p>
+          <div>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
+  <div class="sub-card">
+    <mat-card id="haut">
+      <mat-card-header>
+        <mat-icon class="custom-icon" style="margin-top: 10px;"> highlight</mat-icon>
+        <p>
+          Proposez-vous d'autres couchages?
+        </p>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li>Pour le moment, vous devez juste ajouter vos couchages standard.</li>
+          <li>Les lits bébé, les lits d'appoint et les autres couchages peuvent être ajoutés dans l'extranet, la plateforme que vous utiliserez pour gérer votre hébergement.</li>
+        </ul>
+        <p class="espace">Votre hébergement dispose-t-il de conditions
+          spécifiques relatives aux enfants ?</p>
+          <ul>
+            <li>Vous pourrez configurer des conditions relatives aux enfants, y compris ajuster les tarifs et l'âge maximum correspondant, dans l'extranet, une fois votre inscription terminée.</li>
+          </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

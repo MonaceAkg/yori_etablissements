@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="main-card" id="grand">
+    <mat-card-header>
+      <mat-card-title class="title">Parlez-nous des options de stationnement pour votre établissement </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <label class="example-radio-group-label">Les clients ont-ils accès à un parking?</label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="breakfastServed">
+        <mat-radio-button class="example-radio-button" value="Oui">Oui, gratuitement</mat-radio-button>
+        <mat-radio-button class="example-radio-button" value="Moyennant">Oui, moyennant un supplément</mat-radio-button>
+        <mat-radio-button class="example-radio-button" value="Non">Non</mat-radio-button>
+      </mat-radio-group>
+
+      <div *ngIf="breakfastServed === 'Oui'">
+        <mat-divider></mat-divider>
+        <label class="example-radio-group-label">Est-il nécessaire de réserver une place de parking?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="breakfastIncluded">
+          <mat-radio-button class="example-radio-button" value="Oui, il est inclus.">Réservation nécessaire.</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Non, il est en supplément.">Sans réservation</mat-radio-button>
+        </mat-radio-group>
+
+        <label class="example-radio-group-label">Où se situe le parking?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="breakfastIncluded">
+          <mat-radio-button class="example-radio-button" value="Oui, il est inclus.">Sur place</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Non, il est en supplément.">À proximité</mat-radio-button>
+        </mat-radio-group>
+
+        <label class="example-radio-group-label">De quel type de parking s'agit-il?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="breakfastIncluded">
+          <mat-radio-button class="example-radio-button" value="Oui, il est inclus.">Privé</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Non, il est en supplément.">À Public</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div *ngIf="breakfastServed === 'Moyennant'">
+        <mat-divider></mat-divider>
+        <mat-card-title class="example-radio-group-label">Combien coûte le parking?</mat-card-title>
+        <div class="menu">
+          <div>
+            <input type="number" class="example-radio-group-label" placeholder="FCA">
+            <button mat-button [matMenuTriggerFor]="menu">par heure</button>
+          </div>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+        </div>
+        <label class="example-radio-group-label">Est-il nécessaire de réserver une place de parking?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="breakfastIncluded">
+          <mat-radio-button class="example-radio-button" value="Oui, il est inclus.">Réservation nécessaire.</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Non, il est en supplément.">Sans réservation</mat-radio-button>
+        </mat-radio-group>
+
+        <label class="example-radio-group-label">Où se situe le parking?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="breakfastIncluded">
+          <mat-radio-button class="example-radio-button" value="Oui, il est inclus.">Sur place</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Non, il est en supplément.">À proximité</mat-radio-button>
+        </mat-radio-group>
+
+        <label class="example-radio-group-label">De quel type de parking s'agit-il?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="breakfastIncluded">
+          <mat-radio-button class="example-radio-button" value="Oui, il est inclus.">Privé</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Non, il est en supplément.">À Public</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </mat-card-content>
+  </div>
+</div>
