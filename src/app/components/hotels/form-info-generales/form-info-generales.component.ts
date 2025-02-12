@@ -7,7 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-
+import { MapComponent } from '../../map/map.component';
+// import { MapComponent } from '../../map/map.component';
 
 const THUMBUP_ICON =
   `
@@ -33,28 +34,28 @@ const THUMBUP_ICON =
     FormsModule,
     MatIconModule,
     CommonModule,
+    MapComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './form-info-generales.component.html',
-  styleUrl: './form-info-generales.component.css'
+  styleUrl: './form-info-generales.component.css',
 })
 export class FormInfoGeneralesComponent {
+  showMap: boolean = false;
   currentRoute: string = '';
   ngOnInit(): void {
-    this.currentRoute = this.router.url; 
+    this.currentRoute = this.router.url;
     this.router.events.subscribe(() => {
       this.currentRoute = this.router.url;
     });
   }
 
-  constructor( private router: Router) {
+  constructor(private router: Router) {
     const iconRegistry = inject(MatIconRegistry);
     const sanitizer = inject(DomSanitizer);
-    iconRegistry.addSvgIconLiteral('thumbs-up', sanitizer.bypassSecurityTrustHtml(THUMBUP_ICON));
+    iconRegistry.addSvgIconLiteral(
+      'thumbs-up',
+      sanitizer.bypassSecurityTrustHtml(THUMBUP_ICON)
+    );
   }
-
-
-
-
-
 }
