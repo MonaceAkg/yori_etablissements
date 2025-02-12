@@ -4,6 +4,18 @@
     height: 80vh; 
   }
 
+  .logo-link {
+    display: block; /* Pour que le lien prenne toute la largeur de l'image */
+  }
+  
+  .logo-image {
+    height: 70px;
+    width: 100px;
+    object-fit: contain; /* Pour que l'image ne soit pas déformée */
+    display: block;
+  }
+  
+
   .jus{
     display: block;
     width: 100%;
@@ -24,12 +36,11 @@
   }
 
 
-  /* Pour le bouton du dropdown */
-/* Style de base pour le bouton */
+
 .dropdown-button {
   padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
+  background-color: initial;
+  color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
   display: flex;
@@ -41,11 +52,12 @@
   display: none;
   position: absolute;
   top: 50px; /* Positionner sous le bouton */
-  left: 0;
+  right: 0;
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 160px;
+  z-index: 100;
 }
 
 /* Les éléments du menu */
@@ -66,9 +78,7 @@
 }
 
 /* Optionnel : ajuster l'apparence du bouton survolé */
-.dropdown-button:hover {
-  background-color: #0056b3;  /* Change la couleur de fond du bouton lors du survol */
-}
+
 
 
 /* Ouvre le menu lorsque l'on survole le bouton */
@@ -173,6 +183,7 @@
     align-items: center;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
   }
 
 
@@ -231,6 +242,42 @@
   .content-left h4{
     margin-top: 1px;
   }
+
+  .card {
+    width: 95%; /* La carte occupe 95% de la largeur de son parent sur les petits écrans */
+  }
+
+  .sup h3 {
+    font-size: 1.2rem; /* Réduire la taille de la police */
+  }
+
+  .para {
+    font-size: 0.8rem;
+  }
+
+  .centered-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .a-link {
+    font-size: 0.8rem;
+  }
+
+  thead p {
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+
+  tbody td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .premier1 {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -239,5 +286,33 @@
   }
   .content-left h4{
     margin-top: 1px;
+  }
+
+  .sup h3 {
+    font-size: 1rem;
+  }
+
+  .para {
+    font-size: 0.7rem;
+  }
+
+  .centered-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  thead p {
+    font-size: 0.9rem;
+    padding-left: 5px;
+  }
+
+  tbody td {
+    font-size: 0.7rem;
+    padding: 4px;
+  }
+
+  .premier1 {
+    font-size: 0.6rem;
+    padding: 3px 6px;
   }
 } 

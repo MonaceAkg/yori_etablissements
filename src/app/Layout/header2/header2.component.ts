@@ -2,7 +2,7 @@ import { Component,OnInit, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { MatCard, MatCardContent, MatCardModule, MatCardTitle } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
-import { MatMenu, MatMenuItem, MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 
@@ -11,17 +11,14 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterLink,
     MatCard,
-    MatMenuItem,
     MatCardContent,
     MatCardTitle,
-    MatMenu,
     MatMenuModule,
-    MatMenuItem,
     MatDivider,
     MatTableModule,
     CommonModule,
     MatCardModule
-  ],
+],
   templateUrl: './header2.component.html',
   styleUrl: './header2.component.css'
 })

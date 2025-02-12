@@ -1,23 +1,29 @@
-<div *ngIf="currentRoute === '/espace'">
+<div *ngIf="currentRoute === '/espace'"> 
     <div class="container">
       <div class="top-bar">
         <div class="logo">
-          <img src="assets/img/logo_bleu.png" alt="" height="70" width="100">
+          <a [routerLink]="['/']" class="logo-link">
+            <img src="assets/img/logo_bleu.png" alt="Logo" class="logo-image">
+          </a>          
         </div>
         <div class="dropdown">
-          <button mat-button [matMenuTriggerFor]="menu" class="dropdown">
-            <div class="initial-circle">
-              {{ userName.charAt(0) }}
-            </div>
-            <span>{{ userName }}</span><br>
-            <span style="padding-left: 40px;"> {{info}} </span>
+          <button class="dropdown-button">
+              <div class="initial-circle">
+                  {{ userName.charAt(0) }} <!-- Affiche la première lettre du nom -->
+              </div>
+              <div>
+                <span>{{ userName }}</span><br>
+                <span> {{info}} </span>
+              </div>
           </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/page1">Page 1</button>
-            <button mat-menu-item routerLink="/page2">Page 2</button>
-            <button mat-menu-item (click)="logout()">Déconnexion</button>
-          </mat-menu>
-        </div>
+          
+          <!-- Menu déroulant -->
+          <div class="dropdown-menu">
+              <a [routerLink]="['/list-etablissements']">link1</a>
+              <a href="/page1">link2</a>
+              <a (click)="logout()">Déconnexion</a>
+          </div>
+      </div>
 
       </div>
 
@@ -59,7 +65,9 @@
     <div class="container">
       <div class="top-bar">
         <div class="logo">
-          <img src="assets/img/logo_bleu.png" alt="" height="70" width="100">
+          <a [routerLink]="['/']" class="logo-link">
+            <img src="assets/img/logo_bleu.png" alt="Logo" class="logo-image">
+          </a>
         </div>
           <div>
             <button type="button" [routerLink]="['/espace']" class="jus">
@@ -71,8 +79,10 @@
                 <div class="initial-circle">
                     {{ userName.charAt(0) }} <!-- Affiche la première lettre du nom -->
                 </div>
-                <span>{{ userName }}</span><br>
-                <span style="padding-left: 40px;">{{ info }}</span>
+                <div>
+                  <span>{{ userName }}</span><br>
+                  <span> {{info}} </span>
+                </div>
             </button>
             
             <!-- Menu déroulant -->
