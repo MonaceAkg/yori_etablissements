@@ -96,26 +96,32 @@
   
   .flex-container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 5px;
-    align-items: stretch; /* Assure que les éléments enfants s'étendent pour avoir la même hauteur */
+    /* gap: 5px; */
+    justify-content: space-between;
+    align-items: center; /* Assure que les éléments enfants s'étendent pour avoir la même hauteur */
   }
   
   .text-card {
     flex: 1;
     margin: 0;
-    padding: 0px; /* Ajoute un peu d'espace intérieur */
+    padding: 0px; 
+    width: 45%;
   }
   
   .image-card {
     flex: 0 0 auto; /* Permet de ne pas étirer cette carte */
     display: flex; /* Flex pour centrer l'image */
-    align-items: center; /* Centrer verticalement l'image */
+    align-items: center;
+    width: 45%;
   }
   
   .image-container img {
-    max-height: 400px;
-    width: auto; /* Conserve le ratio de l'image */
+    width: 100%;
+  height: auto;
+    display: block;
+    object-fit: cover;
   }
   
   .border-left,
@@ -201,6 +207,19 @@
       padding: 10px;
       text-align: center;
     }
+
+    .flex-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .image-card {
+      width: 100%;
+    }
+  
+    .text-card {
+      width: 100%;
+    }
   
     .hero-section h1 {
       font-size: 2em; /* Réduit la taille de police */
@@ -240,10 +259,18 @@
       width: 100%;
       box-sizing: border-box;
     }
+
+    .text-card h1 {
+      font-size: 1.5rem;
+    }
+  
+    .text-card p {
+      font-size: 0.9rem;
+    }
   
     .text-card,
     .image-card {
-      width: 80%;
-      margin-bottom: 20px; /* Ajoute un espace entre les cartes */
+      width: auto;
+      margin-bottom: 10px; /* Ajoute un espace entre les cartes */
     }
   }
