@@ -6,7 +6,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDivider } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import intlTelInput from 'intl-tel-input';
+// import intlTelInput from 'intl-tel-input';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -64,3 +64,7 @@ export class ProprietaireComponent implements OnInit{
   }
 
 }
+function intlTelInput(nativeElement: any, arg1: { initialCountry: string; separateDialCode: boolean; utilsScript: string; }) {
+  throw new Error('Function not implemented.');
+}
+

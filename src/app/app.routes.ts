@@ -10,6 +10,8 @@ import { Progression1Component } from './components/progression1/progression1.co
 import { AjoutEtablissementComponent } from './Layout/ajout-etablissement/ajout-etablissement.component';
 import { Progression2Component } from './components/progression2/progression2.component';
 import { Progression3Component } from './components/progression3/progression3.component';
+import { Progression4Component } from './components/progression4/progression4.component';
+import { LoadingComponent } from './components/hotels/loading/loading.component';
 
 export const routes: Routes = [
   {
@@ -24,7 +26,11 @@ export const routes: Routes = [
   {
     path: '',
     component: MainEspaceComponent,
-    children: [{ path: 'espace', component: EspaceComponent }],
+    children: [
+      { path: 'espace', component: EspaceComponent },
+      { path: 'list-etablissements', component: EspaceComponent },
+
+    ],
   },
   {
     path: '',
@@ -41,7 +47,10 @@ export const routes: Routes = [
       { path: 'ajout-hotel', component: Progression1Component },
       { path: 'info-hotel', component: Progression2Component },
       { path: 'enregistrement-hotel', component: Progression3Component },
-      { path: 'finalisation', component: Progression3Component },
+      { path: 'finalisation', component: Progression4Component },
     ],
   },
+
+
+  { path: 'loading', component: LoadingComponent },
 ];

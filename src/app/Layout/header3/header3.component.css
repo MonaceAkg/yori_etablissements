@@ -50,13 +50,13 @@
 
 .dropdown-menu {
   display: none; /* Masque le menu par défaut */
-  /* position: absolute; */
-  top: 100%; /* Aligne le menu directement sous le bouton */
-  right: 0; /* Aligne le menu à droite du bouton */
+  position: absolute;
+  top: 10; /* Aligne le menu directement sous le bouton */
+  right: 0;
   background-color: #ffffff; /* Fond du menu déroulant */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée pour le menu */
   border-radius: 4px; /* Coins arrondis pour le menu */
-  z-index: 1000; /* Assure que le menu s'affiche au-dessus des autres éléments */
+  z-index: 10; /* Assure que le menu s'affiche au-dessus des autres éléments */
   white-space: nowrap; /* Empêche le texte de se couper */
 }
 

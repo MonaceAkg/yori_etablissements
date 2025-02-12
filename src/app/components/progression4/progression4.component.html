@@ -1,0 +1,77 @@
+<div class="tab-container">
+  <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="activeTabIndex">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="circle-container">
+          <div class="circle" [ngClass]="{'active': activeTabIndex >= 0}">1</div>
+          <div class="circle-title">Paiement</div>
+        </div>
+      </ng-template>
+      <app-paiement></app-paiement>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="circle-container">
+          <div class="circle" [ngClass]="{'active': activeTabIndex >= 1}">2</div>
+          <div class="circle-title">Bon à savoir</div>
+        </div>
+      </ng-template>
+      <app-a-savoir></app-a-savoir>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="circle-container">
+          <div class="circle" [ngClass]="{'active': activeTabIndex >= 2}">3</div>
+          <div class="circle-title">Progression</div>
+        </div>
+      </ng-template>
+      <app-etape-enregistrement></app-etape-enregistrement>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="circle-container">
+          <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">4</div>
+          <div class="circle-title">Proprietaire</div>
+        </div>
+      </ng-template>
+      <app-proprietaire></app-proprietaire>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div 
+  class="tab-navigation tab-navigation-buttons"
+  [ngClass]="{
+    'style0': activeTabIndex === 0,
+    'style1': activeTabIndex === 1,
+    'style2': activeTabIndex === 2,
+    'style3': activeTabIndex === 3
+  }"
+  (click)="handleDivClick()"
+> 
+  <button *ngIf="activeTabIndex === 0" (click)="nextTab($event)">
+    Prochaine étape <span class="chevron">&#9654;</span>
+  </button>
+
+  <button *ngIf="activeTabIndex === 1" (click)="previousTab($event)">
+    <span class="chevron">&#9664;</span> Précédent
+  </button>
+  <button *ngIf="activeTabIndex === 1" (click)="nextTab($event)">
+    Prochaine étape <span class="chevron">&#9654;</span>
+  </button>
+
+  <button *ngIf="activeTabIndex === 2" (click)="nextTab($event)" style="background-color: transparent; border: none;">
+    Finaliser l'inscription
+  </button>
+
+  <button *ngIf="activeTabIndex === 3" [routerLink]="['/loading']" style="background-color: transparent; border: none;" (click)="navigateToRoute($event)">
+    Enregistrer
+  </button>
+</div>
+
+
+
+</div> 
+ 

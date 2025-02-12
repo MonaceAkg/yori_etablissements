@@ -18,19 +18,20 @@ mat-label {
 }
 
 .main-card {
-  flex: 1 1 62%; /* Prend 60% de la largeur */
+  flex: 1 1 60%; /* Prend 60% de la largeur */
   background-color: white;
+  border: 1px solid rgb(234, 234, 234);
   margin-right: 20px; /* Espacement à droite */
 }
 
 .sub-card {
-  flex: 1 1 40%; 
+  flex: 1 1 40.5%; 
   background-color: inherit;
 }
 
 #haut {
   background-color: white;
-  /* margin-top: 10px; */
+  border: 1px solid rgb(234, 234, 234);
   width: 100%; /* Prend toute la largeur sur petits écrans */
 }
 

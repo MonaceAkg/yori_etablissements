@@ -23,17 +23,19 @@ mat-label {
 .main-card {
   flex:1 1 49%; /* Prend 60% de la largeur */
   background-color: white;
+  border: 1px solid rgb(234, 234, 234);
+
 }
 
 /* Sous-carte */
 .sub-card {
-  flex:1 1 380px;
+  flex:1 1 420px;
   margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
   background-color: inherit;
 }
 
 #haut {
-
+  border: 1px solid rgb(234, 234, 234);
   background-color: white;
 }
 

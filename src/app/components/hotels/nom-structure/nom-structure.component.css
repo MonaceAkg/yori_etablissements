@@ -1,9 +1,10 @@
 .container {
   display: flex; 
   justify-content: center;
+  border: 1px solid rgb(234, 234, 234);
   margin: 25px 25px 10px 0;
   width: 100%;
-  max-width: 800px;
+  max-width: 780px;
   border-radius: 10px;
   background-color: white;
 }
@@ -20,7 +21,7 @@
   background-color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 10px;
-  width: 582px;
+  width: 100%;
 }
 
 .paragraphe{
@@ -99,15 +100,15 @@ textarea {
 
 /* Styles pour les écrans plus petits */
 @media (max-width: 768px) {
-  .main-card {
+  .container {
     padding: 15px; /* Réduire l'espacement interne sur mobile */
     margin: auto; /* Centrer la carte sur mobile */
-    width: calc(100% - 40px); /* Ajuster la largeur pour inclure un peu d'espacement sur les bords */
-    max-width: none; /* Supprimer la largeur maximale pour permettre une meilleure adaptation */
+    width: auto;
+    max-width: none;
   }
 
   .card-content{
-    width: 100%;
+    width: auto;
   }
 
 

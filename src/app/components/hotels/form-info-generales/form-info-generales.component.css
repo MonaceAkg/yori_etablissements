@@ -18,10 +18,11 @@
 
 
 .main-card {
-  flex: 1 1 582px;
+  flex: 1 1 550px;
   height: 765px;
   background-color: white;
-  max-width: 800px;
+  /* max-width: 800px; */
+  border: 1px solid rgb(234, 234, 234);
   border-radius: 10px;
   padding: 20px 10px;
 
@@ -39,6 +40,7 @@
 
 .sub-card {
   flex:1 1 40%;
+  border: 1px solid rgb(234, 234, 234);
   border-radius: 10px;
   background-color: white;
 }
@@ -93,3 +95,4 @@ input, select {
     margin-bottom: 10px;
   }
 }
+ 

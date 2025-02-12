@@ -1,8 +1,8 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { MatCard, MatCardContent, MatCardModule, MatCardTitle } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
-import { MatMenu, MatMenuItem, MatMenuModule } from '@angular/material/menu';
+import { MatMenu, MatMenuItem, MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 
@@ -35,6 +35,20 @@ export class Header2Component implements OnInit{
     this.router.events.subscribe(() => {
       this.currentRoute = this.router.url; // Met à jour la route si elle change
     });
+  }
+
+  @ViewChild(MatMenuTrigger) menuTrigger: MatMenuTrigger | undefined;  // Indique que cela peut être undefined au départ
+
+  openMenu() {
+    if (this.menuTrigger) {
+      this.menuTrigger.openMenu();
+    }
+  }
+
+  closeMenu() {
+    if (this.menuTrigger) {
+      this.menuTrigger.closeMenu();
+    }
   }
 
 
