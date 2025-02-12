@@ -24,6 +24,60 @@
   }
 
 
+  /* Pour le bouton du dropdown */
+/* Style de base pour le bouton */
+.dropdown-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Cacher le menu au départ */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px; /* Positionner sous le bouton */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+}
+
+/* Les éléments du menu */
+.dropdown-menu a {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Affichage du menu au survol du bouton */
+.dropdown:hover .dropdown-menu {
+  display: block;  /* Le menu devient visible dès le survol du parent */
+}
+
+/* Optionnel : ajuster l'apparence du bouton survolé */
+.dropdown-button:hover {
+  background-color: #0056b3;  /* Change la couleur de fond du bouton lors du survol */
+}
+
+
+/* Ouvre le menu lorsque l'on survole le bouton */
+.dropdown:hover .mat-menu-panel {
+  display: block;
+}
+
+
+
   .premier{
     background-color: white;
     color: rgba(13, 13, 197, 0.8);
@@ -186,4 +240,4 @@
   .content-left h4{
     margin-top: 1px;
   }
-}
+} 

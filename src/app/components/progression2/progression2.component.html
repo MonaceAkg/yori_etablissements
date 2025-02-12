@@ -1,1 +1,80 @@
-<p>progression2 works!</p>
+<div class="tab-container">
+    <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="activeTabIndex">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 0}">1</div>
+            <div class="circle-title">Type chambre</div>
+          </div>
+        </ng-template> 
+        <app-update-chambre></app-update-chambre>
+      </mat-tab>
+  
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 1}">2</div>
+            <div class="circle-title">Salle de bain</div>
+          </div>
+        </ng-template>
+        <app-salle-bain></app-salle-bain>
+      </mat-tab>
+  
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 2}">3</div>
+            <div class="circle-title">Equipements</div>
+          </div>
+        </ng-template>
+        <app-equipements></app-equipements>
+      </mat-tab>
+  
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">4</div>
+            <div class="circle-title">Tarifs</div>
+          </div>
+        </ng-template>
+        <app-tarif></app-tarif> 
+      </mat-tab>
+  
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 4}">5</div>
+            <div class="circle-title">Photo</div>
+          </div>
+        </ng-template>
+        <app-photo-categorie></app-photo-categorie>
+      </mat-tab>
+  
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 5}">6</div>
+            <div class="circle-title">Progression</div>
+          </div>
+        </ng-template>
+        <app-etape-enregistrement></app-etape-enregistrement>
+      </mat-tab>
+    </mat-tab-group>
+  
+    <div class="tab-navigation tab-navigation-buttons" *ngIf="activeTabIndex < 5" 
+       [ngClass]="{
+         'style0': activeTabIndex === 0,
+         'style1': activeTabIndex === 1,
+         'style2': activeTabIndex === 2,
+         'style3': activeTabIndex === 3,
+         'style4': activeTabIndex === 4,
+       }" style="margin-bottom: 20px;">
+    <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
+      <span class="chevron">&#9664;</span> Précédent
+    </button>
+    <button (click)="nextTab()">
+      prochaine étape <span class="chevron">&#9654;</span>
+    </button>
+  </div>
+  </div>
+   

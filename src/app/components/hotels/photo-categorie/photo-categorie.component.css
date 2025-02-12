@@ -20,19 +20,21 @@ mat-label{
 }
 
 .main-card {
-  flex: 1 62%;
+  flex: 1 60%;
   background-color: white;
+  border: 1px solid rgb(234, 234, 234);
 }
 
 
 .sub-card {
-  flex: 1 40%;
+  flex: 1 40.6%;
   margin-bottom: 10px; 
   background-color: inherit;
 }
 
 
 #haut{
+  border: 1px solid rgb(234, 234, 234);
   background-color: white;
 }
 

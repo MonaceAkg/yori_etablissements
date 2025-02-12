@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {
   MatTab,
   MatTabChangeEvent,
@@ -7,7 +7,6 @@ import {
   MatTabsModule,
 } from '@angular/material/tabs';
 
-import { RouterLink } from '@angular/router';
 import { FormInfoGeneralesComponent } from '../hotels/form-info-generales/form-info-generales.component';
 import { NomStructureComponent } from '../hotels/nom-structure/nom-structure.component';
 import { CommoditesComponent } from '../hotels/commodites/commodites.component';
@@ -20,7 +19,6 @@ import { EtapeEnregistrementComponent } from '../hotels/etape-enregistrement/eta
 @Component({
   selector: 'app-progression1',
   imports: [
-    RouterLink,
     MatTab,
     MatTabGroup,
     MatTabsModule,
@@ -32,8 +30,8 @@ import { EtapeEnregistrementComponent } from '../hotels/etape-enregistrement/eta
     ParkingComponent,
     LanguesComponent,
     PolitiqueComponent,
-    EtapeEnregistrementComponent,
-  ],
+    EtapeEnregistrementComponent
+],
   templateUrl: './progression1.component.html',
   styleUrl: './progression1.component.css',
 })

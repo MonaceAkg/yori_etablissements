@@ -8,13 +8,15 @@
         <div class="initial-circle">
           {{ userName.charAt(0) }}
         </div>
-        <span>{{ userName }}</span>
+        <div>
+          {{ userName }} <br>
+          Mes informations
+        </div>
       </button>
       <div class="dropdown-menu">
-        <a href="/page1">Page 1</a>
-        <a href="/page2">Page 2</a>
-        <a href="#" (click)="logout()">Déconnexion</a>
+        <a [routerLink]="['/list-etablissements']"><mat-icon>person</mat-icon>  Mes établisesements</a>
+        <a href="#" (click)="logout()"><mat-icon>power_settings_new</mat-icon> Déconnexion</a>
       </div>
-    </div>
+    </div>    
   </div>
 </div>

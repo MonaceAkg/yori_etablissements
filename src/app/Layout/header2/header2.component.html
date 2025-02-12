@@ -55,7 +55,7 @@
   </div>
   </div>
 
-  <div *ngIf="currentRoute === '/list'">
+  <div *ngIf="currentRoute === '/list-etablissements'">
     <div class="container">
       <div class="top-bar">
         <div class="logo">
@@ -66,21 +66,23 @@
                 Ajoutez votre établissement
             </button>
           </div>   
-        <div class="dropdown">
-          <button mat-button [matMenuTriggerFor]="menu" class="dropdown">
-            <div class="initial-circle">
-              {{ userName.charAt(0) }}
+          <div class="dropdown">
+            <button class="dropdown-button">
+                <div class="initial-circle">
+                    {{ userName.charAt(0) }} <!-- Affiche la première lettre du nom -->
+                </div>
+                <span>{{ userName }}</span><br>
+                <span style="padding-left: 40px;">{{ info }}</span>
+            </button>
+            
+            <!-- Menu déroulant -->
+            <div class="dropdown-menu">
+                <a href="/page1">Page 1</a>
+                <a href="/page2">Page 2</a>
+                <a (click)="logout()">Déconnexion</a>
             </div>
-            <span>{{ userName }}</span><br>
-            <span style="padding-left: 40px;"> {{info}} </span>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/page1">Page 1</button>
-            <button mat-menu-item routerLink="/page2">Page 2</button>
-            <button mat-menu-item (click)="logout()">Déconnexion</button>
-          </mat-menu>
         </div>
-
+          
       </div>
 
       <header class="header">
