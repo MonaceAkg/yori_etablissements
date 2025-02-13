@@ -1,0 +1,102 @@
+<form >
+    <ng-container>
+        <div class="container">
+          <div class="main-card" id="grand">
+            <div class="card-content">
+                <h1>Tarif</h1>
+                <h3>Fixer un prix par catégorie</h3>
+                <h3>Choissisez une monnaie</h3>
+                <div>
+                    <select [(ngModel)]="monnaie" (change)="calculerPourcentage()" name="monnaie" style="width: 100px;height: 30px;">
+                      <option value="FCFA">F CFA</option>
+                      <option value="Euro">Euro</option>
+                      <option value="Dollar">Dollar</option>
+                    </select> 
+                  </div>
+            </div>
+            <h3>Selectionnez  les differents champs</h3>
+            <div>
+                <input class="label" type="checkbox" id="adulte" name="adulte" value="adulte" [(ngModel)]="adulteChecked" (change)="onCheckboxChange('adulte')"/>    
+                <label>Adulte</label> <br>    
+                <div class="inline-container" *ngIf="adulteChecked">
+                    <div>
+                       <label>Fixez un tarif</label><br>
+                        <input class="input" type="number" name="adulte" [(ngModel)]="adulteAmount" (input)="calculatePercentage('adulte')"/>
+                    </div>
+                    <p class="montant" class="montant">Vous obtiendrez {{ adultePercentage }} {{ pourcentage | number:'0' }} {{ monnaie }} par reservation</p>
+                </div>
+            
+                <input class="label" type="checkbox" id="enfant" name="enfant" value="enfant" [(ngModel)]="enfantChecked" (change)="onCheckboxChange('enfant')"/>    
+                <label>Enfant</label> <br>    
+                <div class="inline-container" *ngIf="enfantChecked">
+                    <div>
+                        <label>Tranche d'âge</label><br>
+                        <select [(ngModel)]="age" name="age" style="width: 250px;height: 30px;">
+                            <option value="selectionnez une tranche d'âge">selectionnez une tranche d'âge</option>
+                            <option value="1an">1 an</option>
+                            <option value="2ans">2 ans</option>
+                            <option value="3ans">3 ans</option>
+                            <option value="4ans">4 ans</option>
+                            <option value="5ans">5 ans</option>
+                            <option value="6ans">6 ans</option>
+                            <option value="7ans">7 ans</option>
+                            <option value="8ans">8 ans</option>
+                            <option value="9ans">9 ans</option>
+                            <option value="10ans">10 ans</option>
+                            <option value="11ans">11 ans</option>
+                            <option value="12ans">12 ans</option>
+                            <option value="13ans">13 ans</option>
+                            <option value="14ans">14 ans</option>
+                            <option value="15ans">15 ans</option>
+                            <option value="16ans">16 ans</option>
+                            <option value="17ans">17 ans</option>
+                          </select><br><br>
+                        <label>Fixez un tarif</label><br>
+                        <input class="input" type="number" name="enfant" [(ngModel)]="enfantAmount" (input)="calculatePercentage('enfant')"/>
+                    </div>
+                    <p style="margin-top: 120px; text-decoration: underline;">Vous obtiendrez {{ enfantPercentage }} {{ pourcentage | number:'0' }} {{ monnaie }} par reservation</p>
+                </div>
+            
+                <input class="label" type="checkbox" id="etudiant" name="etudiant" value="etudiant" [(ngModel)]="etudiantChecked" (change)="onCheckboxChange('etudiant')"/>    
+                <label>Etudiant</label> <br>  
+                <div class="inline-container" *ngIf="etudiantChecked">
+                   <div>
+                    <label>Fixez un tarif</label><br>
+                    <input class="input" type="number" name="etudiant" [(ngModel)]="etudiantAmount" (input)="calculatePercentage('etudiant')"/>
+                   </div>
+                    <p class="montant">Vous obtiendrez {{ etudiantPercentage }} {{ pourcentage | number:'0' }} {{ monnaie }} par reservation</p>
+                </div>
+            
+                <input class="label" type="checkbox" id="handicape" name="handicape" value="handicape" [(ngModel)]="handicapeChecked" (change)="onCheckboxChange('handicape')"/>
+                <label>Handicape</label> <br>    
+                <div class="inline-container" *ngIf="handicapeChecked">
+                    <div>
+                        <label>Fixez un tarif</label><br>
+                        <input class="input" type="number" name="handicape" [(ngModel)]="handicapeAmount" (input)="calculatePercentage('handicape')"/>
+                    </div>
+                    <p class="montant">Vous obtiendrez {{ handicapePercentage }} {{ pourcentage | number:'0' }} {{ monnaie }} par reservation</p>
+                </div>
+            </div>
+                       
+          </div>
+          <div class="sub-card-container">
+            <div class="sub-card" id="haut">
+              <div class="card-header">
+                <p><span class="custom-icon">💡</span>Combien souhaitez-vous facturer par reservation?</p>
+              </div>
+              <div class="card-content">
+                <p>00% Commission sur Yori.com</p>
+                <p><mat-icon class="mat-icon">done</mat-icon>
+                    Gagnez du temps grâce à la confirmation automatique des réservations
+                </p>
+                <p><mat-icon class="mat-icon">done</mat-icon> Nous mettons en valeur votre établissement à l'échelle mondiale
+                </p>
+                <mat-divider></mat-divider>
+                <p>Nous percevons une commission de 15 % pour chaque réservation effectuée sur l'application.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </ng-container>
+</form>

@@ -1,0 +1,103 @@
+.container {
+  display: flex; 
+  justify-content: center;
+  margin: 25px 25px 10px 0;
+  width: 60%;
+  max-width: 740px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+
+
+.main-card {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(234, 234, 234);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#paragraphe{
+  margin-bottom: 40px;
+}
+
+#paragraphe p{
+
+  font-size: 12px;
+}
+
+.card-header h2 {
+  margin-bottom: 15px;
+}
+
+.card-content {
+  margin-bottom: 20px; /* Espacement entre le contenu et le footer */
+  width: 60%;
+}
+
+.form-field {
+  margin-bottom: 15px; /* Espacement entre les champs */
+}
+
+.full-width {
+  width: 100%; /* Prend 100% de la largeur du conteneur */
+  height: 100px;
+}
+
+label{
+  font-weight: 500;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%; /* Largeur 100% */
+  padding: 10px; /* Espacement intérieur */
+  border: 1px solid #ccc; /* Bordure légère */
+  border-radius: 4px; /* Coins arrondis */
+}
+
+.card-footer{
+  margin-top: 40px;
+}
+
+.card-footer label {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#labelF{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.radio-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* Espacement entre les boutons */
+}
+
+.star {
+  margin-left: 4px; /* Espacement entre le texte et les étoiles */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 10px; /* Réduction du padding sur petits écrans */
+  }
+
+  .main-card, .full-width {
+    width: 100%; /* Prend 100% de la largeur sur petits écrans */
+  }
+
+}

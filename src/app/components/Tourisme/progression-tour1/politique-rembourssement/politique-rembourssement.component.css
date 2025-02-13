@@ -1,0 +1,41 @@
+.container {
+    margin: 25px 25px 10px 0;
+    background-color: white;
+  }
+   
+  .main-card {
+    border: 1px solid rgb(234, 234, 234);
+    padding-left: 20px;
+    border-radius: 10px;
+    background-color: initial;
+    width: 53.5%;
+  }
+  
+#remboursable{
+  margin: 15px 0 10px 10px;
+  width: 300px;
+  border-radius: 8px;
+  height: 30px;
+  border: 1px solid rgb(21, 21, 21);
+}
+
+.espace{
+  margin-left: 10px;
+}
+
+  label {
+    margin-left: 10px; /* Espacement entre le checkbox et le label */
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+      padding: 10px; /* Réduction du padding sur petits écrans */
+    }
+  
+    .main-card, .full-width {
+      width: auto; 
+    }
+
+  }
+  

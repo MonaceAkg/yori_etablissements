@@ -1,0 +1,110 @@
+<body>
+    <div class="tab-container"> 
+      <!-- <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="activeTabIndex"> -->
+      <mat-tab-group (selectedTabChange)="onTabChange($event)">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 0}">1</div>
+              <div class="circle-title">Informations générales</div>
+            </div>
+          </ng-template>
+          <app-form-info-generales></app-form-info-generales>
+        </mat-tab>
+  
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 1}">2</div>
+              <div class="circle-title">Nom de la structure</div>
+            </div>
+          </ng-template>
+          <app-type-etablissement></app-type-etablissement>
+        </mat-tab> 
+   
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 2}">3</div>
+              <div class="circle-title">Horraires</div>
+            </div>
+          </ng-template>
+          <app-politique></app-politique>
+        </mat-tab>
+  
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">4</div>
+              <div class="circle-title">Politique</div>
+            </div>
+          </ng-template>
+          <app-politique-rembourssement></app-politique-rembourssement>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 4}">5</div>
+              <div class="circle-title">Infos importantes</div>
+            </div>
+          </ng-template>
+          <app-info-importantes></app-info-importantes>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 5}">6</div>
+              <div class="circle-title">Infos complémentaires</div>
+            </div>
+          </ng-template>
+          <app-info-complementaires></app-info-complementaires>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 6}">7</div>
+              <div class="circle-title">Les inclusions</div>
+            </div>
+          </ng-template>
+         <app-inclus></app-inclus>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 7}">8</div>
+              <div class="circle-title">Les tarifs</div>
+            </div>
+          </ng-template>
+          <app-tarifs></app-tarifs>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 8}">9</div>
+              <div class="circle-title">Progression</div>
+            </div> 
+          </ng-template>
+         <app-fin-etape1></app-fin-etape1>
+        </mat-tab>
+      </mat-tab-group>
+      <div class="tab-navigation tab-navigation-buttons" *ngIf="activeTabIndex < 8" 
+       [ngClass]="{
+         'style0': activeTabIndex === 0,
+         'style1': activeTabIndex === 1,
+         'style3': activeTabIndex === 3,
+         'style4': activeTabIndex === 4,
+         'style5': activeTabIndex === 5,
+         'style2': activeTabIndex === 2,
+         'style6': activeTabIndex === 6,
+         'style7': activeTabIndex === 7,
+       }">
+    <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
+      <span class="chevron">&#9664;</span> Précédent
+    </button>
+    <button (click)="nextTab()">
+      prochaine étape <span class="chevron">&#9654;</span>
+    </button>
+  </div>
+  </div>
+  </body>
+  

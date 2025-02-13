@@ -1,0 +1,37 @@
+<form>
+    <div class="container">
+        <div class="main-card" id="grand">
+          <mat-card-header>
+            <mat-card-title>Information(s) complementaire(s)</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Saisissez les informations complementaires de votre etablissement</p>
+            <h3>Exemple:</h3>
+            <div class="cont">
+                <div class="box">
+                    Transport en commun disponibles à proximité.
+                </div>
+                <div class="box">
+                    Masques à disposition pour les voyageurs.
+                </div>
+            </div>
+            <p>Vous pouvez ajouter plusieurs informations.</p>
+            <div class="input-container" *ngFor="let input of inputs; let i = index">
+                <div 
+                    class="custom-input" 
+                    contenteditable="true" 
+                    (input)="updateInput(i, $event)" 
+                    [textContent]="input.value" 
+                    (blur)="input.editable = false" 
+                    (focus)="input.editable = true"
+                    [class.readonly]="!input.editable"
+                ></div>
+            </div>  
+            <div>
+                <button type="button" (click)="addInput()" class="btn-ajout">Ajouter</button>
+            </div>
+          </mat-card-content>
+        </div>
+      </div>
+       
+</form>

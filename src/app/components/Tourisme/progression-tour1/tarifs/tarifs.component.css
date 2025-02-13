@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: initial;
+    padding: 20px 0 10px 0;
+    border-radius: 10px;
+  }
+
+  .main-card {
+    border: 1px solid rgb(234, 234, 234);
+    flex: 1 1 48%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 10px;
+
+  }
+  
+
+  .card-header, .card-content {
+    margin-bottom: 15px;
+  }
+ 
+  .sub-card-container {
+    flex: 1 1 40%;
+  }
+
+  .sub-card {
+    border: 1px solid rgb(234, 234, 234);
+    flex:1 1 40%;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  #haut{
+    padding: 10px;
+  }
+
+  .custom-icon {
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+  .mat-icon{
+    color: #77B5FE;
+    margin: 10px 10px 10px 0;
+  }
+
+.label{
+    margin-top: 10px;
+  }
+
+
+  .inline-container {
+    display: flex;
+    align-items: center; /* Centre verticalement les éléments */
+    gap: 10px; /* Espace entre l'input et le paragraphe */
+}
+
+
+.input{
+  width: 150px;
+}
+
+.montant{
+  margin-top: 40px;
+  margin-left: 90px;
+  text-decoration: underline;
+
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+    width: 95%;
+  }
+
+  .main-card, .sub-card-container {
+    width: auto;
+  }
+
+  .sub-card {
+    position: static;
+    margin-bottom: 10px;
+  }
+}

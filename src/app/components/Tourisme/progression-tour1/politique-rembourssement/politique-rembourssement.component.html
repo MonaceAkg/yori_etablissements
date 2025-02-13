@@ -1,0 +1,43 @@
+<form>
+    <div class="container">
+        <!-- Première carte qui prend 60% de la largeur -->
+        <div class="main-card" id="grand">
+          <mat-card-header>
+            <mat-card-title class="espace">Politque du site</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+            [(ngModel)]="breakfastServed"
+            name="breakfastServed">
+            <h3 class="espace">Politique d'annulation</h3>
+            <mat-radio-button class="example-radio-button" value="remboursable">Remboursable</mat-radio-button><br>
+              <div *ngIf="breakfastServed === 'remboursable'">
+                <label for="remboursable">Ecrivez une condition du rembousement</label> <br>
+                <input type="text" name="" id="remboursable">
+              </div>
+            <mat-radio-button class="example-radio-button" value="non_remboursable">Non remboursable</mat-radio-button><br>
+                <div *ngIf="breakfastServed === 'non_remboursable'">
+                </div>
+            </mat-radio-group>
+     
+            <div class="espace">
+                <h2>Selectionnez les cases de votre choix</h2>
+                <p>Vous pouvez sélectionner plusieurs réponses.</p>
+            </div>
+            <div *ngFor="let option of options" style="margin: 10px;">
+              <input
+                type="checkbox"
+                [value]="option"
+                (change)="onSelect(option, $event)"
+                id="{{option}}">
+              <label for="{{option}}">{{option}}</label>
+            </div>
+      
+            <p>Options sélectionnées : {{selectedOptions.join(', ')}}</p>
+          </mat-card-content>
+        </div>
+      </div>
+       
+</form>
