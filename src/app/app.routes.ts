@@ -16,6 +16,7 @@ import { AjoutTourismeComponent } from './Layout/ajout-tourisme/ajout-tourisme.c
 import { ProgressionTour1Component } from './components/Tourisme/progression-tour1/progression-tour1.component';
 import { ProgressionTour2Component } from './components/Tourisme/progression-tour2/progression-tour2.component';
 import { ProgressionTour3Component } from './components/Tourisme/progression-tour3/progression-tour3.component';
+import { MapComponent } from './components/map/map.component';
 
 export const routes: Routes = [
   {
@@ -66,6 +67,10 @@ export const routes: Routes = [
     ]
   },
 
+
+  {
+    path:'carte', component:MapComponent
+  },
 
   { path: 'loading', component: LoadingComponent },
 ];

@@ -1,7 +1,12 @@
-/* map.component.css */
+.container {
+  display: flex;
+  flex-direction: column; /* Ou row selon votre besoin */
+  margin: 10%;
+}
+
 #map {
-  height: 200px;
-  width: 800px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  width: 30%; /* Utiliser 100% de la largeur disponible */
+  height: 200px; /* Définir une hauteur fixe */
+  margin: 0 auto; /* Centrer la carte */
+  position: relative; /* Positionner par rapport aux autres éléments */
 }

@@ -1,6 +1,5 @@
 <ng-container *ngIf="currentRoute === '/ajout-hotel'">
   <div class="container">
-    <!-- Première carte qui prend 60% de la largeur -->
     <div class="main-card" id="grand">
       <div class="card-header">
         <h2>Où se situe l'établissement que vous inscrivez</h2>
@@ -39,8 +38,7 @@
       </div>
       <div class="card-footer">
         <div class="map-container">
-          <!-- <p>Map Placeholder</p> -->
-          <app-map></app-map>
+          <!-- <app-map *ngIf="!showMap"></app-map> -->
         </div>
       </div>
     </div>
