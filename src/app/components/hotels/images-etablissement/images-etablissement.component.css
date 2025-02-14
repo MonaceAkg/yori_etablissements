@@ -20,7 +20,8 @@ mat-label{
 }
 
 .main-card {
-  flex: 1 60%;
+  border: 1px solid rgb(234, 234, 234);
+  flex: 1 58%;
   background-color: white;
 }
 
@@ -32,6 +33,8 @@ mat-label{
 
 
 #haut{
+  border: 1px solid rgb(234, 234, 234);
+
   background-color: white;
 }
 

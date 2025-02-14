@@ -34,9 +34,8 @@ const THUMBUP_ICON =
     FormsModule,
     MatIconModule,
     CommonModule,
-    MapComponent,
+    // MapComponent,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './form-info-generales.component.html',
   styleUrl: './form-info-generales.component.css',
 })
