@@ -34,7 +34,7 @@ const THUMBUP_ICON =
     FormsModule,
     MatIconModule,
     CommonModule,
-    // MapComponent,
+    MapComponent,
   ],
   templateUrl: './form-info-generales.component.html',
   styleUrl: './form-info-generales.component.css',

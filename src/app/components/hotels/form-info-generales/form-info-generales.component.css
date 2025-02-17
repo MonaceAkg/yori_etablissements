@@ -30,6 +30,11 @@
   margin-bottom: 15px;
 }
 
+/* .card-footer{
+  background-color: yellow;
+  position: relative;
+} */
+
 .sub-card-container {
   flex: 1 1 360px;
 }
@@ -44,7 +49,7 @@
 #haut,
 #bas {
   padding: 10px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .full-width {
@@ -65,18 +70,18 @@ select {
   margin-top: 5px;
 }
 
+
+
 .map-container {
-  height: 200px;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  /* display: flex;
+  flex-direction: column; */
+  width: 100%;
+  height: auto;
+  background-color: red;
 }
 
-.red {
-  color: red;
-}
+
+
 
 @media (max-width: 768px) {
   .container {
@@ -94,7 +99,11 @@ select {
     position: static;
     margin-bottom: 10px;
   }
+
+  .map-container{
+    height: 80%;
+    background-color: green;
+  }
 }
-.geo {
-  margin-top: 30px;
-}
+
+
