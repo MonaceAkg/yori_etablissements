@@ -31,7 +31,6 @@
               "node_modules/leaflet.markercluster/dist/MarkerCluster.css",
               "node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css",
               "src/custom-theme.scss",
-              "node_modules/ngx-intl-tel-input/assets/css/intlTelInput.css",
               "src/styles.css"
             ],
             "scripts": []

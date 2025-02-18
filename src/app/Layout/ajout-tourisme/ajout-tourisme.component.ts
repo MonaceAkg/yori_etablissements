@@ -4,6 +4,7 @@ import { Header3Component } from '../header3/header3.component';
 
 @Component({
   selector: 'app-ajout-tourisme',
+  standalone: true,
   imports: [RouterOutlet, Header3Component],
   templateUrl: './ajout-tourisme.component.html',
   styleUrl: './ajout-tourisme.component.css'

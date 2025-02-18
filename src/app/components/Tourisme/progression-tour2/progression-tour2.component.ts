@@ -6,6 +6,7 @@ import { ImagesEtablissementComponent } from './images-tourism/images-etablissem
 
 @Component({
   selector: 'app-progression-tour2',
+  standalone: true,
   imports: [
     MatTab,
     MatTabGroup,

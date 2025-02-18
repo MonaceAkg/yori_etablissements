@@ -11,6 +11,7 @@ import { LoginComponent } from '../../auth/login/login.component';
 
 @Component({
   selector: 'app-header1',
+  standalone: true,
   imports: [
     MatDialogModule,
     CommonModule,

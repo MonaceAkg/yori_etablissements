@@ -13,6 +13,7 @@ import { NomStructureComponent } from './type-structure/nom-structure.component'
 
 @Component({
   selector: 'app-progression-tour1',
+  standalone: true,
   imports: [
     MatTab,
     MatTabGroup,

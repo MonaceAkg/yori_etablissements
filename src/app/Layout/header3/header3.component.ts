@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header3',
+  standalone: true,
   imports: [
     CommonModule,
     MatIcon,
