@@ -5,6 +5,7 @@ import { Footer2Component } from '../footer2/footer2.component';
 
 @Component({
   selector: 'app-main-choix',
+  standalone: true,
   imports: [
     Header3Component,
     RouterOutlet,

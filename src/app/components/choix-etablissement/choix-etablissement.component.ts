@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-choix-etablissement',
+  standalone: true,
   imports: [
     RouterLink
   ],

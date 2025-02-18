@@ -9,6 +9,7 @@ import { ProprietaireComponent } from './proprietaire/proprietaire.component';
 
 @Component({
   selector: 'app-progression-tour3',
+  standalone: true,
   imports: [
     MatTab,
     MatTabGroup,

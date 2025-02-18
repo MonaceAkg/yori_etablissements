@@ -18,6 +18,7 @@ import { EtapeEnregistrementComponent } from '../hotels/etape-enregistrement/eta
 
 @Component({
   selector: 'app-progression1',
+  standalone: true,
   imports: [
     MatTab,
     MatTabGroup,
