@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { filter } from 'rxjs';
 import { LoginComponent } from '../../auth/login/login.component';
 
@@ -13,7 +13,6 @@ import { LoginComponent } from '../../auth/login/login.component';
   selector: 'app-header1',
   standalone: true,
   imports: [
-    MatDialogModule,
     CommonModule,
     MatIcon,
     MatMenu,

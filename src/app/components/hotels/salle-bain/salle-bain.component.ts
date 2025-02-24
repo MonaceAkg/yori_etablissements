@@ -12,15 +12,14 @@ import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
     MatCard,
     MatCardHeader,
     MatCardContent,
-    MatCardTitle,
     MatRadioGroup,
     MatRadioButton,
     MatDivider,
     ReactiveFormsModule,
     FormsModule,
     MatIcon,
-    CommonModule,
-  ],
+    CommonModule
+],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './salle-bain.component.html',
   styleUrl: './salle-bain.component.css'

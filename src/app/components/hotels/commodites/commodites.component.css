@@ -15,6 +15,7 @@
 
 .form{
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 10px;
   background-color: white;
   width: 100%;
 }
@@ -25,7 +26,9 @@
 
 .haut {
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 10px;
   margin-top: 0px;
+  padding: 10px;
   background-color: rgb(255, 255, 255);
   height: auto;
 }

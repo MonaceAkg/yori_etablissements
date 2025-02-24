@@ -1,7 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
 
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -9,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
 	selector: 'app-login',
 	standalone: true,
-	imports: [ReactiveFormsModule, MatInputModule, MatButtonModule,CommonModule],
+	imports: [ReactiveFormsModule,CommonModule],
 	templateUrl: './login.component.html',
 	styleUrl: './login.component.css'
 })

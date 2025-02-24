@@ -1,11 +1,11 @@
 <div class="container">
   <div class="main-card">
     <form action="" >
-      <mat-card class="form">
-        <mat-card-header>
-          <mat-card-title>Quels équipements proposez-vous dans votre établissement?</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
+      <div class="form">
+        <!-- <mat-card-header> -->
+          <h2>Quels équipements proposez-vous dans votre établissement?</h2>
+        <!-- </mat-card-header> -->
+        <div>
           <mat-selection-list #shoes>
             @for (shoe of typesOfShoes; track shoe) {
               <mat-list-option>{{shoe}}</mat-list-option>
@@ -16,26 +16,25 @@
             Options selected: {{shoes.selectedOptions.selected.length}}
           </p>
   
-        </mat-card-content>
-        <!-- <mat-divider></mat-divider> -->
-      </mat-card>
+        </div>
+      </div>
     </form>
   </div>
 
-  <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
   <div class="sub-card">
-    <mat-card class="haut">
-      <mat-card-header>
-        <mat-icon class="custom-icon" style="padding-right: 10px;"> highlight</mat-icon>
+    <div class="haut">
+      <!-- <mat-card-header> -->
+        <span class="material-symbols-outlined">lightbulb</span>
+
         <p>
           Que faire si l'un des équipements que je propose n'est pas dans la liste?
         </p>
-      </mat-card-header>
-      <mat-card-content>
+      <!-- </mat-card-header> -->
+      <div>
         <ul>
           <li>Les équipements listés ici sont ceux que les clients recherchent le plus. Une fois votre inscription terminée, vous pourrez en ajouter d'autres depuis une liste plus détaillée disponible dans votre extranet, la plateforme que vous utiliserez pour gérer votre hébergement.</li>
         </ul>
-      </mat-card-content>
-    </mat-card>
+      </div>
+    </div>
   </div>
 </div>

@@ -10,6 +10,10 @@ mat-label {
   font-weight: 500;
 }
 
+.header{
+  padding: 0 35px;
+}
+
 .custom-icon {
   color: white;
   background-color: black;
@@ -19,8 +23,10 @@ mat-label {
 
 .main-card {
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 10px;
   background-color: white;
   flex: 1 1 570px; 
+  padding: 10px;
 }
 
 .sub-card {
@@ -29,7 +35,7 @@ mat-label {
 
 #haut{
   border: 1px solid rgb(234, 234, 234);
-
+  border-radius: 10px;
   margin-bottom: 10px;
   background-color: white;
 }
@@ -42,23 +48,23 @@ mat-label {
 
 .lit-info {
   display: flex;
-  align-items: center; /* Aligne verticalement l'image et le texte */
-  flex-wrap: wrap; /* Permet au contenu de se répartir sur plusieurs lignes si nécessaire */
+  align-items: center;
+  flex-wrap: wrap; 
 }
 
 .lit-image {
   margin-bottom: 20px;
-  height: 40px; /* Hauteur fixe pour l'image */
-  width: 40px; /* Largeur fixe pour l'image */
+  height: 40px; 
+  width: 40px; 
 }
 
 .lit-details {
-  font-size: 14px; /* Taille du texte */
-  margin-left: 5px; /* Espace entre l'image et le texte */
+  font-size: 14px; 
+  margin-left: 5px; 
 }
 
 .full-width {
-  width: 100%; /* S'assurer que les champs prennent toute la largeur */
+  width: 100%; 
 }
 
 .quantity-container {
@@ -77,7 +83,7 @@ mat-label {
 
 .btn {
   width: 40px;
-  height: 40px; /* Hauteur ajustée pour une meilleure interaction */
+  height: 40px; 
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -115,7 +121,6 @@ ul {
   margin-top: 50px;
 }
 
-/* Ajout de styles pour la responsivité */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -123,7 +128,7 @@ ul {
     width: 95%;
   }
   .main-card, .sub-card {
-    flex: 1 1 100%; /* Prendre toute la largeur sur mobile */
+    flex: 1 1 100%;
   }
 
   .haut{

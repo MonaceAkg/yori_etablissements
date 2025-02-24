@@ -13,16 +13,13 @@ import { MatSelectModule } from '@angular/material/select';
     MatCard,
     MatCardTitle,
     MatCardHeader,
-    MatCardContent,
-    MatIcon,
     MatRadioGroup,
     MatRadioButton,
     MatDivider,
     MatSelectModule,
     MatCardTitleGroup,
     CommonModule
-
-  ],
+],
   templateUrl: './type-chambre.component.html',
   styleUrl: './type-chambre.component.css'
 })

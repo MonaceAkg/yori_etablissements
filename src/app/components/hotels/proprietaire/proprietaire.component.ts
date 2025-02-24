@@ -4,9 +4,6 @@ import { FormControl, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModu
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDivider } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-// import intlTelInput from 'intl-tel-input';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -27,8 +24,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     MatCardContent,
     MatDivider,
     FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
     ReactiveFormsModule,
     CommonModule
   ],

@@ -21,13 +21,14 @@
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
     "intl-tel-input": "^25.3.0",
-    "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
+    "maplibre-gl": "^5.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^19.0.0",
     "@angular-devkit/build-angular": "^19.0.2",
     "@angular/cli": "^19.0.2",
     "@angular/compiler-cli": "^19.0.0",
@@ -41,7 +42,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.6.2"
+    "source-map-explorer": "^2.5.3",
+    "typescript": "~5.6.2",
+    "webpack-bundle-analyzer": "^4.10.2"
   },
   "styles": [
     "src/styles.css",
