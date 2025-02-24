@@ -12,8 +12,6 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 export class GoogleMapComponent implements OnInit {
   private map!: maplibregl.Map;
 
-  constructor() { }
-
   ngOnInit(): void {
     this.initMap();
   }
@@ -21,10 +19,10 @@ export class GoogleMapComponent implements OnInit {
   private initMap(): void {
     // Créer la carte avec un centre et un zoom par défaut
     this.map = new maplibregl.Map({
-      container: 'map', // ID du conteneur HTML
-      style: 'https://demotiles.maplibre.org/style.json', // Style de la carte
-      center: [0, 0], // Centre par défaut (sera écrasé par la géolocalisation)
-      zoom: 1 // Niveau de zoom par défaut
+      container: 'map',
+      style: 'https://api.maptiler.com/maps/streets/style.json?key=ccJFPSANlMQAFc4HEs3k', // Style détaillé
+      center: [0, 0],
+      zoom: 1
     });
 
     // Ajouter des contrôles de navigation
@@ -32,25 +30,30 @@ export class GoogleMapComponent implements OnInit {
 
     // Géolocalisation : centrer la carte sur la position actuelle
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { longitude, latitude } = position.coords;
-          this.map?.setCenter([longitude, latitude]); // Centrer la carte sur la position actuelle
-          this.map?.setZoom(15); // Zoomer sur la position
+navigator.geolocation.getCurrentPosition(
+  (position) => {
+    const { longitude, latitude } = position.coords;
+    this.map?.setCenter([longitude, latitude]); // Centrer la carte sur la position actuelle
+    this.map?.setZoom(15); // Zoomer sur la position
 
-          // Ajouter un marqueur à la position actuelle
-          new maplibregl.Marker({ color: '#FF0000' }) // Marqueur rouge
-            .setLngLat([longitude, latitude])
-            .setPopup(new maplibregl.Popup().setHTML('<b>Vous êtes ici !</b>'))
-            .addTo(this.map);
-        },
-        (error) => {
-          console.error('Erreur de géolocalisation :', error);
-          // Si la géolocalisation échoue, centrer la carte sur Paris par défaut
-          this.map?.setCenter([2.3522, 48.8566]);
-          this.map?.setZoom(13);
-        }
-      );
+    // Ajouter un marqueur à la position actuelle
+    new maplibregl.Marker({ color: '#FF0000' }) // Marqueur rouge
+      .setLngLat([longitude, latitude])
+      .setPopup(new maplibregl.Popup().setHTML('<b>Vous êtes ici !</b>'))
+      .addTo(this.map);
+  },
+  (error) => {
+    console.error('Erreur de géolocalisation :', error);
+    // Si la géolocalisation échoue, centrer la carte sur Paris par défaut
+    this.map?.setCenter([2.3522, 48.8566]);
+    this.map?.setZoom(13);
+  },
+  {
+    enableHighAccuracy: true, // Active la haute précision (GPS)
+    timeout: 5000, // Temps d'attente pour obtenir la localisation
+    maximumAge: 0 // Ne pas utiliser de cache de localisation
+  }
+);
     } else {
       console.error('La géolocalisation n\'est pas supportée par ce navigateur.');
       // Si la géolocalisation n'est pas supportée, centrer la carte sur Paris par défaut
