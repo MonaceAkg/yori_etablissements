@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatCardContent, MatCardTitle, MatCardHeader } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatDivider } from '@angular/material/divider';
 import { MatMenu, MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
@@ -17,7 +16,6 @@ import { MatRadioModule } from '@angular/material/radio';
     MatRadioModule,
     FormsModule,
     MatDivider,
-    MatChipsModule,
     CommonModule,
     MatMenu,
     MatMenuTrigger,

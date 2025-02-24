@@ -1,14 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { MapComponent } from '../../map/map.component';
-// import { MapComponent } from '../../map/map.component';
+
 
 const THUMBUP_ICON =
   `
@@ -28,13 +25,10 @@ const THUMBUP_ICON =
   selector: 'app-form-info-generales',
   standalone: true,
   imports: [
-    MatFormFieldModule,
     MatSelectModule,
-    MatInputModule,
     FormsModule,
     MatIconModule,
     CommonModule,
-    MapComponent,
   ],
   templateUrl: './form-info-generales.component.html',
   styleUrl: './form-info-generales.component.css',

@@ -4,13 +4,8 @@ import { FormControl, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModu
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDivider } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import intlTelInput from 'intl-tel-input';
-// import intlTelInput from 'intl-tel-input';
 
 
-/** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
@@ -28,8 +23,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     MatCardContent,
     MatDivider,
     FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
     ReactiveFormsModule,
     CommonModule
 
@@ -55,14 +48,5 @@ export class ProprietaireComponent implements OnInit{
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   matcher = new MyErrorStateMatcher();
 
-  // ngAfterViewInit(): void {
-  //   if (this.phoneInputElement) {
-  //     intlTelInput(this.phoneInputElement.nativeElement, {
-  //       initialCountry: 'GA',
-  //       separateDialCode: true,
-  //       utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/24.5.0/build/js/utils.js'
-  //     });
-  //   }
-  // }
 
 }

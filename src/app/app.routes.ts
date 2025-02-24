@@ -1,3 +1,4 @@
+import { GoogleMapComponent } from './components/hotels/google-map/google-map.component';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { MainAccueilComponent } from './Layout/main-accueil/main-accueil.component';
@@ -16,7 +17,6 @@ import { AjoutTourismeComponent } from './Layout/ajout-tourisme/ajout-tourisme.c
 import { ProgressionTour1Component } from './components/Tourisme/progression-tour1/progression-tour1.component';
 import { ProgressionTour2Component } from './components/Tourisme/progression-tour2/progression-tour2.component';
 import { ProgressionTour3Component } from './components/Tourisme/progression-tour3/progression-tour3.component';
-import { MapComponent } from './components/map/map.component';
 
 export const routes: Routes = [
   {
@@ -69,7 +69,8 @@ export const routes: Routes = [
 
 
   {
-    path:'carte', component:MapComponent
+    path:'carte', 
+    component:GoogleMapComponent
   },
 
   { path: 'loading', component: LoadingComponent },

@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 
@@ -9,7 +8,6 @@ import { MatIcon } from '@angular/material/icon';
   standalone: true,
   imports: [
     MatCardModule,
-    MatButtonModule,
     CommonModule,
     MatIcon
   ],

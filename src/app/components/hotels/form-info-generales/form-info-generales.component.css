@@ -49,7 +49,7 @@
 #haut,
 #bas {
   padding: 10px;
-  /* margin-bottom: 20px; */
+  margin-bottom: 20px;
 }
 
 .full-width {
@@ -103,6 +103,10 @@ select {
   .map-container{
     height: 80%;
     background-color: green;
+  }
+
+  #haut{
+    margin-bottom: auto;
   }
 }
 

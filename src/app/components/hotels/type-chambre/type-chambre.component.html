@@ -1,13 +1,12 @@
 <div class="container">
-  <!-- Première carte qui prend 60% de la largeur -->
-  <mat-card class="main-card" id="grand">
-    <mat-card-header>
-      <mat-card-title>Configurez votre type de chambre</mat-card-title><br>
-    </mat-card-header>
-    <mat-card-content>
+  <div class="main-card" id="grand">
+    <div class="header">
+      <h2>Configurez votre type de chambre</h2><br>
+    </div>
+    <div class="container">
       <form>
         <br>
-        <mat-form-field class="full-width" style="color: white;">
+        <mat-form-field class="full-width">
           <mat-label>Selectionnez le nom de votre hébergement</mat-label>
           <mat-select matNativeControl required>
             <mat-option *ngFor="let option of options" [value]="option.value">
@@ -16,7 +15,7 @@
           </mat-select>
         </mat-form-field>
         <div>
-          <mat-label>Combien d'hébergements de ce type (hébergement) <br> possédez-vous?</mat-label><br>
+          <p>Combien d'hébergements de ce type (hébergement) <br> possédez-vous?</p><br>
           <input type="number" name="number" id="inputNumber" placeholder="0" style="margin: 10px 0 10px 0;">
         </div>
         <mat-divider style="margin-bottom: 20px;"></mat-divider>
@@ -59,14 +58,12 @@
           </p>
           <div>
             <input type="number" name="" id="inputNumber" placeholder="0">
-            <!-- <label for="fruits">Choisissez un fruit :</label> -->
             <select id="fruits" name="fruits">
               <option value="apple">mètres carrés</option>
               <option value="banana">pieds carrés</option>
             </select>
           </div>
         </div>
-
 
         <div style="margin: 40px;">
           <p>
@@ -82,19 +79,19 @@
 
       </form>
 
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </div>
 
   <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
   <div class="sub-card">
-    <mat-card id="haut">
-      <mat-card-header>
-        <mat-icon class="custom-icon" style="margin-top: 10px;"> highlight</mat-icon>
+    <div id="haut">
+      <div style="padding: 10px;">
+        <span class="material-symbols-outlined">lightbulb</span>
         <p>
           Proposez-vous d'autres couchages?
         </p>
-      </mat-card-header>
-      <mat-card-content>
+      </div>
+      <div class="content">
         <ul>
           <li>Pour le moment, vous devez juste ajouter vos couchages standard.</li>
           <li>Les lits bébé, les lits d'appoint et les autres couchages peuvent être ajoutés dans l'extranet, la plateforme que vous utiliserez pour gérer votre hébergement.</li>
@@ -104,7 +101,7 @@
           <ul>
             <li>Vous pourrez configurer des conditions relatives aux enfants, y compris ajuster les tarifs et l'âge maximum correspondant, dans l'extranet, une fois votre inscription terminée.</li>
           </ul>
-      </mat-card-content>
-    </mat-card>
+      </div >
+    </div>
   </div>
 </div>

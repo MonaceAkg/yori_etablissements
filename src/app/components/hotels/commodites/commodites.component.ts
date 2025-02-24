@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatCard, MatCardTitle, MatCardHeader, MatCardContent } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIcon } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -11,17 +7,10 @@ import { MatSelectModule } from '@angular/material/select';
   selector: 'app-commodites',
   standalone: true,
   imports: [
-    MatCard,
-    MatCardTitle,
-    MatCardHeader,
-    MatCardContent,
-    MatFormFieldModule,
     MatSelectModule,
-    MatInputModule,
     FormsModule,
-    MatListModule,
-    MatIcon,
-  ],
+    MatListModule
+],
   templateUrl: './commodites.component.html',
   styleUrl: './commodites.component.css'
 })
