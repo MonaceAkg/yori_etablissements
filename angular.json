@@ -24,7 +24,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+               "src/_redirects"
             ],
             "styles": [
               "src/custom-theme.scss",
@@ -32,7 +33,7 @@
               "src/styles.css"
                         ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["leaflet"]
+            "allowedCommonJsDependencies": ["maplibre-gl"]
           },
           "configurations": {
             "production": {
@@ -85,7 +86,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+               "src/_redirects"
             ],
             "styles": [
               "src/styles.css"
