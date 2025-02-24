@@ -5,6 +5,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-accueil',
+  standalone: true,
   imports: [
     MatButtonToggleModule,
     RouterLink

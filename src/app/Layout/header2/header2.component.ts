@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header2',
+  standalone: true,
   imports: [
     RouterLink,
     MatCard,
