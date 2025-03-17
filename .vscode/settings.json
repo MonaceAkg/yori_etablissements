@@ -1,0 +1,11 @@
+{
+    "workbench.activityBar.iconClickBehavior": "toggle",
+    "window.autoDetectColorScheme": false,
+    "workbench.editor.decorations.colors": true,
+    "workbench.editor.autoLockGroups": {
+        "terminalEditor": false,
+        "default": true
+    },
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.tree.expandMode": "doubleClick"
+}
