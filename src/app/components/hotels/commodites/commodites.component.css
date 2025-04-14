@@ -8,20 +8,24 @@
   border-radius: 10px;
 }
 
-
 .main-card {
-  flex: 1 1 550px; 
+  flex: 1 1 550px;
 }
 
-.form{
+.form {
   border: 1px solid rgb(234, 234, 234);
   border-radius: 10px;
   background-color: white;
   width: 100%;
 }
 
+.titre {
+  padding: 10px;
+  text-align: center;
+}
+
 .sub-card {
-  flex:1 320px; 
+  flex: 1 320px;
 }
 
 .haut {
@@ -33,12 +37,28 @@
   height: auto;
 }
 
-
 .custom-icon {
   color: white;
   background-color: black;
   border-radius: 50%;
   padding: 5px;
+}
+
+.search-bar {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-selection-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.para {
+  padding: 0 20px;
 }
 
 @media (max-width: 768px) {
@@ -47,11 +67,12 @@
     padding: 10px;
     width: 95%;
   }
-  .main-card, .sub-card {
+  .main-card,
+  .sub-card {
     flex: 1 1 100%; /* Prendre toute la largeur sur mobile */
   }
 
-  .haut{
+  .haut {
     height: 100%;
   }
 }
