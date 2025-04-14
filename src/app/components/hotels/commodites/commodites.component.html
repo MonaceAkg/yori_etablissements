@@ -1,22 +1,30 @@
 <div class="container">
   <div class="main-card">
-    <form action="" >
+    <form action="">
       <div class="form">
-        <!-- <mat-card-header> -->
-          <h2>Quels équipements proposez-vous dans votre établissement?</h2>
-        <!-- </mat-card-header> -->
-        <div>
-          <mat-selection-list #shoes>
-            @for (shoe of typesOfShoes; track shoe) {
-              <mat-list-option>{{shoe}}</mat-list-option>
-            }
-          </mat-selection-list>
+        <h2 class="titre">Quels équipements proposez-vous dans votre établissement?</h2>
+        
+        <!-- Ajoutez cette barre de recherche -->
+        <mat-form-field appearance="outline" class="search-bar">
+          <mat-label>Rechercher un équipement</mat-label>
+          <input matInput 
+                 [(ngModel)]="searchTerm" 
+                 (input)="filterList()" 
+                 name="search"
+                 placeholder="Tapez pour filtrer...">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
   
-          <p>
-            Options selected: {{shoes.selectedOptions.selected.length}}
-          </p>
+        <mat-selection-list #shoes>
+          @for (shoe of filteredShoes; track shoe) {
+            <mat-list-option>{{shoe}}</mat-list-option>
+          }
+          @empty {
+            <mat-list-option disabled>Aucun résultat trouvé</mat-list-option>
+          }
+        </mat-selection-list>
   
-        </div>
+        <p class="para">Options sélectionnées: {{shoes.selectedOptions.selected.length}}</p>
       </div>
     </form>
   </div>

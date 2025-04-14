@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { Router } from '@angular/router';
 import { GoogleMapComponent } from '../google-map/google-map.component';
@@ -21,7 +21,6 @@ import { GoogleMapComponent } from '../google-map/google-map.component';
   styleUrl: './form-info-generales.component.css',
 })
 export class FormInfoGeneralesComponent {
-  showMap: boolean = false;
   currentRoute: string = '';
   ngOnInit(): void {
     this.currentRoute = this.router.url;
