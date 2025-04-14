@@ -1,19 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
-    font-family: 'Roboto';
-    src: url('/assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
-    font-weight: 100 900;  /* Active toutes les épaisseurs */
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('/assets/fonts/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: italic;
-  }
-  
-  /* Appliquer la police au site */
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
-  
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900; /* Active toutes les épaisseurs */
+  font-style: normal;
+}
+
+/* Appliquer la police au site */
+body {
+  font-family: "Roboto", sans-serif;
+}
