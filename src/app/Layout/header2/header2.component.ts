@@ -1,7 +1,6 @@
 import { Component,OnInit, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { MatCard, MatCardContent, MatCardModule, MatCardTitle } from '@angular/material/card';
-import { MatDivider } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
@@ -11,11 +10,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     RouterLink,
-    MatCard,
-    MatCardContent,
-    MatCardTitle,
     MatMenuModule,
-    MatDivider,
     MatTableModule,
     CommonModule,
     MatCardModule
@@ -50,15 +45,14 @@ export class Header2Component implements OnInit{
   }
 
 
-  userName = 'Juste Monace'; // Remplacez par le nom réel de l'utilisateur
+  userName = 'Juste Monace'; 
   info = "mes informations"
 
   logout() {
-    // Logique de déconnexion ici
     console.log('Déconnexion');
   }
 
-  noms: string[] = ['HOTEL RENDAMA', 'HIBISCUS', 'LA COLOMBE', 'RADISSON BLU'];
+noms: string[] = ['HOTEL RENDAMA', 'HIBISCUS', 'LA COLOMBE', 'RADISSON BLU','SALI','MBOUR','SAINT LOUIS','DAKAR','KAYAR','THIES',];
 
   onButtonClick(nom: string) {
     alert(`Vous avez cliqué sur ${nom}`);

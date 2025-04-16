@@ -9,7 +9,7 @@
 }
 
 .main-card {
-  flex: 1 1 550px;
+  flex: 1 1 40%;
 }
 
 .form {
@@ -37,6 +37,15 @@
   height: auto;
 }
 
+.haut p {
+  display: flex;
+  gap: 10px;
+}
+
+.span-text {
+  font-weight: 500;
+}
+
 .custom-icon {
   color: white;
   background-color: black;
@@ -44,9 +53,15 @@
   padding: 5px;
 }
 
-.search-bar {
-  width: 100%;
-  margin-bottom: 20px;
+.search-input {
+  width: 93%;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.list {
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 mat-selection-list {
@@ -67,7 +82,7 @@ mat-selection-list {
   }
   .main-card,
   .sub-card {
-    flex: 1 1 100%; /* Prendre toute la largeur sur mobile */
+    flex: 1 1 100%;
   }
 
   .haut {

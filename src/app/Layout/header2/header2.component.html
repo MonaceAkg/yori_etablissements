@@ -19,47 +19,46 @@
           
           <!-- Menu déroulant -->
           <div class="dropdown-menu">
-              <a [routerLink]="['/list-etablissements']">link1</a>
+              <a [routerLink]="['/list-etablissements']">liste établissement</a>
               <a href="/page1">Monace</a>
               <a (click)="logout()">Déconnexion</a>
           </div>
-      </div>
-
+        </div>
       </div>
 
       <header class="header">
-        <div class="content-left" style="color: white;">
-          <h4>
+        <div class="content-left">
+          <div class="content-left-text">
+            <h4>
               Optimisez vos revenus en offrant votre hébergement à des voyageurs venant des quatre coins du globe
           </h4>
           <p>
               En publiant En affichant votre hébergement sur notre plateforme en ligne, vous profiterez d'une visibilité renforcée ainsi que d'une gestion simplifiée de vos réservations
           </p>
+          </div>
         </div>
-        <mat-card class="card">
-          <!-- Partie 1 : Titre et paragraphe -->
-          <mat-card-title class="sup">
-            <h3>Inscrivez-vous gratuitement</h3>
-            <p class="para">Rejoignez notre plateforme pour profiter de tous les avantages !</p>
-            <hr>
-          </mat-card-title>
-          <!-- Partie 2 : Bouton centré -->
-          <mat-divider></mat-divider>
-          <mat-card-content>
-            <button  color="primary" class="centered-button" [routerLink]="['/choix-etablissement']">Démarrer maintenant</button>
-          </mat-card-content>
-          <!-- Partie 3 : H5 et lien -->
-          <mat-divider></mat-divider>
-          <mat-card-footer>
-            <hr>
+        <div class="card">
+          <div style="padding-left: 30px; border-bottom: 1px solid rgb(165, 165, 165);" class="fille">
+            <h1>Inscrivez-vous gratuitement</h1>
+            <div style="display: flex; gap: 5px; margin-top: 20px;">
+              <span class="material-symbols-outlined">
+              check
+              </span>Nous traitons les paiements pour vous.
+            </div>
+          </div>        
+          <div style="display: flex;justify-content: center; border-bottom: 1px solid rgb(165, 165, 165);" class="fille">
+            <button class="centered-button" [routerLink]="['/choix-etablissement']">Démarrer maintenant <span class="material-symbols-outlined" style="color: white;">
+              arrow_right_alt
+              </span></button>
+          </div>         
+          <div style="padding-left: 30px;" class="fille">
             <h4>Vous avez déjà commencé une inscription ? </h4>
             <a routerLink="/login" class="a-link">continuer l'inscription</a>
-          </mat-card-footer>
-        </mat-card>
-
+          </div>
+        </div>
       </header>
   </div>
-  </div>
+</div>
 
   <div *ngIf="currentRoute === '/list-etablissements'">
     <div class="container">
@@ -96,7 +95,7 @@
       </div>
 
       <header class="header">
-        <div class="content-left" style="color: white; ;">
+        <div class="content-left">
           <h2>Mes établissements</h2>
           <p>
             L'ensemble de vos établissements apparaîtra ici.
@@ -106,10 +105,9 @@
         <div class="card2">
           <table>
             <thead>
-              <p style="padding-left: 20px;">INSCRITS (6)</p>
-              <p style="padding-left: 20px;">Liste de tous de mes etablissements inscrits</p>
-              <mat-divider></mat-divider>
+              <p style="padding: 20px;">Liste de tous de mes etablissements inscrits</p>
             </thead>
+            <hr>
             <tbody>
               <tr *ngFor="let nom of noms">
                 <td>{{ nom }}</td>

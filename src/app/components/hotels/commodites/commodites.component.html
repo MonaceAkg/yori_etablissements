@@ -5,15 +5,16 @@
         <h2 class="titre">Quels équipements proposez-vous dans votre établissement?</h2>
         
         <!-- Ajoutez cette barre de recherche -->
-        <mat-form-field appearance="outline" class="search-bar">
-          <mat-label>Rechercher un équipement</mat-label>
-          <input matInput 
+        <!-- <mat-form-field appearance="outline" class="search-bar"> -->
+          <div style="width: 100%; display: flex; justify-content: center;">
+            <input matInput 
                  [(ngModel)]="searchTerm" 
                  (input)="filterList()" 
                  name="search"
-                 placeholder="Tapez pour filtrer...">
-          <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
+                 placeholder="Tapez pour filtrer..." class="search-input" />
+          <!-- <mat-icon matSuffix>search</mat-icon> -->
+          </div>
+        <!-- </mat-form-field> -->
   
         <mat-selection-list #shoes>
           @for (shoe of filteredShoes; track shoe) {
@@ -31,15 +32,15 @@
 
   <div class="sub-card">
     <div class="haut">
-      <!-- <mat-card-header> -->
-        <span class="material-symbols-outlined">lightbulb</span>
-
         <p>
-          Que faire si l'un des équipements que je propose n'est pas dans la liste?
+          <span class="material-symbols-outlined">
+            light_mode
+          </span>
+          <span class="span-text">Que faire si l'un des équipements que je propose n'est pas dans la liste?</span>
         </p>
       <!-- </mat-card-header> -->
       <div>
-        <ul>
+        <ul class="list">
           <li>Les équipements listés ici sont ceux que les clients recherchent le plus. Une fois votre inscription terminée, vous pourrez en ajouter d'autres depuis une liste plus détaillée disponible dans votre extranet, la plateforme que vous utiliserez pour gérer votre hébergement.</li>
         </ul>
       </div>

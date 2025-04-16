@@ -1,16 +1,14 @@
 .container {
-  display: flex; 
+  display: flex;
   justify-content: center;
   margin: 25px 25px 10px 0;
-  width: 60%;
-  max-width: 780px;
+  width: 57%;
   border-radius: 10px;
   background-color: white;
   border: 1px solid rgb(234, 234, 234);
-
 }
 
-.form{
+.form {
   width: 100%;
 }
 
@@ -60,8 +58,8 @@ label {
   .example-radio-group {
     align-items: flex-start; /* Maintient l'alignement à gauche */
   }
-  
-  .main-card{
+
+  .main-card {
     width: auto;
     border: none;
     background-color: initial;
