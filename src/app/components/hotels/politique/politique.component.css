@@ -9,7 +9,7 @@
 }
 
 .main-card {
-  flex: 1 1 550px; 
+  flex: 1 1 550px;
   border: 1px solid rgb(234, 234, 234);
   border-radius: 10px;
   padding: 10px;
@@ -17,17 +17,20 @@
   border-radius: 10px;
 }
 
-.sub-card {
-  flex:1 320px;
+.example-radio-group-label {
+  margin: 10px 0;
 }
 
+.sub-card {
+  flex: 1 320px;
+}
 
-mat-card-title{
+mat-card-title {
   margin-bottom: 20px;
   font-weight: 500;
 }
 
-#haut{
+#haut {
   margin-bottom: 10px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
@@ -35,15 +38,12 @@ mat-card-title{
   height: auto;
   width: auto;
   border: 1px solid rgb(234, 234, 234);
-
 }
 
 .form-section {
   margin-bottom: 20px;
   padding: 20px;
-  background-color: white;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .time-selector {
@@ -53,11 +53,11 @@ mat-card-title{
 }
 
 .time-selector input[type="time"] {
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 45%; /* Prend 45% de la largeur pour chaque input */
+  width: 45%;
 }
 
 .example-form {
@@ -76,8 +76,6 @@ mat-card-title{
   border-radius: 50%;
   padding: 5px;
 }
-
-
 
 @media (max-width: 768px) {
   .container {

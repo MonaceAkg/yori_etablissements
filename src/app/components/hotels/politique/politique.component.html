@@ -2,14 +2,14 @@
   <div class="main-card" id="grand">
       <h2>Politique de l'établissement</h2>
     <div>
-      <label class="example-radio-group-label">Politique d'annulation</label><br>
+      <label class="">Politique d'annulation</label><br>
       <mat-radio-group
-        aria-labelledby="example-radio-group-label"
+        aria-labelledby=""
         class="example-radio-group"
         [(ngModel)]="breakfastServed">
         <mat-radio-button class="example-radio-button" value="Oui">Remboursable</mat-radio-button><br>
         <div *ngIf="breakfastServed === 'Oui'">
-          <label class="example-radio-group-label">Écrivez une condition de remboursement</label>
+          <label class="">Écrivez une condition de remboursement</label>
           <form class="example-form">
             <mat-form-field class="example-full-width">
               <mat-label>Message</mat-label>
@@ -45,18 +45,18 @@
       <!-- <mat-divider></mat-divider> -->
        <hr>
 
-      <label class="example-radio-group-label">Acceptez-vous les enfants ?</label>
+      <label class="">Acceptez-vous les enfants ?</label>
       <mat-radio-group
-        aria-labelledby="example-radio-group-label"
+        aria-labelledby=""
         class="example-radio-group"
         [(ngModel)]="childrenAccepted"><br>
         <mat-radio-button class="example-radio-button" value="Oui">Oui</mat-radio-button><br>
         <mat-radio-button class="example-radio-button" value="Non">Non</mat-radio-button><br>
       </mat-radio-group>
 
-      <label class="example-radio-group-label">Acceptez-vous les animaux domestiques ?</label><br>
+      <label class="">Acceptez-vous les animaux domestiques ?</label><br>
       <mat-radio-group
-        aria-labelledby="example-radio-group-label"
+        aria-labelledby=""
         class="example-radio-group"
         [(ngModel)]="petsAccepted">
         <mat-radio-button class="example-radio-button" value="Oui">Oui</mat-radio-button><br>

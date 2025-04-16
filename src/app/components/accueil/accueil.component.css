@@ -10,13 +10,13 @@
 }
 
 #fin {
-  background-color: rgba(242, 240, 240, 0.87);
+  background-color: var(--light-gray);
   border-radius: 10px;
   width: auto;
 }
 
 .premier {
-  background-color: rgba(13, 13, 197, 0.8);
+  background-color: var(--primary-color);
   text-align: center;
   display: inline-block;
   border: none;
@@ -52,14 +52,14 @@ button {
   font-size: calc(12px + 0.5vw);
   border-radius: 10px;
   background-color: rgba(254, 254, 254, 0.1);
-  color: #ffffff;
+  color: var(--withe-color);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-  background-color: #e0e0e0;
+  background-color: var(--withe-color);
   color: #000;
 }
 
@@ -131,13 +131,13 @@ button:hover {
 
 .a-link button {
   font-size: 15px;
-  background-color: #ffffff;
-  color: rgba(13, 13, 197, 0.8);
+  background-color: var(--withe-color);
+  color: var(--primary-color);
   font-weight: bold;
   border-radius: 10px;
   height: 40px;
   margin-top: 30px;
-  border: 1px solid rgba(13, 13, 197, 0.8);
+  border: 1px solid var(--primary-color);
   cursor: pointer;
   width: 50%;
 }
@@ -174,7 +174,7 @@ button:hover {
 .feature {
   padding: 20px;
   margin: 20px 0;
-  background-color: #f4f4f4;
+  background-color: var(--light-gray);
   border-radius: 0;
   width: 100%;
   box-sizing: border-box;

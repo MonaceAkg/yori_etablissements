@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #0d0dc5;
+  --light-gray: lightgray;
+  --withe-color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;

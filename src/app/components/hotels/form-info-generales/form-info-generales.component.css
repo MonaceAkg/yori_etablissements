@@ -16,7 +16,7 @@
 }
 
 .main-card {
-  flex: 1 1 550px;
+  flex: 1 1 40%;
   height: 765px;
   background-color: white;
   border: 1px solid rgb(234, 234, 234);
@@ -24,18 +24,31 @@
   padding: 20px 10px;
 }
 
+.card-header p {
+  display: flex;
+  gap: 5px;
+}
+
 .card-header,
 .card-content {
   margin-bottom: 15px;
 }
 
-.card-footer {
-  flex-grow: 1; /* Pour prendre l'espace restant */
+.span-text {
+  font-size: 20px;
+  font-weight: bold;
 }
 
+.card-footer {
+  flex-grow: 1;
+}
+
+.red {
+  color: red !important;
+}
 
 .sub-card-container {
-  flex: 1 1 360px;
+  flex: 1 1 25%;
 }
 
 .sub-card {
@@ -69,7 +82,13 @@ select {
   margin-top: 5px;
 }
 
+ul {
+  margin-left: 40px;
+}
 
+ul li {
+  padding: 5px 0;
+}
 
 @media (max-width: 768px) {
   .container {
@@ -87,9 +106,7 @@ select {
     position: static;
     margin-bottom: 10px;
   }
-  #haut{
+  #haut {
     margin-bottom: auto;
   }
 }
-
-
