@@ -1,6 +1,6 @@
 :root {
   --primary-color: #0d0dc5;
-  --light-gray: lightgray;
+  --light-gray: rgb(243, 243, 243);
   --withe-color: #fff;
 }
 

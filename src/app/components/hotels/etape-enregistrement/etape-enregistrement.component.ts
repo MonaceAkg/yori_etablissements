@@ -20,9 +20,9 @@ export class EtapeEnregistrementComponent implements OnInit{
   currentRoute: string = '';
   constructor(private router: Router) {}
   ngOnInit(): void {
-    this.currentRoute = this.router.url; // Récupère la route actuelle
+    this.currentRoute = this.router.url; 
     this.router.events.subscribe(() => {
-      this.currentRoute = this.router.url; // Met à jour la route si elle change
+      this.currentRoute = this.router.url;
     });
   }
 

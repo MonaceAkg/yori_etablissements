@@ -10,8 +10,8 @@ mat-label {
   font-weight: 500;
 }
 
-.header{
-  padding: 0 35px;
+.header {
+  padding: 0 9%;
 }
 
 .custom-icon {
@@ -25,15 +25,15 @@ mat-label {
   border: 1px solid rgb(234, 234, 234);
   border-radius: 10px;
   background-color: white;
-  flex: 1 1 570px; 
+  flex: 1 1 570px;
   padding: 10px;
 }
 
 .sub-card {
-  flex:1 320px; 
+  flex: 1 320px;
 }
 
-#haut{
+#haut {
   border: 1px solid rgb(234, 234, 234);
   border-radius: 10px;
   margin-bottom: 10px;
@@ -49,22 +49,22 @@ mat-label {
 .lit-info {
   display: flex;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .lit-image {
   margin-bottom: 20px;
-  height: 40px; 
-  width: 40px; 
+  height: 40px;
+  width: 40px;
 }
 
 .lit-details {
-  font-size: 14px; 
-  margin-left: 5px; 
+  font-size: 14px;
+  margin-left: 5px;
 }
 
 .full-width {
-  width: 100%; 
+  width: 100%;
 }
 
 .quantity-container {
@@ -83,7 +83,7 @@ mat-label {
 
 .btn {
   width: 40px;
-  height: 40px; 
+  height: 40px;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -93,14 +93,12 @@ mat-label {
   background-color: inherit;
   color: rgb(0, 0, 0);
   font-size: 25px;
-  margin-bottom: 15px;
 }
 
 .btn-blue {
   background-color: inherit;
   color: rgba(13, 13, 197, 0.8);
   font-size: 25px;
-  margin-bottom: 15px;
 }
 
 .inputbox {
@@ -127,11 +125,12 @@ ul {
     padding: 10px;
     width: 95%;
   }
-  .main-card, .sub-card {
+  .main-card,
+  .sub-card {
     flex: 1 1 100%;
   }
 
-  .haut{
+  .haut {
     height: 100%;
   }
 }

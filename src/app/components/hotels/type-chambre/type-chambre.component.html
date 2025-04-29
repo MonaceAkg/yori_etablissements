@@ -1,74 +1,137 @@
 <div class="container">
   <div class="main-card" id="grand">
     <div class="header">
-      <h2>Configurez votre type de chambre</h2><br>
+      <h2>Configurez votre type de chambre</h2>
+      <br />
     </div>
     <div class="container">
       <form>
-        <br>
-        <mat-form-field class="full-width">
-          <mat-label>Selectionnez le nom de votre hébergement</mat-label>
-          <mat-select matNativeControl required>
-            <mat-option *ngFor="let option of options" [value]="option.value">
+        <div style="display: grid">
+          <label for="hebergement">Nom de l'hébergement</label>
+          <select [(ngModel)]="selectedOption" style="width: 50%; height: 150%">
+            <option *ngFor="let option of options" [value]="option.value">
               {{ option.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div>
-          <p>Combien d'hébergements de ce type (hébergement) <br> possédez-vous?</p><br>
-          <input type="number" name="number" id="inputNumber" placeholder="0" style="margin: 10px 0 10px 0;">
+            </option>
+          </select>
         </div>
-        <mat-divider style="margin-bottom: 20px;"></mat-divider>
-        <mat-label>Quels lits sont disponibles dans cette catégorie ?</mat-label><br><br>
-        <mat-card *ngFor="let lit of lits; let i = index" class="example-card" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>
+
+        <div style="margin-top: 5%">
+          <p>
+            Combien d'hébergements de ce type (hébergement) <br />
+            possédez-vous?
+          </p>
+          <input
+            type="number"
+            name="number"
+            id="inputNumber"
+            placeholder="0"
+            style="width: 10%; margin-bottom: 20px; height: 150%"
+          />
+        </div>
+        <mat-divider style="margin-bottom: 20px"></mat-divider>
+        <mat-label>Quels lits sont disponibles dans cette catégorie ?</mat-label
+        ><br /><br />
+        <div
+          *ngFor="let lit of lits; let i = index"
+          class="example-card"
+          appearance="outlined"
+        >
+          <div style="display: flex; justify-content: space-between">
+            <div>
+              <div>
                 <div class="lit-info">
-                  <img mat-card-sm-image src="assets/img/lit.png" class="lit-image">
-                  <span class="lit-details">{{ lit.name }} <br> {{ lit.size }}</span>
+                  <img
+                    mat-card-sm-image
+                    src="assets/img/lit.png"
+                    class="lit-image"
+                  />
+                  <span class="lit-details"
+                    >{{ lit.name }} <br />
+                    {{ lit.size }}</span
+                  >
                 </div>
-              </mat-card-title>
-            </mat-card-title-group>
-            <div class="quantity-container">
-              <div class="quantity">
-                <button type="button" (click)="quantity('min', i)" class="btn btn-black" [disabled]="productQuantities[i] <= 1"><strong>-</strong></button>
-                <input class="inputbox" type="text" [value]="productQuantities[i]" id="" disabled>
-                <button type="button" (click)="quantity('max', i)" class="btn btn-blue"><strong>+</strong></button>
               </div>
             </div>
-          </mat-card-header>
-        </mat-card>
-        <div style="margin: 40px;">
-          <p>Combien de personnes peuvent séjourner dans cette
-            catégorie hébergement ?
+            <div class="quantity-container">
+              <div class="quantity">
+                <button
+                  type="button"
+                  (click)="quantity('min', i)"
+                  class="btn btn-black"
+                  [disabled]="productQuantities[i] <= 1"
+                >
+                  <strong>-</strong>
+                </button>
+                <input
+                  class="inputbox"
+                  type="text"
+                  [value]="productQuantities[i]"
+                  id=""
+                  disabled
+                />
+                <button
+                  type="button"
+                  (click)="quantity('max', i)"
+                  class="btn btn-blue"
+                >
+                  <strong>+</strong>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin: 40px">
+          <p>
+            Combien de personnes peuvent séjourner dans cette catégorie
+            hébergement ?
           </p>
-          <div class="quantity-container" style="width: 140px;">
+          <div class="quantity-container" style="width: 140px">
             <div class="quantity">
-              <button type="button" (click)="quantity1('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
-              <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-              <button type="button" (click)="quantity1('max')" class="btn btn-blue"><strong>+</strong></button>
+              <button
+                type="button"
+                (click)="quantity1('min')"
+                class="btn btn-black"
+                [disabled]="productquantity <= 1"
+              >
+                <strong>-</strong>
+              </button>
+              <input
+                class="inputbox"
+                type="text"
+                disabled
+                [value]="productquantity"
+                id=""
+              />
+              <button
+                type="button"
+                (click)="quantity1('max')"
+                class="btn btn-blue"
+              >
+                <strong>+</strong>
+              </button>
             </div>
           </div>
         </div>
 
-        <div style="margin: 40px;">
-          <p>
-            Quelle est la superficie de cet hébergement ?
-          </p>
-          <div>
-            <input type="number" name="" id="inputNumber" placeholder="0">
-            <select id="fruits" name="fruits">
+        <div style="margin: 40px">
+          <p>Quelle est la superficie de cet hébergement ?</p>
+          <div style="display: flex; gap: 5px">
+            <input
+              type="number"
+              name=""
+              id="inputNumber"
+              placeholder="0"
+              style="height: 25px"
+            />
+            <select id="fruits" name="fruits" style="height: 25px">
               <option value="apple">mètres carrés</option>
               <option value="banana">pieds carrés</option>
             </select>
           </div>
         </div>
 
-        <div style="margin: 40px;">
-          <p>
-            Est-il possible de fumer dans cet hébergement ?
-          </p>
+        <div style="margin: 40px">
+          <p>Est-il possible de fumer dans cet hébergement ?</p>
           <div>
             <mat-radio-group aria-label="Select an option">
               <mat-radio-button value="1">Oui</mat-radio-button>
@@ -76,32 +139,40 @@
             </mat-radio-group>
           </div>
         </div>
-
       </form>
-
     </div>
   </div>
 
   <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
   <div class="sub-card">
     <div id="haut">
-      <div style="padding: 10px;">
+      <div style="padding: 10px">
         <span class="material-symbols-outlined">lightbulb</span>
-        <p>
-          Proposez-vous d'autres couchages?
-        </p>
+        <p>Proposez-vous d'autres couchages?</p>
       </div>
       <div class="content">
         <ul>
-          <li>Pour le moment, vous devez juste ajouter vos couchages standard.</li>
-          <li>Les lits bébé, les lits d'appoint et les autres couchages peuvent être ajoutés dans l'extranet, la plateforme que vous utiliserez pour gérer votre hébergement.</li>
+          <li>
+            Pour le moment, vous devez juste ajouter vos couchages standard.
+          </li>
+          <li>
+            Les lits bébé, les lits d'appoint et les autres couchages peuvent
+            être ajoutés dans l'extranet, la plateforme que vous utiliserez pour
+            gérer votre hébergement.
+          </li>
         </ul>
-        <p class="espace">Votre hébergement dispose-t-il de conditions
-          spécifiques relatives aux enfants ?</p>
-          <ul>
-            <li>Vous pourrez configurer des conditions relatives aux enfants, y compris ajuster les tarifs et l'âge maximum correspondant, dans l'extranet, une fois votre inscription terminée.</li>
-          </ul>
-      </div >
+        <p class="espace">
+          Votre hébergement dispose-t-il de conditions spécifiques relatives aux
+          enfants ?
+        </p>
+        <ul>
+          <li>
+            Vous pourrez configurer des conditions relatives aux enfants, y
+            compris ajuster les tarifs et l'âge maximum correspondant, dans
+            l'extranet, une fois votre inscription terminée.
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

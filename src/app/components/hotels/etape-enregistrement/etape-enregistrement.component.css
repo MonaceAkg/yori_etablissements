@@ -5,16 +5,21 @@
   max-width: 800px;
   background-color: white;
   border: 1px solid rgb(234, 234, 234);
-
   border-radius: 10px;
+}
+
+.title {
+  margin: 0 20px;
 }
 
 .example-card {
   margin-bottom: 8px;
   background-color: inherit;
+  padding: 10px 0;
 }
 
-.btn1, .btn2 {
+.btn1,
+.btn2 {
   border-radius: 10px;
   font-size: 12px;
   padding: 5px;
@@ -47,8 +52,7 @@ button:hover {
   width: auto; /* Prend toute la largeur */
 }
 
-
-.btnOffre{
+.btnOffre {
   color: white;
   background-color: rgba(13, 13, 197, 0.8);
   border: 0.5px solid white;
@@ -57,7 +61,7 @@ button:hover {
   /* text-align: right; */
 }
 
-.ajoutInfo{
+.ajoutInfo {
   background-color: rgba(13, 13, 197, 0.8);
   color: #fff;
   border: none;
@@ -70,7 +74,6 @@ button:hover {
   height: 100px; /* Hauteur de la ligne */
   /* Positionne la ligne selon le besoin */
 }
-
 
 .step-header {
   display: flex;
@@ -115,7 +118,7 @@ button:hover {
 }
 
 .horizontal-line::after {
-  content: '';
+  content: "";
   border-right: 1px solid #ccc; /* Ligne verticale droite */
   height: 100%; /* Prend toute la hauteur */
   position: absolute;
@@ -143,7 +146,9 @@ button:hover {
   text-decoration: none;
 }
 
-
+.box {
+  margin: 30px 20px;
+}
 
 @media (max-width: 768px) {
   .container {
@@ -152,5 +157,9 @@ button:hover {
     padding: 10px;
     width: 90%;
     margin: 10px;
+  }
+
+  .box {
+    margin: 10px 0;
   }
 }
