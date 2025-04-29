@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { MatCard, MatCardTitle, MatCardHeader, MatCardContent, MatCardTitleGroup } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { MatCard, MatCardTitle, MatCardHeader, MatCardTitleGroup } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
-import { MatIcon } from '@angular/material/icon';
 import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -10,15 +10,12 @@ import { MatSelectModule } from '@angular/material/select';
   selector: 'app-update-chambre',
   standalone: true,
   imports: [
-    MatCard,
-    MatCardTitle,
-    MatCardHeader,
     MatRadioGroup,
     MatRadioButton,
     MatDivider,
     MatSelectModule,
-    MatCardTitleGroup,
-    CommonModule
+    CommonModule,
+    FormsModule
 ],
   templateUrl: './type-chambre.component.html',
   styleUrl: './type-chambre.component.css'
@@ -75,5 +72,6 @@ export class TypeChambreComponent implements OnInit {
     { value: 'Appartement', viewValue: 'Appartement' },
     { value: 'Doctoir', viewValue: 'Doctoir' },
   ];
+  selectedOption = this.options[0].value;
 }
 

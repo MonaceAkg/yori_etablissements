@@ -1,169 +1,228 @@
 <div class="container">
-  <h3>Informations sur l'hébergement</h3>
-
+  <h3 class="title">Informations sur l'hébergement</h3>
   <!-- Étape 1 - Infos sur l'hébergement -->
-  <mat-card class="example-card" appearance="outlined">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>
-          <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
-          Étape 1 - Infos sur l'hébergement
-        </mat-card-title>
-        <a mat-button href="https://www.google.com/" target="_blank">Modifier</a>
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        Information de votre hébergement, son adresse, ses équipements, etc.
-      </p>
-    </mat-card-content>
-  </mat-card>
+  <div class="box">
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>
+            <mat-icon style="color: rgb(61, 217, 25)">offline_pin</mat-icon>
+            Étape 1 - Infos sur l'hébergement
+          </mat-card-title>
+          <a mat-button href="https://www.google.com/" target="_blank"
+            >Modifier</a
+          >
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Information de votre hébergement, son adresse, ses équipements, etc.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
 
   <!-- Étape 2 - Infos sur l'hébergement -->
-  <mat-card class="example-card" appearance="outlined"> 
-    <ng-container *ngIf="currentRoute === '/ajout-hotel'">
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title>
-            <mat-icon style="color: rgb(14, 14, 14);">weekend</mat-icon>
-            Étape 2 - Infos sur l'hébergement
-          </mat-card-title>
-          <button  class="btn1" [routerLink]="['/info-hotel']">Ajouter une offre</button>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Information de votre hébergement, son adresse, ses équipements, etc.</p>
-      </mat-card-content>
-    </ng-container>
+  <div class="box">
+    <mat-card class="example-card" appearance="outlined">
+      <ng-container *ngIf="currentRoute === '/ajout-hotel'">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              <mat-icon style="color: rgb(14, 14, 14)">weekend</mat-icon>
+              Étape 2 - Infos sur l'hébergement
+            </mat-card-title>
+            <button class="btn1" [routerLink]="['/info-hotel']">
+              Ajouter une offre
+            </button>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Information de votre hébergement, son adresse, ses équipements, etc.
+          </p>
+        </mat-card-content>
+      </ng-container>
 
-    <ng-container *ngIf="['/info-hotel', '/enregistrement-hotel', '/finalisation'].includes(currentRoute)">
-      <div class="container1">
-        <div class="step-header">
-          <mat-card-title>
-            <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
-            Étape 2 - Infos sur l'hébergement
-          </mat-card-title>
-        </div>
-        <p class="subtitle">Ajoutez un autre hébergement pour configurer de nouveaux.</p>
-        <div class="content">
-          <img src="assets/img/test.png" alt="Image Hébergement">
-          <div class="details">
-            <div>
-              <p><strong>Double</strong></p>
-              <p>Personnes</p>
-              <p>2</p>
+      <ng-container
+        *ngIf="
+          ['/info-hotel', '/enregistrement-hotel', '/finalisation'].includes(
+            currentRoute
+          )
+        "
+      >
+        <div class="container1">
+          <div class="step-header">
+            <mat-card-title>
+              <mat-icon style="color: rgb(61, 217, 25)">offline_pin</mat-icon>
+              Étape 2 - Infos sur l'hébergement
+            </mat-card-title>
+          </div>
+          <p class="subtitle">
+            Ajoutez un autre hébergement pour configurer de nouveaux.
+          </p>
+          <div class="content">
+            <img src="assets/img/test.png" alt="Image Hébergement" />
+            <div class="details">
+              <div>
+                <p><strong>Double</strong></p>
+                <p>Personnes</p>
+                <p>2</p>
+              </div>
+              <div class="vertical-line"></div>
+              <div>
+                <!-- <p>&nbsp;</p> -->
+                <p>Tarif</p>
+                <p>35.000 FCFA</p>
+              </div>
+              <div class="vertical-line"></div>
+              <div>
+                <!-- <p>&nbsp;</p> -->
+                <p>Catégorie de ce type</p>
+                <p>7</p>
+              </div>
             </div>
-            <div class="vertical-line"></div>
-            <div>
-              <!-- <p>&nbsp;</p> -->
-              <p>Tarif</p>
-              <p>35.000 FCFA</p>
-            </div>
-            <div class="vertical-line"></div>
-            <div>
-              <!-- <p>&nbsp;</p> -->
-              <p>Catégorie de ce type</p>
-              <p>7</p>
+          </div>
+
+          <div class="top-right-actions">
+            <a href="#">Supprimer</a>
+            <a href="#">Modifier</a>
+          </div>
+
+          <div class="horizontal-line"></div>
+          <hr />
+          <div class="actions">
+            <div class="right-actions">
+              <button class="btnOffre">Ajouter une offre</button>
             </div>
           </div>
         </div>
-
-        <div class="top-right-actions">
-          <a href="#">Supprimer</a>
-          <a href="#">Modifier</a>
-        </div>
-
-        <div class="horizontal-line"></div>
-        <hr>
-        <div class="actions">
-          <div class="right-actions">
-            <button class="btnOffre">Ajouter une offre</button>
-          </div>
-        </div>
-      </div>
-    </ng-container>
-  </mat-card>
-
+      </ng-container>
+    </mat-card>
+  </div>
 
   <!-- Étape 3 - Photos -->
-  <mat-card class="example-card" appearance="outlined">
-    <ng-container *ngIf="['/ajout-hotel', '/info-hotel'].includes(currentRoute)">
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title>
-            <mat-icon style="color: rgb(14, 14, 14);">photo</mat-icon>
-            Étape 3 - Photos
-          </mat-card-title>
-          <button mat-flat-button class="btn2" [routerLink]="['/enregistrement-hotel']">Ajouter des photos</button>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Partagez quelques photos de votre hébergement pour que les clients puissent se projeter.</p>
-      </mat-card-content>
-    </ng-container>
+  <div class="box">
+    <mat-card class="example-card" appearance="outlined">
+      <ng-container
+        *ngIf="['/ajout-hotel', '/info-hotel'].includes(currentRoute)"
+      >
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              <mat-icon style="color: rgb(14, 14, 14)">photo</mat-icon>
+              Étape 3 - Photos
+            </mat-card-title>
+            <button
+              mat-flat-button
+              class="btn2"
+              [routerLink]="['/enregistrement-hotel']"
+            >
+              Ajouter des photos
+            </button>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Partagez quelques photos de votre hébergement pour que les clients
+            puissent se projeter.
+          </p>
+        </mat-card-content>
+      </ng-container>
 
-    <ng-container *ngIf="['/enregistrement-hotel', '/finalisation'].includes(currentRoute)">
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title>
-            <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
-            Étape 3 - Photos
-          </mat-card-title>
-          <a href="#">Modifier</a>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Partagez quelques photos de votre hébergement pour que les clients puissent se projeter.</p>
-      </mat-card-content>
-    </ng-container>
-  </mat-card>
+      <ng-container
+        *ngIf="
+          ['/enregistrement-hotel', '/finalisation'].includes(currentRoute)
+        "
+      >
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              <mat-icon style="color: rgb(61, 217, 25)">offline_pin</mat-icon>
+              Étape 3 - Photos
+            </mat-card-title>
+            <a href="#">Modifier</a>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Partagez quelques photos de votre hébergement pour que les clients
+            puissent se projeter.
+          </p>
+        </mat-card-content>
+      </ng-container>
+    </mat-card>
+  </div>
 
   <!-- Étape 4 - Dernières étapes -->
-  <mat-card class="example-card" appearance="outlined">
-    <ng-container *ngIf="currentRoute !== '/enregistrement-hotel' && currentRoute !== '/finalisation'">
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title>
-            <mat-icon style="color: rgb(14, 14, 14);">assignment</mat-icon>
-            Étape 4 - Dernières étapes
-          </mat-card-title>
-          <button mat-flat-button disabled>Ajouter les dernières informations</button>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Configurez les paiements et les factures avant d'ouvrir votre hébergement à la réservation.</p>
-      </mat-card-content>
-    </ng-container>
+  <div class="box">
+    <mat-card class="example-card" appearance="outlined">
+      <ng-container
+        *ngIf="
+          currentRoute !== '/enregistrement-hotel' &&
+          currentRoute !== '/finalisation'
+        "
+      >
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              <mat-icon style="color: rgb(14, 14, 14)">assignment</mat-icon>
+              Étape 4 - Dernières étapes
+            </mat-card-title>
+            <button mat-flat-button disabled>
+              Ajouter les dernières informations
+            </button>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Configurez les paiements et les factures avant d'ouvrir votre
+            hébergement à la réservation.
+          </p>
+        </mat-card-content>
+      </ng-container>
 
-    <ng-container *ngIf="currentRoute === '/enregistrement-hotel'">
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title>
-            <mat-icon style="color: rgb(14, 14, 14);">assignment</mat-icon>
-            Étape 4 - Dernières étapes
-          </mat-card-title>
-          <button mat-flat-button class="ajoutInfo"  [routerLink]="['/finalisation']">Ajouter les dernières informations</button>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Configurez les paiements et les factures avant d'ouvrir votre hébergement à la réservation.</p>
-      </mat-card-content>
-    </ng-container>
+      <ng-container *ngIf="currentRoute === '/enregistrement-hotel'">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              <mat-icon style="color: rgb(14, 14, 14)">assignment</mat-icon>
+              Étape 4 - Dernières étapes
+            </mat-card-title>
+            <button
+              mat-flat-button
+              class="ajoutInfo"
+              [routerLink]="['/finalisation']"
+            >
+              Ajouter les dernières informations
+            </button>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Configurez les paiements et les factures avant d'ouvrir votre
+            hébergement à la réservation.
+          </p>
+        </mat-card-content>
+      </ng-container>
 
-    <ng-container *ngIf="currentRoute === '/finalisation'">
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title>
-            <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
-            Étape 4 - Infos sur l'hébergement
-          </mat-card-title>
-          <a href="#">Modifier</a>
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Configurez les paiements et les factures avant d'ouvrir votre hébergement à la réservation.</p>
-      </mat-card-content>
-    </ng-container>
-  </mat-card>
+      <ng-container *ngIf="currentRoute === '/finalisation'">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              <mat-icon style="color: rgb(61, 217, 25)">offline_pin</mat-icon>
+              Étape 4 - Infos sur l'hébergement
+            </mat-card-title>
+            <a href="#">Modifier</a>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Configurez les paiements et les factures avant d'ouvrir votre
+            hébergement à la réservation.
+          </p>
+        </mat-card-content>
+      </ng-container>
+    </mat-card>
+  </div>
 </div>
- 
