@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0 10px 0; 
+  margin: 20px 0 10px 0;
   background-color: initial;
   width: 100%;
 }
@@ -25,11 +25,12 @@ mat-label {
 }
 
 .sub-card {
-  flex: 1 1 40.5%; 
+  flex: 1 1 40.5%;
   background-color: inherit;
 }
 
 #haut {
+  padding: 20px;
   background-color: white;
   border: 1px solid rgb(234, 234, 234);
   width: 100%; /* Prend toute la largeur sur petits écrans */

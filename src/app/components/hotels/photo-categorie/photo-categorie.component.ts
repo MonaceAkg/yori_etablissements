@@ -8,12 +8,9 @@ import { MatIcon } from '@angular/material/icon';
   standalone: true,
   imports: [
     MatCard,
-    MatCardContent,
-    MatCardHeader,
-    MatCardTitle,
     MatIcon,
     CommonModule
-  ],
+],
   templateUrl: './photo-categorie.component.html',
   styleUrl: './photo-categorie.component.css'
 })
