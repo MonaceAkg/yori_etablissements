@@ -7,10 +7,6 @@
   width: 100%;
 }
 
-mat-label {
-  font-weight: 500;
-}
-
 .custom-icon {
   color: white;
   background-color: black;
@@ -20,21 +16,20 @@ mat-label {
 
 .main-card {
   border: 1px solid rgb(234, 234, 234);
-  flex:1 1 auto;
+  flex: 1 1 auto;
   background-color: white;
 }
 
 .sub-card {
-  flex:1 1 340px;
+  flex: 1 1 340px;
   background-color: initial;
 }
 
-#haut{
+#haut {
   border: 1px solid rgb(234, 234, 234);
   margin-bottom: 10px;
   background-color: inherit;
   background-color: white;
-
 }
 
 ul {
@@ -49,7 +44,8 @@ ul {
     width: 95%; /* Prendre 95% de la largeur */
   }
 
-  .main-card, .sub-card {
+  .main-card,
+  .sub-card {
     width: 100%; /* Prendre 100% de la largeur */
   }
 
@@ -61,4 +57,3 @@ ul {
     margin: 0 auto; /* Centrer l'icône dans la carte */
   }
 }
-

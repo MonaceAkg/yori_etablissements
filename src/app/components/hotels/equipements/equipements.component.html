@@ -1,69 +1,39 @@
 <div class="container">
   <mat-card class="main-card" id="grand">
-    <mat-card-header>
-      <mat-card-title>Quels équipements sont à disposition des
-        clients dans cet hébergement ?</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+    <div class="box-checkbox">
+      <h3>
+        Quels équipements sont à disposition des clients dans cet hébergement?
+      </h3>
+    </div>
+    <div>
       <form>
-        <mat-divider style="margin-bottom: 20px;"></mat-divider>
-        <p style="font-weight: 500;"> 
-          Principaux équipements
-        </p>
-        <div style="margin-left: 20px;">
+        <div class="box-checkbox">
+          <p class="p-checkbox">Principaux équipements</p>
+          <div *ngFor="let equipement of equipements">
             <label>
-              <input type="checkbox" /> Télévision à écran plat
-            </label><br />
-            <label>
-              <input type="checkbox" /> Portant
-            </label><br />
-            <label>
-              <input type="checkbox" /> Climatisation
-            </label><br />
-            <label>
-              <input type="checkbox" /> Linge de maison
-            </label><br />
-            <label>
-              <input type="checkbox" /> Bureau
-            </label><br />
-            <label>
-              <input type="checkbox" /> Service de réveil
-            </label><br />
-            <label>
-              <input type="checkbox" /> Serviettes
-            </label><br />
-            <label>
-              <input type="checkbox" /> Armoire ou penderie
-            </label><br />
-            <label>
-              <input type="checkbox" /> Chauffage
-            </label><br />
-            <label>
-              <input type="checkbox" /> Ventilateur
-            </label><br />
-            <label>
-              <input type="checkbox" /> Coffre-fort
-            </label><br />
-            <label>
-              <input type="checkbox" /> Serviettes / linge de lit (frais supplémentaires)
-            </label><br />
-            <label>
-              <input type="checkbox" /> Logement entièrement situé au rez-de-chaussée
-            </label><br />
+              <input
+                type="checkbox"
+                [value]="equipement.value"
+                (change)="onCheckboxChange($event)"
+                [checked]="selectedEquipements.includes(equipement.value)"
+              />
+              {{ equipement.viewValue }}
+            </label>
+          </div>
         </div>
 
-
-        <mat-divider style="margin-bottom: 20px;"></mat-divider>
-        <p style="font-weight: 500;">
-          Vues et extérieur
-        </p>
-        <div *ngFor="let option2 of options2" style="margin: 20px;">
-          <input
-            type="checkbox"
-            [value]="option2"
-            (change)="onSelect(option2, $event)"
-            id="{{option2}}">
-          <label for="{{option2}}">{{option2}}</label>
+        <mat-divider style="margin-bottom: 20px"></mat-divider>
+        <div class="box-checkbox">
+          <p class="p-checkbox">Vues et extérieur</p>
+          <div *ngFor="let option2 of options2">
+            <input
+              type="checkbox"
+              [value]="option2"
+              (change)="onSelect(option2, $event)"
+              id="{{ option2 }}"
+            />
+            <label for="{{ option2 }}">{{ option2 }}</label>
+          </div>
         </div>
 
         <div *ngIf="isBalconSelected()">
@@ -77,41 +47,42 @@
           </mat-form-field>
         </div>
 
-
-
-        <mat-divider style="margin-bottom: 20px;"></mat-divider>
-        <p style="font-weight: 500;">
-          Repas et boissons
-        </p>
-        <div>
-          <div *ngFor="let option3 of options3" style="margin: 20px;">
-            <input
-              type="checkbox"
-              [value]="option3"
-              (change)="onSelect3(option3, $event)"
-              id="{{option3}}">
-            <label for="{{option3}}">{{option3}}</label>
+        <mat-divider style="margin-bottom: 20px"></mat-divider>
+        <div class="box-checkbox">
+          <p class="p-checkbox">Repas et boissons</p>
+          <div>
+            <div *ngFor="let option3 of options3">
+              <input
+                type="checkbox"
+                [value]="option3"
+                (change)="onSelect3(option3, $event)"
+                id="{{ option3 }}"
+              />
+              <label for="{{ option3 }}">{{ option3 }}</label>
+            </div>
           </div>
         </div>
       </form>
-
-    </mat-card-content>
+    </div>
   </mat-card>
 
   <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
   <div class="sub-card">
-    <mat-card class="sub-card" id="haut">
-      <mat-card-header>
-        <mat-icon class="custom-icon" style="margin-top: 10px;"> highlight</mat-icon>
-              <p>
-                Vous avez des doutes ?
-              </p>
-      </mat-card-header>
-      <mat-card-content>
-        <ul>
-          <li>Rassurez-vous, vous pourrez mettre à jour les équipements présents dans votre salle de bains plus tard.</li>
-        </ul>
-      </mat-card-content>
+    <mat-card id="haut">
+      <div style="margin: 25px">
+        <div style="display: flex; align-items: center; margin-bottom: 10px">
+          <span class="material-symbols-outlined"> light_mode </span>
+          <h3>Vous avez des doutes ?</h3>
+        </div>
+        <div style="margin-left: 20px">
+          <ul>
+            <li>
+              Rassurez-vous, vous pourrez mettre à jour les équipements présents
+              dans votre salle de bains plus tard.
+            </li>
+          </ul>
+        </div>
+      </div>
     </mat-card>
   </div>
 </div>

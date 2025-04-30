@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MatCard, MatCardHeader, MatCardContent, MatCardTitle } from '@angular/material/card';
+import { MatCard } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatIcon } from '@angular/material/icon';
 import { MatOption, MatSelect } from '@angular/material/select';
 
 @Component({
@@ -12,19 +11,15 @@ import { MatOption, MatSelect } from '@angular/material/select';
   standalone: true,
   imports: [
     MatCard,
-    MatCardHeader,
-    MatCardContent,
-    MatCardTitle,
     MatDivider,
     ReactiveFormsModule,
     FormsModule,
-    MatIcon,
     CommonModule,
     MatFormField,
     MatLabel,
     MatSelect,
     MatOption
-  ],
+],
   templateUrl: './equipements.component.html',
   styleUrl: './equipements.component.css'
 })
@@ -96,5 +91,33 @@ export class EquipementsComponent implements OnInit {
 
 
   ];
+
+
+  equipements = [
+    { value: 'Télévision à écran plat', viewValue: 'Télévision à écran plat' },
+    { value: 'Portant', viewValue: 'Portant' },
+    { value: 'Climatisation', viewValue: 'Climatisation' },
+    { value: 'Linge de maison', viewValue: 'Linge de maison' },
+    { value: 'Bureau', viewValue: 'Bureau' },
+    { value: 'Service de réveil', viewValue: 'Service de réveil' },
+    { value: 'Serviettes', viewValue: 'Serviettes' },
+    { value: 'Armoire ou penderie', viewValue: 'Armoire ou penderie' },
+    { value: 'Chauffage', viewValue: 'Chauffage' },
+    { value: 'Coffre-for', viewValue: 'Coffre-for' },
+    { value: 'Serviettes / linge de lit (frais supplémentaires)', viewValue: 'Serviettes / linge de lit (frais supplémentaires)' },
+    { value: 'Logement entièrement situé au rez-de-chaussée', viewValue: 'Logement entièrement situé au rez-de-chaussée' },
+  ]
+
+  selectedEquipements: string[] = [];
+  onCheckboxChange(event: any): void {
+    const value = event.target.value;
+    if (event.target.checked) {
+      this.selectedEquipements.push(value);
+    } else {
+      this.selectedEquipements = this.selectedEquipements.filter(val => val !== value);
+    }
+  }
+  
+
 
 }
