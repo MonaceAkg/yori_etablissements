@@ -134,9 +134,12 @@ body {
 @media (max-width: 768px) {
   .tab-navigation.style0,
   .tab-navigation.style1,
-  .tab-navigation.style2,
-  .tab-navigation.style3 {
+  .tab-navigation.style2 {
     width: 90%;
     margin-left: 1.5%;
+  }
+
+  .tab-navigation.style3 {
+    width: 97%;
   }
 }
