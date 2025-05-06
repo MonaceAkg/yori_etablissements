@@ -1,44 +1,53 @@
-<mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
+<div class="example-card" appearance="outlined">
+  <div>
     <div mat-card-avatar class="example-header-image"></div>
-    <!-- <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-  </mat-card-header>
-  <mat-card-content>
+  </div>
+  <div>
     <div class="container">
-      <img src="assets/img/logo.png" alt="logo YORI" height="200" width="200">
-
-      <p *ngIf="showFirstParagraph" class="para">Veuillez patienter l'ajout de votre établissement sur Yori.com</p>
-      <p *ngIf="showSecondParagraph" class="para">L'ajout de votre établissement vous apportera des réservations mondiales</p>
+      <div style="padding-top: 6%">
+        <img
+          src="assets/img/logo.png"
+          alt="logo YORI"
+          height="200"
+          width="200"
+        />
+      </div>
+      <p *ngIf="showFirstParagraph" class="para">
+        Veuillez patienter l'ajout de votre établissement sur Yori.com
+      </p>
+      <p *ngIf="showSecondParagraph" class="para">
+        L'ajout de votre établissement vous apportera des réservations mondiales
+      </p>
       <section>
         <div class="dots">
-          <span style="--i:1;"></span>
-          <span style="--i:2;"></span>
-          <span style="--i:3;"></span>
-          <span style="--i:4;"></span>
-          <span style="--i:5;"></span>
-          <span style="--i:6;"></span>
-          <span style="--i:7;"></span>
-          <span style="--i:8;"></span>
-          <span style="--i:9;"></span>
-          <span style="--i:10;"></span>
-          <span style="--i:11;"></span>
-          <span style="--i:12;"></span>
-          <span style="--i:13;"></span>
-          <span style="--i:14;"></span>
-          <span style="--i:15;"></span>
+          <span style="--i: 1"></span>
+          <span style="--i: 2"></span>
+          <span style="--i: 3"></span>
+          <span style="--i: 4"></span>
+          <span style="--i: 5"></span>
+          <span style="--i: 6"></span>
+          <span style="--i: 7"></span>
+          <span style="--i: 8"></span>
+          <span style="--i: 9"></span>
+          <span style="--i: 10"></span>
+          <span style="--i: 11"></span>
+          <span style="--i: 12"></span>
+          <span style="--i: 13"></span>
+          <span style="--i: 14"></span>
+          <span style="--i: 15"></span>
         </div>
-      </section>    
+      </section>
       <div class="popup" *ngIf="showPopup">
         <div class="icon-container">
           <mat-icon>done</mat-icon>
         </div>
         <h3>SUCCES!</h3>
-        <p>Votre inscription a été réalisée avec succès.<br>Un e-mail vous sera envoyé sous peu.</p>
+        <p>
+          Votre inscription a été réalisée avec succès.<br />Un e-mail vous sera
+          envoyé sous peu.
+        </p>
         <button class="btn-valide">OK</button>
       </div>
     </div>
-  </mat-card-content>
-  <mat-card-actions>
-  </mat-card-actions>
-</mat-card>
+  </div>
+</div>
