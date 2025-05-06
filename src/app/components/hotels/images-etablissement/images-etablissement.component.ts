@@ -1,21 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
-import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-images-etablissement',
   standalone: true,
   imports: [
-    MatCard,
-    MatCardContent,
-    MatCardHeader,
-    MatCardTitle,
     MatDivider,
-    MatIcon,
     CommonModule
-  ],
+],
   templateUrl: './images-etablissement.component.html',
   styleUrl: './images-etablissement.component.css'
 })

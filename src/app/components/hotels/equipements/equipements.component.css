@@ -18,6 +18,7 @@
   flex: 1 1 49%; /* Prend 60% de la largeur */
   background-color: white;
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 5px;
 }
 
 .box-checkbox {
@@ -40,6 +41,7 @@ input[type="checkbox"] {
 }
 
 #haut {
+  border-radius: 5px;
   border: 1px solid rgb(234, 234, 234);
   background-color: white;
 }

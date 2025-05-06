@@ -1,14 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatCard } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 
 @Component({
   selector: 'app-tarif',
   standalone: true,
   imports: [
-    MatCard,
     MatDivider,
     FormsModule,
     CommonModule

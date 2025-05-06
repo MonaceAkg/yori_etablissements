@@ -1,29 +1,29 @@
 <div class="container">
-  <mat-card class="main-card" id="grand">
-    <mat-card-header>
-      <mat-card-title>Paiement valable</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <form>
-        <!-- <mat-divider style="margin-bottom: 20px;"></mat-divider> -->
-        <p style="font-weight: 500;">
+  <div class="main-card" id="grand">
+    <div>
+      <h2>Paiement valable</h2>
+    </div>
+    <div>
+      <form class="form-paiement">
+        <h4 style="margin: 20px 0">
           Choisissez un ou plusieurs modes de paiement
-        </p>
+        </h4>
         <div *ngFor="let item of items">
-          <label>
-            <input
-              type="checkbox"
-              [(ngModel)]="item.checked"
-            />
+          <label class="checkbox-container">
+            <input type="checkbox" [(ngModel)]="item.checked" />
             {{ item.label }}
 
             <span *ngIf="item.images">
-              <img *ngFor="let img of item.images" [src]="img" alt="{{ item.label }}" style="width: 40px; height: 20px; margin-left: 5px;" />
+              <img
+                *ngFor="let img of item.images"
+                [src]="img"
+                alt="{{ item.label }}"
+                class="image-checkbox"
+              />
             </span>
           </label>
         </div>
       </form>
-
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </div>
 </div>

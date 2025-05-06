@@ -1,13 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-photo-categorie',
   standalone: true,
   imports: [
-    MatCard,
     MatIcon,
     CommonModule
 ],

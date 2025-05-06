@@ -1,20 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MatCard, MatCardHeader, MatCardContent, MatCardTitle } from '@angular/material/card';
 
 @Component({
   selector: 'app-paiement',
   standalone: true,
   imports: [
-    MatCard,
-    MatCardHeader,
-    MatCardContent,
-    MatCardTitle,
     ReactiveFormsModule,
     FormsModule,
-    CommonModule, 
-  ],
+    CommonModule
+],
   templateUrl: './paiement.component.html',
   styleUrl: './paiement.component.css'
 })

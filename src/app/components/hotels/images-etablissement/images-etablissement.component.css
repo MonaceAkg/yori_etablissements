@@ -7,71 +7,79 @@
   width: 100%;
 }
 
-mat-label{
-  font-weight: 500;
-}
-
-
 .custom-icon {
-  color: white;         /* Couleur de l'icône */
-  background-color: black; /* Fond noir */
-  border-radius: 50%;    /* Pour donner un effet de cercle autour de l'icône */
-  padding: 5px;         /* Pour ajouter un espace autour de l'icône */
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .main-card {
+  display: grid;
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 5px;
   flex: 1 58%;
+  padding: 20px 30px;
   background-color: white;
+  gap: 20px;
 }
 
+.card-content {
+  display: grid;
+  gap: 25px;
+}
 
-.sub-card {  
+.sub-card {
   flex: 1 40%;
   margin-bottom: 10px;
 }
 
-
-#haut{
+#haut {
   border: 1px solid rgb(234, 234, 234);
-
   background-color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
 }
 
-
-ul{
+ul {
   margin-top: 50px;
 }
 
-.full-width{
+.full-width {
   width: 300px;
 }
-
 
 .ma-div {
   border: 2px dashed black;
   display: flex;
   flex-direction: column; /* Aligne les éléments verticalement */
-  align-items: center;    /* Centre horizontalement */
+  align-items: center; /* Centre horizontalement */
   justify-content: center; /* Centre verticalement */
-  padding: 25px 45px;     /* Padding top/bottom de 25px et left/right de 45px */
+  padding: 25px 45px; /* Padding top/bottom de 25px et left/right de 45px */
   background-color: inherit;
 }
 
 .ma-div:hover {
-  border-color: rgba(13, 13, 197, 0.8); /* Changer la couleur de la bordure au survol */
+  border-color: rgba(
+    13,
+    13,
+    197,
+    0.8
+  ); /* Changer la couleur de la bordure au survol */
 }
 
-.button{
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: inherit;
   color: rgba(13, 13, 197, 0.8);
   border: 2px solid rgba(13, 13, 197, 0.8);
   border-radius: 5px;
   cursor: pointer;
   height: 40px;
+  padding: 10px;
 }
-
-
 
 .image-list {
   display: flex;
@@ -98,21 +106,20 @@ ul{
 
 .delete-button {
   position: absolute;
-    top: 5px;
-    right: 5px;
-    background: none;
-    border: none;
-    color: red;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color 0.3s; /* Pour un effet de transition */
-    z-index: 1; /* As /* Pour un effet de transition */
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s; /* Pour un effet de transition */
+  z-index: 1; /* As /* Pour un effet de transition */
 }
 
 .delete-button:hover {
   color: darkred; /* Changement de couleur au survol */
 }
-
 
 /* Ajout de styles pour la responsivité */
 @media (max-width: 768px) {
@@ -123,16 +130,16 @@ ul{
     margin-right: 35px;
   }
 
-  .button{
+  .button {
     font-size: 10px;
   }
 
   .main-card {
-   width: 90%; /* Prend toute la largeur sur petits écrans */
+    width: 90%; /* Prend toute la largeur sur petits écrans */
     margin: 10px 0; /* Marges verticales */
   }
 
-  .sub-card{
+  .sub-card {
     width: 95%;
   }
 }

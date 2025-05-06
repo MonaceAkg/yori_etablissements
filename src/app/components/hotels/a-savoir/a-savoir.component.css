@@ -3,13 +3,8 @@
   justify-content: center;
   margin: 20px 20px 0px 0;
   background-color: inherit;
-  width: 69.4%;
+  width: 60%;
 }
-
-mat-label{
-  font-weight: 500;
-}
-
 
 .faq-item {
   margin-bottom: 15px; /* Espace entre les questions */
@@ -17,14 +12,12 @@ mat-label{
 
 .faq-item p {
   display: flex;
-  align-items: center; /* Aligne verticalement l'image et le texte */
+  align-items: center;
 }
 
-.paragraphe{
+.paragraphe {
   margin-left: 35px;
 }
-
-
 
 .faq-icon {
   margin-right: 15px; /* Espace entre l'image et le texte */
@@ -32,18 +25,16 @@ mat-label{
   height: auto; /* Maintient le ratio de l'image */
 }
 
-
-
 .main-card {
+  padding: 20px;
   background-color: white;
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 5px;
 }
 
-
-.title{
+.title {
   margin-bottom: 30px;
 }
-
 
 @media (max-width: 768px) {
   .container {

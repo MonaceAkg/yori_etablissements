@@ -1,169 +1,142 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-  
-  }
-  
-  
-  .tab-navigation.style1{
-    margin-left: 240px;
-  }
-  
-  .tab-navigation.style0{
-    margin-left: 370px; 
-  } 
-  
-  .tab-navigation.style2{
-    background-color: #3600f9;
-    width: 58.5%;
-    border-radius: 10px;
-  } 
-  .tab-navigation.style2 button{
-    background-color: inherit;
-  } 
-  
-  .tab-navigation.style3{
-    background-color: #3600f9;
-    width: 50%;
-    border-radius: 10px;
-  } 
-  .tab-navigation.style3 button{
-    background-color: inherit;
-  } 
-  
-  .tab-navigation button {
-    pointer-events: none; /* Les boutons n'interfèrent pas avec le clic de la div */
-  }
-  
-  .tab-navigation-buttons {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    gap: 10px; 
-    margin-top: 10px;
-    padding-bottom: 10px;
-  }
-  
-  
-  
-  .tab-navigation-buttons button {
-    padding: 5px 5px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .tab-navigation-buttons button:first-child {
-    text-align: center;
-    background-color: #fff; 
-    color: rgba(13, 13, 197, 0.8);;
-    border: 2px solid rgba(13, 13, 197, 0.8);
-  }
-  
-  .tab-navigation-buttons button:last-child {
-    text-align: center;
-    background-color: rgba(13, 13, 197, 0.8);
-    color: #fff; 
-  }
-  
-  .tab-navigation-buttons button:hover {
-    opacity: 0.8;
-  }
-  
-  .tab-navigation-buttons button:active {
-    transform: scale(0.95);
-  }
-  
-  .chevron {
-    font-size: 20px; 
-    text-align: center;
-  }
-  
-  
-  .tab-container {
-    position: relative;
-    box-shadow: 0px 4px 8px rgba(65, 66, 65, 0.639);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.tab-navigation.style0 {
+  margin-left: 8%;
+}
+
+.tab-navigation.style2 {
+  background-color: #3700ff;
+  width: 58.5%;
+  border-radius: 10px;
+  padding: 0;
+}
+.tab-navigation.style2 button {
+  background-color: white;
+}
+
+.tab-navigation.style3 {
+  background-color: #3600f9;
+  padding: 0;
+  width: 50%;
+  border-radius: 10px;
+}
+.tab-navigation.style3 button {
+  background-color: white;
+}
+
+.tab-navigation button {
+  pointer-events: none;
+}
+
+.tab-navigation-buttons {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.tab-navigation-buttons button {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+}
+
+.tab-navigation-buttons button:first-child {
+  text-align: center;
+  background-color: #fff;
+  color: rgba(13, 13, 197, 0.8);
+  border: 2px solid rgba(13, 13, 197, 0.8);
+}
+
+.tab-navigation-buttons button:last-child {
+  text-align: center;
+  background-color: rgba(13, 13, 197, 0.8);
+  color: #fff;
+}
+
+.chevron {
+  font-size: 20px;
+  text-align: center;
+}
+
+.tab-container {
+  position: relative;
+  box-shadow: 0px 4px 8px rgba(65, 66, 65, 0.639);
+  width: 90%;
+  margin-left: 60px;
+  border-radius: 10px;
+  height: 50px;
+  background-color: #fff;
+}
+
+.circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(211, 211, 211);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.circle.active {
+  background-color: rgba(13, 13, 197, 0.8);
+}
+
+.circle-title {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+}
+
+.full-width-button {
+  width: 90%;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 570px;
+  height: 40px;
+  line-height: 50px;
+}
+
+.full-width-button1 {
+  width: 4200px;
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 450px;
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .tab-navigation.style0,
+  .tab-navigation.style1,
+  .tab-navigation.style2,
+  .tab-navigation.style3 {
     width: 90%;
-    margin-left: 60px;
-    border-radius: 10px;
-    height: 50px;
-    padding-top: 20px;
-    background-color: #fff;
+    margin-left: 1.5%;
   }
-  
-  .circle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* oui */
-    justify-content: center;
-  }
-  
-  .circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: rgb(211, 211, 211);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .circle.active {
-    background-color: rgba(13, 13, 197, 0.8);
-  }
-  
-  .circle-title {
-    margin-top: 5px; 
-    font-size: 12px;
-    color: #333; 
-    text-align: center;
-  }
-  
-  
-  .full-width-button {
-    width: 90%;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px; 
-    margin-right: 570px;
-    height: 40px;
-    line-height: 50px;
-  }
-  
-  .full-width-button1 {
-    width: 4200px;
-    display: block;
-    margin-bottom: 10px; 
-    margin-right: 450px;
-    height: 40px;
-  }
-  
-  
-  @media (max-width: 768px) {
-    .tab-navigation.style0, .tab-navigation.style1,.tab-navigation.style2,.tab-navigation.style3{
-      margin: auto;
-      margin-top: 10px;
-    }
-  
-    body{
-      height: auto;
-      margin: 0;
-      width: auto;
-    }
-  
-    .tab-container{
-      width: 90%;
-    }
-  }  
+}
