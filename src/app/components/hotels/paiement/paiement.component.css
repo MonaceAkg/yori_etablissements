@@ -1,23 +1,29 @@
 .container {
   display: flex;
   justify-content: center;
-  gap: 20px;
   margin: 20px 20px 0px 0;
   background-color: inherit;
-  width: 69.4%;
+  width: 60%;
 }
-
-mat-label{
-  font-weight: 500;
-}
-
 
 .main-card {
+  padding: 20px;
   border: 1px solid rgb(234, 234, 234);
-  flex: 1 50%; /* Prend 60% de la largeur */
+  border-radius: 5px;
+  flex: 1 50%;
   background-color: white;
 }
 
+.checkbox-container {
+  display: flex;
+  gap: 10px;
+}
+
+.image-checkbox {
+  width: 40px;
+  height: 20px;
+  margin-left: 5px;
+}
 
 @media (max-width: 768px) {
   .container {

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MatCard } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatOption, MatSelect } from '@angular/material/select';
@@ -10,7 +9,6 @@ import { MatOption, MatSelect } from '@angular/material/select';
   selector: 'app-equipements',
   standalone: true,
   imports: [
-    MatCard,
     MatDivider,
     ReactiveFormsModule,
     FormsModule,

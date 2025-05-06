@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatCard, MatCardHeader, MatCardContent } from '@angular/material/card';
+import { MatCardHeader, MatCardContent } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
 @Component({
   selector: 'app-salle-bain',
   standalone: true,
   imports: [
-    MatCard,
     MatCardHeader,
     MatCardContent,
     MatRadioGroup,
