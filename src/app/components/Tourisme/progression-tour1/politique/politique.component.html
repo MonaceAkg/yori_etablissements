@@ -6,69 +6,93 @@
           <h3>Horaires douverture</h3>
         </div>
         <div class="card-content">
+          <div style="display: grid; gap: 10px; margin: 7% 0">
             <h4>Selectionner les jours ouvrables</h4>
-            <p>Vous pouvez sélectionner plusieurs réponses.</p>
-            <!-- <form (ngSubmit)="onSubmit()"> -->
-                <div class="chip-container">
-                  <div *ngFor="let day of daysOfWeek" 
-                       class="chip" 
-                       [class.selected]="selectedDays.includes(day)"
-                       (click)="toggleDay(day)">
-                    {{ day }}
-                  </div>
+            <span>Vous pouvez sélectionner plusieurs cartes.</span>
+          </div>
+          <!-- <form (ngSubmit)="onSubmit()"> -->
+          <div class="chip-container">
+            <div
+              *ngFor="let day of daysOfWeek"
+              class="chip"
+              [class.selected]="selectedDays.includes(day)"
+              (click)="toggleDay(day)"
+            >
+              {{ day }}
+            </div>
+          </div>
+          <div>
+            <p>Heure d'ouverture</p>
+            <input type="time" name="" class="input-time" />
+            <br />
+            <p>Heure de fermeture</p>
+            <input type="time" name="" class="input-time" />
+          </div>
+          <!-- </form> -->
+          <p>Durée la de visite</p>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+            [(ngModel)]="breakfastServed"
+            name="breakfastServed"
+          >
+            <mat-radio-button class="example-radio-button" value="heures"
+              >Viste par heures</mat-radio-button
+            ><br />
+            <div *ngIf="breakfastServed === 'heures'">
+              <label for="property-type">Définir une durée de la visite</label>
+              <select id="property-type" required>
+                <option *ngFor="let type of propertyTypes" [value]="type.value">
+                  {{ type.label }}
+                </option>
+              </select>
+              <label>Creneau horaire</label>
+              <div class="chip-container2">
+                <div
+                  *ngFor="let hour of hours"
+                  class="chip2"
+                  [class.selected]="selectedhours.includes(hour)"
+                  (click)="togglehours(hour)"
+                >
+                  {{ hour }}
                 </div>
-                <div>
-                  <p>Heure d'ouverture</p>
-                  <input type="time" name="" class="input-time">
-                  <br>
-                  <p>Heure de fermeture</p>
-                  <input type="time" name="" class="input-time">
-                </div>          
-              <!-- </form> -->
-               <p>Durée la de visite</p>
-              <mat-radio-group
-              aria-labelledby="example-radio-group-label"
-              class="example-radio-group"
-              [(ngModel)]="breakfastServed"
-              name="breakfastServed">
-              <mat-radio-button class="example-radio-button" value="heures">Viste par heures</mat-radio-button><br>
-                <div *ngIf="breakfastServed === 'heures'">
-                  <label for="property-type">Définir une durée de la visite</label>
-                      <select id="property-type" required>
-                        <option *ngFor="let type of propertyTypes" [value]="type.value">{{ type.label }}</option>
-                      </select>
-                      <label>Creneau horaire</label>
-                      <div class="chip-container2">
-                        <div *ngFor="let hour of hours" 
-                            class="chip2" 
-                            [class.selected]="selectedhours.includes(hour)"
-                            (click)="togglehours(hour)">
-                          {{ hour }}
-                        </div>
-                        <a href="" class="lien">Ajouter</a> 
-                      </div>
-                </div>
-                <mat-radio-button class="example-radio-button" value="jours">Viste par jours</mat-radio-button><br>
-                <div *ngIf="breakfastServed === 'jours'">
-                  <mat-radio-group
-                  aria-labelledby="example-radio-group-label"
-                  class="example-radio-group"
-                  [(ngModel)]="breakfastServed2"
-                  name="breakfastServed2">
-                  <label for="">Définir une durée maximale pour les visites</label>
-                  <mat-radio-button class="example-radio-button" value="illimitee">Durée illimitée</mat-radio-button><br>
-                  <mat-radio-button class="example-radio-button" value="limitee">Durée limitée</mat-radio-button><br>
-                  <div *ngIf="breakfastServed2 === 'limitee'">
-                    <select id="property-type" required>
-                      <option *ngFor="let type of propertyTypes" [value]="type.value">{{ type.label }}</option>
-                    </select>
-                  </div>
-                </mat-radio-group>
+                <a href="" class="lien">Ajouter</a>
               </div>
-            </mat-radio-group>
+            </div>
+            <mat-radio-button class="example-radio-button" value="jours"
+              >Viste par jours</mat-radio-button
+            ><br />
+            <div *ngIf="breakfastServed === 'jours'">
+              <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="example-radio-group"
+                [(ngModel)]="breakfastServed2"
+                name="breakfastServed2"
+              >
+                <label for=""
+                  >Définir une durée maximale pour les visites</label
+                >
+                <mat-radio-button class="example-radio-button" value="illimitee"
+                  >Durée illimitée</mat-radio-button
+                ><br />
+                <mat-radio-button class="example-radio-button" value="limitee"
+                  >Durée limitée</mat-radio-button
+                ><br />
+                <div *ngIf="breakfastServed2 === 'limitee'">
+                  <select id="property-type" required>
+                    <option
+                      *ngFor="let type of propertyTypes"
+                      [value]="type.value"
+                    >
+                      {{ type.label }}
+                    </option>
+                  </select>
+                </div>
+              </mat-radio-group>
+            </div>
+          </mat-radio-group>
         </div>
       </div>
     </div>
   </form>
 </div>
-  

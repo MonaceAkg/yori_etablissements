@@ -29,8 +29,7 @@
   gap: 5px;
 }
 
-.card-header,
-.card-content {
+.card-header {
   margin-bottom: 15px;
 }
 
@@ -88,6 +87,15 @@ ul {
 
 ul li {
   padding: 5px 0;
+}
+
+.icon-container {
+  display: flex;
+  gap: 10px;
+}
+
+.card-p {
+  padding-left: 7%;
 }
 
 @media (max-width: 768px) {

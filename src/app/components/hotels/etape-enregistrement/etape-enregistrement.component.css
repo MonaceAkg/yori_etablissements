@@ -53,6 +53,7 @@ button:hover {
 }
 
 .btnOffre {
+  padding: 5px;
   color: white;
   background-color: rgba(13, 13, 197, 0.8);
   border: 0.5px solid white;
@@ -62,6 +63,7 @@ button:hover {
 }
 
 .ajoutInfo {
+  padding: 5px;
   background-color: rgba(13, 13, 197, 0.8);
   color: #fff;
   border: none;
