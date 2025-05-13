@@ -6,11 +6,30 @@
   width: 50%;
 }
 
-.main-card, .sub-card {
+.main-card {
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 5px;
   flex: 1 1 100%; /* Prend toute la largeur */
-  margin-bottom: 0px; /* Espace entre les cartes */
+  padding: 5%; /* Espace entre les cartes */
   background-color: white;
+}
+
+hr {
+  border: 2px solid rgb(234, 234, 234); /* Bordure de séparation */
+  margin: 20px 0; /* Espace autour de la ligne */
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  color: rgba(13, 13, 197, 0.8);
+  border: 2px solid rgba(13, 13, 197, 0.8);
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  padding: 10px;
 }
 
 .example-form {
@@ -23,7 +42,10 @@
   width: 100%;
 }
 
-#phone, #full-name, #first-name, #email {
+#phone,
+#full-name,
+#first-name,
+#email {
   height: 30px;
   width: 100%; /* Prendre toute la largeur */
   margin: 10px 0;
@@ -32,7 +54,6 @@
 .form-field {
   margin: 20px 0;
 }
-
 
 .card-item {
   display: flex;
@@ -46,14 +67,32 @@
   height: auto; /* Maintient le ratio de l'image */
 }
 
+.ma-div {
+  border: 2px dashed black;
+  display: flex;
+  flex-direction: column; /* Aligne les éléments verticalement */
+  align-items: center; /* Centre horizontalement */
+  justify-content: center; /* Centre verticalement */
+  padding: 25px 45px; /* Padding top/bottom de 25px et left/right de 45px */
+  background-color: inherit;
+}
 
+.ma-div:hover {
+  border-color: rgba(
+    13,
+    13,
+    197,
+    0.8
+  ); /* Changer la couleur de la bordure au survol */
+}
 
 @media (max-width: 768px) {
   .container {
-    width:auto;
+    width: auto;
   }
   /* Réduction de la taille du texte */
-  .main-card p, .main-card h3 {
+  .main-card p,
+  .main-card h3 {
     font-size: 0.9em; /* Réduire la taille du texte */
   }
 
