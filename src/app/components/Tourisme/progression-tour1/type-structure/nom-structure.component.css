@@ -1,14 +1,11 @@
 .container {
-  display: flex; 
+  display: flex;
   justify-content: center;
   margin: 25px 25px 10px 0;
-  width: 60%;
-  max-width: 740px;
+  width: 54.5%;
   border-radius: 10px;
   background-color: white;
 }
-
-
 
 .main-card {
   background-color: rgb(255, 255, 255);
@@ -18,13 +15,16 @@
   width: 100%;
 }
 
-#paragraphe{
+#paragraphe {
   margin-bottom: 40px;
 }
 
-#paragraphe p{
-
+#paragraphe p {
   font-size: 12px;
+}
+
+.card-header {
+  margin-bottom: 20px;
 }
 
 .card-header h2 {
@@ -45,7 +45,7 @@
   height: 100px;
 }
 
-label{
+label {
   font-weight: 500;
 }
 
@@ -58,7 +58,7 @@ select {
   border-radius: 4px; /* Coins arrondis */
 }
 
-.card-footer{
+.card-footer {
   margin-top: 40px;
 }
 
@@ -67,7 +67,7 @@ select {
   font-weight: 400;
 }
 
-#labelF{
+#labelF {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 20px;
@@ -96,8 +96,8 @@ select {
     padding: 10px; /* Réduction du padding sur petits écrans */
   }
 
-  .main-card, .full-width {
+  .main-card,
+  .full-width {
     width: 100%; /* Prend 100% de la largeur sur petits écrans */
   }
-
 }
