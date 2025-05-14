@@ -21,12 +21,26 @@
               {{ day }}
             </div>
           </div>
-          <div>
-            <p>Heure d'ouverture</p>
-            <input type="time" name="" class="input-time" />
-            <br />
-            <p>Heure de fermeture</p>
-            <input type="time" name="" class="input-time" />
+          <div *ngFor="let day of selectedDays" class="day-hours">
+            <p style="font-weight: 300">{{ day }}</p>
+
+            <div class="hours-labels">
+              <label>Heure d'ouverture :</label>
+              <label>Heure de fermeture :</label>
+            </div>
+
+            <div class="hours-inputs">
+              <input
+                type="time"
+                [value]="hoursByDay[day].opening"
+                (input)="updateHour(day, 'opening', $any($event.target).value)"
+              />
+              <input
+                type="time"
+                [value]="hoursByDay[day].closing"
+                (input)="updateHour(day, 'closing', $any($event.target).value)"
+              />
+            </div>
           </div>
           <!-- </form> -->
           <p>Durée la de visite</p>
