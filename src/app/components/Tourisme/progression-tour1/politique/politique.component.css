@@ -12,6 +12,19 @@
   width: 52%;
 }
 
+.hours-labels,
+.hours-inputs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.hours-inputs input {
+  flex: 1;
+  padding: 4px 8px;
+  font-size: 1rem;
+}
+
 #paragraphe {
   margin-bottom: 40px;
 }
@@ -92,17 +105,20 @@ select {
 .chip-container,
 .chip-container2 {
   display: flex;
+  gap: 8px;
   flex-wrap: wrap;
-  gap: 8px; /* Espace entre les chips */
+  margin-bottom: 20px;
 }
 
 .chip {
-  padding: 8px 16px;
+  padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 16px;
   cursor: pointer;
+  user-select: none;
   transition: background-color 0.3s, color 0.3s;
 }
+
 .chip2 {
   padding: 10px 12px;
   border: 1px solid #ccc;
@@ -113,7 +129,7 @@ select {
 
 .chip.selected,
 .chip2.selected {
-  background-color: #343232; /* Couleur d'arrière-plan pour les jours sélectionnés */
+  background-color: #0d0dc5; /* Couleur d'arrière-plan pour les jours sélectionnés */
   color: #ffffff; /* Couleur du texte pour les jours sélectionnés */
 }
 

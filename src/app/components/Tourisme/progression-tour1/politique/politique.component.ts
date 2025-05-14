@@ -13,7 +13,7 @@ import { MatRadioButton, MatRadioGroup, MatRadioModule } from '@angular/material
     MatRadioModule,
     CommonModule,
     FormsModule
-],
+  ],
   templateUrl: './politique.component.html',
   styleUrl: './politique.component.css'
 })
@@ -26,19 +26,34 @@ export class PolitiqueComponent {
   hours: string[] = ['10h00', '12h00', '14h00', '16h00', '18h00'];
   selectedDays: string[] = [];
   selectedhours: string[] = [];
+  hoursByDay: { [day: string]: { opening: string; closing: string } } = {};
 
-  // Ajout des nouvelles propriétés
-  arrivalTime: string | undefined;
-  departureTime: string | undefined;
+
 
   toggleDay(day: string): void {
     const index = this.selectedDays.indexOf(day);
     if (index >= 0) {
-      this.selectedDays.splice(index, 1); // Désactive le jour si sélectionné
+      // Désélectionner le jour et supprimer ses horaires
+      this.selectedDays.splice(index, 1);
+      delete this.hoursByDay[day];
     } else {
-      this.selectedDays.push(day); // Active le jour si non sélectionné
+      // Sélectionner le jour et initialiser horaires vides
+      this.selectedDays.push(day);
+      this.hoursByDay[day] = { opening: '', closing: '' };
     }
   }
+
+  updateHour(day: string, type: 'opening' | 'closing', value: string): void {
+    if (!this.hoursByDay[day]) {
+      this.hoursByDay[day] = { opening: '', closing: '' };
+    }
+    this.hoursByDay[day][type] = value;
+  }
+
+
+
+
+
 
   togglehours(hours: string): void {
     const index = this.selectedhours.indexOf(hours);
@@ -51,6 +66,14 @@ export class PolitiqueComponent {
   onSubmit(): void {
     console.log('Jours sélectionnés :', this.selectedDays);
   }
+
+  //   onSubmit(): void {
+  //   console.log('Jours et horaires sélectionnés :');
+  //   this.selectedDays.forEach(day => {
+  //     const hours = this.hoursByDay[day];
+  //     console.log(`${day} : Ouverture = ${hours.opening || '(non défini)'}, Fermeture = ${hours.closing || '(non défini)'}`);
+  //   });
+  // }
 
   propertyTypes: { value: string, label: string }[] = [
     { value: '', label: 'Selectionnez une durée' },
@@ -82,25 +105,24 @@ export class PolitiqueComponent {
 
 
 
-    // Liste des types de petit-déjeuner
-    breakfastTypes: string[] = [
-      'A la carte',
-      'Africain',
-      'Americain',
-      'Asiatique',
-      'Buffet',
-      'Petit déjeuner à emporter',
-      'Continental',
-      'Végétalien',
-      'Casher',
-      'Végétarien',
-      'Sans gluten',
-      'Halal',
-      'Anglais / irlandais complet'
-    ];
-  
-    // Liste des indices où un retour à la ligne est souhaité
-    lineBreakIndices: number[] = [4, 8]; // Les indices après "Buffet" et "Casher"
+  // Liste des types de petit-déjeuner
+  breakfastTypes: string[] = [
+    'A la carte',
+    'Africain',
+    'Americain',
+    'Asiatique',
+    'Buffet',
+    'Petit déjeuner à emporter',
+    'Continental',
+    'Végétalien',
+    'Casher',
+    'Végétarien',
+    'Sans gluten',
+    'Halal',
+    'Anglais / irlandais complet'
+  ];
+
+  // Liste des indices où un retour à la ligne est souhaité
+  lineBreakIndices: number[] = [4, 8]; // Les indices après "Buffet" et "Casher"
 
 }
- 
