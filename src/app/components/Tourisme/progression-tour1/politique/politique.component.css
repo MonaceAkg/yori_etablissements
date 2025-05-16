@@ -9,7 +9,21 @@
   background-color: initial;
   padding: 20px;
   border-radius: 10px;
-  width: 52%;
+  width: 55.6%;
+}
+
+.main-card h3,
+.text-top {
+  margin: 20px 0;
+}
+
+.text-top :first-child {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.mode-visite {
+  padding: 20px 0;
 }
 
 .hours-labels,
@@ -25,50 +39,21 @@
   font-size: 1rem;
 }
 
-#paragraphe {
-  margin-bottom: 40px;
-}
-
-#paragraphe p {
-  font-size: 12px;
-}
-
-.card-header h2,
-.card-header {
-  margin-bottom: 15px;
-}
-
-.card-content {
-  margin-bottom: 20px; /* Espacement entre le contenu et le footer */
-  width: 60%;
-}
-
-.form-field {
-  margin-bottom: 15px; /* Espacement entre les champs */
-}
-
-.full-width {
-  width: 100%; /* Prend 100% de la largeur du conteneur */
-  height: 100px;
-}
-
-label,
-p {
-  font-weight: 500;
-  /* padding-top: 100px; */
+.day-hours :first-child {
+  margin-bottom: 10px;
 }
 
 .input-time {
   width: 130px;
 }
 
-input[type="text"],
-textarea,
-select {
-  width: 100%; /* Largeur 100% */
-  padding: 10px; /* Espacement intérieur */
-  border: 1px solid #ccc; /* Bordure légère */
-  border-radius: 4px; /* Coins arrondis */
+.chip-bouton {
+  background-color: initial;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .card-footer {
@@ -104,6 +89,7 @@ select {
 
 .chip-container,
 .chip-container2 {
+  width: 50%;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;

@@ -1,16 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatRadioButton, MatRadioGroup, MatRadioModule } from '@angular/material/radio';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-politique',
   standalone: true,
   imports: [
-    CommonModule,
-    MatRadioButton,
-    MatRadioGroup,
-    MatRadioModule,
     CommonModule,
     FormsModule
   ],
@@ -18,65 +13,25 @@ import { MatRadioButton, MatRadioGroup, MatRadioModule } from '@angular/material
   styleUrl: './politique.component.css'
 })
 export class PolitiqueComponent {
-  breakfastServed: string | undefined;
-  breakfastServed2: string | undefined;
-  breakfastIncluded: string | undefined;
-
   daysOfWeek: string[] = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-  hours: string[] = ['10h00', '12h00', '14h00', '16h00', '18h00'];
+
   selectedDays: string[] = [];
-  selectedhours: string[] = [];
+  // Horaires par jour sélectionné
   hoursByDay: { [day: string]: { opening: string; closing: string } } = {};
+  selectedHoursByDay: { [day: string]: string[] } = {};
 
 
+  // Gestion des heures disponibles pour créneaux
+  hours: string[] = ['8h00', '10h00', '12h00', '14h00', '16h00', '18h00'];
 
-  toggleDay(day: string): void {
-    const index = this.selectedDays.indexOf(day);
-    if (index >= 0) {
-      // Désélectionner le jour et supprimer ses horaires
-      this.selectedDays.splice(index, 1);
-      delete this.hoursByDay[day];
-    } else {
-      // Sélectionner le jour et initialiser horaires vides
-      this.selectedDays.push(day);
-      this.hoursByDay[day] = { opening: '', closing: '' };
-    }
-  }
+  selectedhours: string[] = [];
 
-  updateHour(day: string, type: 'opening' | 'closing', value: string): void {
-    if (!this.hoursByDay[day]) {
-      this.hoursByDay[day] = { opening: '', closing: '' };
-    }
-    this.hoursByDay[day][type] = value;
-  }
+  // Gestion de la sélection du mode de visite
+  breakfastServed: 'heures' | 'jours' | null = null;
+  breakfastServed2: 'illimitee' | 'limitee' | null = null;
 
-
-
-
-
-
-  togglehours(hours: string): void {
-    const index = this.selectedhours.indexOf(hours);
-    if (index >= 0) {
-      this.selectedhours.splice(index, 1); // Désactive le jour si sélectionné
-    } else {
-      this.selectedhours.push(hours); // Active le jour si non sélectionné
-    }
-  }
-  onSubmit(): void {
-    console.log('Jours sélectionnés :', this.selectedDays);
-  }
-
-  //   onSubmit(): void {
-  //   console.log('Jours et horaires sélectionnés :');
-  //   this.selectedDays.forEach(day => {
-  //     const hours = this.hoursByDay[day];
-  //     console.log(`${day} : Ouverture = ${hours.opening || '(non défini)'}, Fermeture = ${hours.closing || '(non défini)'}`);
-  //   });
-  // }
-
-  propertyTypes: { value: string, label: string }[] = [
-    { value: '', label: 'Selectionnez une durée' },
+  propertyTypes: { value: string; label: string }[] = [
+    { value: '', label: 'Sélectionnez une durée' },
     { value: '1h', label: '1h' },
     { value: '2h', label: '2h' },
     { value: '3h', label: '3h' },
@@ -88,7 +43,7 @@ export class PolitiqueComponent {
     { value: '9h', label: '9h' },
     { value: '10h', label: '10h' },
     { value: '11h', label: '11h' },
-    { value: 'demi_journee', label: 'démi-journée' },
+    { value: 'demi_journee', label: 'Demi-journée' },
     { value: '13h', label: '13h' },
     { value: '14h', label: '14h' },
     { value: '15h', label: '15h' },
@@ -100,29 +55,82 @@ export class PolitiqueComponent {
     { value: '21h', label: '21h' },
     { value: '22h', label: '22h' },
     { value: '23h', label: '23h' },
-    { value: '1jour', label: '1jour' },
+    { value: '1jour', label: '1 jour' },
   ];
 
 
 
-  // Liste des types de petit-déjeuner
-  breakfastTypes: string[] = [
-    'A la carte',
-    'Africain',
-    'Americain',
-    'Asiatique',
-    'Buffet',
-    'Petit déjeuner à emporter',
-    'Continental',
-    'Végétalien',
-    'Casher',
-    'Végétarien',
-    'Sans gluten',
-    'Halal',
-    'Anglais / irlandais complet'
+
+
+  // Options pour la durée limitée (jours, semaines, mois)
+  durationOptions: { value: string; label: string }[] = [
+    { value: '1j', label: '1 jour' },
+    { value: '2j', label: '2 jours' },
+    { value: '3j', label: '3 jours' },
+    { value: '4j', label: '4 jours' },
+    { value: '5j', label: '5 jours' },
+    { value: '1s', label: '1 semaine' },
+    { value: '2s', label: '2 semaines' },
+    { value: '3s', label: '3 semaines' },
+    { value: '1m', label: '1 mois' },
+    { value: '2m', label: '2 mois' },
+    { value: '3m', label: '3 mois' },
   ];
 
-  // Liste des indices où un retour à la ligne est souhaité
-  lineBreakIndices: number[] = [4, 8]; // Les indices après "Buffet" et "Casher"
+  selectedDurationHeures: string = '';
+  selectedDurationJours: string = '';
+
+  toggleDay(day: string): void {
+    const index = this.selectedDays.indexOf(day);
+    if (index >= 0) {
+      this.selectedDays = this.selectedDays.filter(d => d !== day);
+      delete this.hoursByDay[day];
+      delete this.selectedHoursByDay[day];
+    } else {
+      this.selectedDays = [...this.selectedDays, day];
+      this.hoursByDay[day] = { opening: '', closing: '' };
+      this.selectedHoursByDay[day] = []; // Initialisation cruciale !
+    }
+  }
+
+  updateHour(day: string, type: 'opening' | 'closing', value: string): void {
+    if (!this.hoursByDay[day]) {
+      this.hoursByDay[day] = { opening: '', closing: '' };
+    }
+    this.hoursByDay[day][type] = value;
+  }
+
+  toggleHour(day: string, hour: string): void {
+    if (!this.selectedHoursByDay[day]) {
+      this.selectedHoursByDay[day] = [];
+    }
+    const index = this.selectedHoursByDay[day].indexOf(hour);
+    if (index >= 0) {
+      this.selectedHoursByDay[day] = this.selectedHoursByDay[day].filter(h => h !== hour);
+    } else {
+      this.selectedHoursByDay[day] = [...this.selectedHoursByDay[day], hour];
+    }
+  }
+  onSubmit(form: NgForm) {
+    if (form.invalid) {
+      alert('Veuillez remplir tous les champs obligatoires.');
+      return;
+    }
+
+    // Tu peux accéder à toutes tes données ici
+    console.log('Jours sélectionnés:', this.selectedDays);
+    console.log('Horaires par jour:', this.hoursByDay);
+    console.log('Mode visite:', this.breakfastServed);
+
+    if (this.breakfastServed === 'heures') {
+      console.log('Durée heures:', this.selectedDurationHeures);
+      console.log('Créneaux horaires par jour:', this.selectedHoursByDay);
+    } else if (this.breakfastServed === 'jours') {
+      console.log('Durée jours:', this.selectedDurationJours);
+    }
+
+    alert('Formulaire soumis avec succès !');
+  }
+
 
 }
