@@ -28,6 +28,7 @@
 
         <div class="hours-inputs">
           <input
+            class="input-time"
             type="time"
             [value]="hoursByDay[day].opening"
             (input)="updateHour(day, 'opening', $any($event.target).value)"
@@ -36,6 +37,7 @@
             ngModel
           />
           <input
+            class="input-time"
             type="time"
             [value]="hoursByDay[day].closing"
             (input)="updateHour(day, 'closing', $any($event.target).value)"
