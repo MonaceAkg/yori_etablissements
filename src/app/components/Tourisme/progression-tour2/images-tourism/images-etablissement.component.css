@@ -7,61 +7,80 @@
   width: 100%;
 }
 
-mat-label{
-  font-weight: 500;
+.custom-icon {
+  color: white; /* Couleur de l'icône */
+  background-color: black; /* Fond noir */
+  border-radius: 50%; /* Pour donner un effet de cercle autour de l'icône */
+  padding: 5px; /* Pour ajouter un espace autour de l'icône */
 }
 
-
-.custom-icon {
-  color: white;         /* Couleur de l'icône */
-  background-color: black; /* Fond noir */
-  border-radius: 50%;    /* Pour donner un effet de cercle autour de l'icône */
-  padding: 5px;         /* Pour ajouter un espace autour de l'icône */
+.title {
+  margin: 10px 0 20px 0;
 }
 
 .main-card {
   flex: 1 57%;
+  padding: 20px;
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 8px; /* Coins arrondis pour la carte principale */
   background-color: white;
 }
 
+.paragraph-top {
+  margin: 40px 0;
+}
 
-.sub-card {  
+.text-muted {
+  font-weight: 400;
+  font-weight: 400;
+}
+
+.sub-card {
   flex: 1 40%;
   margin-bottom: 10px;
 }
 
-
-#haut{
+#haut {
   border: 1px solid rgb(234, 234, 234);
+  padding: 20px;
+  border-radius: 8px; /* Coins arrondis pour la carte supérieure */
   background-color: white;
 }
 
+.title2 {
+  display: flex;
+  gap: 5px;
+}
 
-ul{
+ul {
   margin-top: 50px;
+  padding-left: 20px;
 }
-
-.full-width{
-  width: 300px;
-}
-
 
 .ma-div {
   border: 2px dashed black;
   display: flex;
+  gap: 10px; /* Espace entre les éléments */
   flex-direction: column; /* Aligne les éléments verticalement */
-  align-items: center;    /* Centre horizontalement */
+  align-items: center; /* Centre horizontalement */
   justify-content: center; /* Centre verticalement */
-  padding: 25px 45px;     /* Padding top/bottom de 25px et left/right de 45px */
+  padding: 25px 45px; /* Padding top/bottom de 25px et left/right de 45px */
   background-color: inherit;
 }
 
 .ma-div:hover {
-  border-color: rgba(13, 13, 197, 0.8); /* Changer la couleur de la bordure au survol */
+  border: 2px solid rgba(13, 13, 197, 0.8);
 }
 
-.button{
+hr {
+  margin: 20px 0;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
   background-color: inherit;
   color: rgba(13, 13, 197, 0.8);
   border: 2px solid rgba(13, 13, 197, 0.8);
@@ -69,8 +88,6 @@ ul{
   cursor: pointer;
   height: 40px;
 }
-
-
 
 .image-list {
   display: flex;
@@ -97,21 +114,20 @@ ul{
 
 .delete-button {
   position: absolute;
-    top: 5px;
-    right: 5px;
-    background: none;
-    border: none;
-    color: red;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color 0.3s; /* Pour un effet de transition */
-    z-index: 1; /* As /* Pour un effet de transition */
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  color: red;
+
+  cursor: pointer;
+  transition: color 0.3s; /* Pour un effet de transition */
+  z-index: 1; /* As /* Pour un effet de transition */
 }
 
 .delete-button:hover {
   color: darkred; /* Changement de couleur au survol */
 }
-
 
 /* Ajout de styles pour la responsivité */
 @media (max-width: 768px) {
@@ -123,11 +139,7 @@ ul{
     margin-right: 35px;
   }
 
-  mat-card-content{
-    flex: 1 1 100%;
-  }
-
-  .button{
+  .button {
     font-size: 10px;
   }
 

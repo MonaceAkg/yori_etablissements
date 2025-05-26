@@ -20,11 +20,8 @@ import { ImagesEtablissementComponent } from './images-tourism/images-etablissem
 })
 export class ProgressionTour2Component {
 
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
-  activeTabIndex: number = 0; 
+  activeTabIndex: number = 0;
 
 
   onTabChange(event: MatTabChangeEvent) {

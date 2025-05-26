@@ -79,16 +79,16 @@
 }
 
 .checkbox-block {
-  margin-bottom: 20px; /* espace vertical entre chaque case */
+  margin-bottom: 20px;
 }
 
 .montant {
-  margin: 0; /* pour éviter marge verticale */
-  white-space: nowrap; /* évite retour à la ligne */
+  margin: 0;
+  white-space: nowrap;
 }
 
 .inline-cont {
-  margin: 20px 0;
+  margin: 5% 0;
 }
 
 .inline {
