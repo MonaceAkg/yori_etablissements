@@ -1,116 +1,136 @@
-    <div class="container">
-        <h3 style="margin-left: 15px;">Informations sur l'hébergement</h3>
-
-        <!-- Étape 1 - Infos sur l'hébergement -->
-        <mat-card class="example-card" appearance="outlined">
-            <mat-card-header>
-            <mat-card-title-group>
-                <mat-card-title>
-                <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
-                Étape 1 - Infos sur l'hébergement
-                </mat-card-title>
-                <a mat-button href="https://www.google.com/" target="_blank">Modifier</a>
-            </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-            <p>
-                Information de votre hébergement, son adresse, ses équipements, etc.
-            </p>
-            </mat-card-content>
-        </mat-card>
-
-        <!-- Étape 2 - Dernières étapes -->
-        <mat-card class="example-card" appearance="outlined">
-            <ng-container *ngIf="['/ajout-tourisme'].includes(currentRoute)">
-            <mat-card-header>
-                <mat-card-title-group>
-                <mat-card-title>
-                    <mat-icon style="color: rgb(14, 14, 14);">photo</mat-icon>
-                    Étape 2 - Photos
-                </mat-card-title>
-                <button mat-flat-button class="btn2" [routerLink]="['/photo-tourisme']">Ajouter des photos</button>
-                </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-                <p>Partagez quelques photos de votre hébergement pour que les clients puissent se projeter.</p>
-            </mat-card-content>
-            </ng-container>
-
-            <ng-container *ngIf="['/photo-tourisme'].includes(currentRoute)">
-            <mat-card-header>
-                <mat-card-title-group>
-                <mat-card-title>
-                    <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
-                    Étape 2 - Photos
-                </mat-card-title>
-                <a href="#">Modifier</a>
-                </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-                <p>Partagez quelques photos de votre hébergement pour que les clients puissent se projeter.</p>
-            </mat-card-content>
-            </ng-container>
-            <ng-container *ngIf="['/complement-tourisme'].includes(currentRoute)">
-            <mat-card-header>
-                <mat-card-title-group>
-                <mat-card-title>
-                    <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
-                    Étape 2 - Photos
-                </mat-card-title>
-                <a href="#">Modifier</a>
-                </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-                <p>Partagez quelques photos de votre hébergement pour que les clients puissent se projeter.</p>
-            </mat-card-content>
-            </ng-container>
-        </mat-card>
-
-        <!-- Étape 3 - Dernières étapes -->
-        <mat-card class="example-card" appearance="outlined">
-            <ng-container *ngIf="currentRoute === '/photo-tourisme'">
-            <mat-card-header>
-                <mat-card-title-group>
-                <mat-card-title>
-                    <mat-icon style="color: rgb(14, 14, 14);">assignment</mat-icon>
-                    Étape 3 - Dernières étapes
-                </mat-card-title>
-                <button mat-flat-button class="ajoutInfo" [routerLink]="['/complement-tourisme']">Ajouter les dernières informations</button>
-                </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-                <p>Configurez les paiements et les factures avant d'ouvrir votre hébergement à la réservation.</p>
-            </mat-card-content>
-            </ng-container>
-
-            <ng-container *ngIf="currentRoute === '/ajout-tourisme'">
-            <mat-card-header>
-                <mat-card-title-group>
-                <mat-card-title>
-                    <mat-icon style="color: rgb(14, 14, 14);">assignment</mat-icon>
-                    Étape 3 - Dernières étapes
-                </mat-card-title>
-                <button mat-flat-button disabled>Ajouter les dernières informations</button>
-                </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-                <p>Configurez les paiements et les factures avant d'ouvrir votre hébergement à la réservation.</p>
-            </mat-card-content>
-            </ng-container>
-
-            <ng-container *ngIf="currentRoute === '/complement-tourisme'">
-            <mat-card-header>
-                <mat-card-title-group>
-                <mat-card-title>
-                    <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
-                    Étape 3 - Infos sur l'hébergement
-                </mat-card-title>
-                <a href="#">Modifier</a>
-                </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-                <p>Configurez les paiements et les factures avant d'ouvrir votre hébergement à la réservation.</p>
-            </mat-card-content>
-            </ng-container>
-        </mat-card>
+<div class="container">
+  <h2>Informations sur l'hébergement</h2>
+  <!-- Étape 1 - Infos sur l'hébergement -->
+  <div class="example-card">
+    <div class="header">
+      <div class="header-title">
+        <span class="material-symbols-outlined green"> task_alt </span>
+        <div>
+          <h3>Étape 1</h3>
+          <p>Infos sur l'hébergement</p>
+        </div>
+      </div>
+      <a mat-button href="https://www.google.com/" target="_blank">Modifier</a>
     </div>
+    <p class="paragraphe">
+      Information de votre hébergement, son adresse, ses équipements, etc.
+    </p>
+  </div>
+
+  <!-- Étape 2 - Dernières étapes -->
+  <div class="example-card">
+    <div *ngIf="['/ajout-tourisme'].includes(currentRoute)">
+      <div class="header">
+        <div class="header-title">
+          <span class="material-symbols-outlined"> imagesmode </span>
+          <div>
+            <h3>Étape 2</h3>
+            <p>Photos de l'hébergement</p>
+          </div>
+        </div>
+        <button class="btn2" [routerLink]="['/photo-tourisme']">
+          Ajouter des photos
+        </button>
+      </div>
+      <div>
+        <p class="paragraphe">
+          Partagez quelques photos de votre hébergement pour que les clients
+          puissent se projeter.
+        </p>
+      </div>
+    </div>
+
+    <div *ngIf="['/photo-tourisme'].includes(currentRoute)">
+      <div>
+        <div class="header">
+          <div class="header-title">
+            <span class="material-symbols-outlined green"> task_alt </span>
+            <div>
+              <h3>Étape 2</h3>
+              <p>Photos de l'hébergement</p>
+            </div>
+          </div>
+          <a href="#">Modifier</a>
+        </div>
+      </div>
+      <p class="paragraphe">
+        Partagez quelques photos de votre hébergement pour que les clients
+        puissent se projeter.
+      </p>
+    </div>
+    <div *ngIf="['/complement-tourisme'].includes(currentRoute)">
+      <div class="header">
+        <div class="header-title">
+          <span class="material-symbols-outlined green"> task_alt </span>
+          <div>
+            <h3>Étape 2</h3>
+            <p>Photos de l'hébergement</p>
+          </div>
+        </div>
+        <a href="#">Modifier</a>
+      </div>
+      <p class="paragraphe">
+        Partagez quelques photos de votre hébergement pour que les clients
+        puissent se projeter.
+      </p>
+    </div>
+  </div>
+
+  <!-- Étape 3 - Dernières étapes -->
+  <div class="example-card">
+    <div *ngIf="currentRoute === '/photo-tourisme'">
+      <div class="header">
+        <div class="header-title">
+          <span class="material-symbols-outlined"> rubric </span>
+          <div>
+            <h3>Étape 3</h3>
+            <p>Dernières étapes</p>
+          </div>
+        </div>
+        <button
+          class="ajoutInfo btn_last_info"
+          [routerLink]="['/complement-tourisme']"
+        >
+          Ajouter les dernières informations
+        </button>
+      </div>
+      <p class="paragraphe">
+        Configurez les paiements et les factures avant d'ouvrir votre
+        hébergement à la réservation.
+      </p>
+    </div>
+
+    <div *ngIf="currentRoute === '/ajout-tourisme'">
+      <div class="header">
+        <div class="header-title">
+          <span class="material-symbols-outlined"> rubric </span>
+          <div>
+            <h3>Étape 3</h3>
+            <p>Dernières étapes</p>
+          </div>
+        </div>
+        <button class="btn_last_info" disabled>
+          Ajouter les dernières informations
+        </button>
+      </div>
+      <p class="paragraphe">
+        Configurez les paiements et les factures avant d'ouvrir votre
+        hébergement à la réservation.
+      </p>
+    </div>
+
+    <div *ngIf="currentRoute === '/complement-tourisme'">
+      <div class="header">
+        <div class="header-title">
+          <span class="material-symbols-outlined green"> task_alt </span>
+          Étape 3 - Infos sur l'hébergement
+        </div>
+        <a href="#">Modifier</a>
+      </div>
+      <p class="paragraphe">
+        Configurez les paiements et les factures avant d'ouvrir votre
+        hébergement à la réservation.
+      </p>
+    </div>
+  </div>
+</div>

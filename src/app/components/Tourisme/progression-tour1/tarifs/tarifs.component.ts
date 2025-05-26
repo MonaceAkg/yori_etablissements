@@ -20,7 +20,6 @@ interface Category {
   selector: 'app-tarifs',
   standalone: true,
   imports: [
-    MatIcon,
     CommonModule,
     FormsModule
   ],
