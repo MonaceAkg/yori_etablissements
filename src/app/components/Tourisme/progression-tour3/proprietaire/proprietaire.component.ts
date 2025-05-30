@@ -1,37 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { MatDivider } from '@angular/material/divider';
+import { Component, OnInit } from '@angular/core';
 
 
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
+
 
 @Component({
   selector: 'app-proprietaire',
   standalone: true,
   imports: [
-    MatCard,
-    MatCardHeader,
-    MatCardTitle,
-    MatCardContent,
-    MatDivider,
-    FormsModule,
-    ReactiveFormsModule,
     CommonModule
-
   ],
   templateUrl: './proprietaire.component.html',
   styleUrl: './proprietaire.component.css'
 })
-export class ProprietaireComponent implements OnInit{
-  @ViewChild('phoneInput', { static: false }) phoneInputElement!: ElementRef; // Utilisation de ViewChild
+export class ProprietaireComponent implements OnInit {
   options: string[] = ["Je certifie que l'activité d'hébergement est légale et détient toutes les autorisations requises, pouvant être présentées sur demande. Mbolo.com B.V. se réserve le droit de vérifier toutes les informations fournies lors de cette inscription.", "J'ai lu et j'accepte les Conditions Génerales de Prestation."];
 
   selectedOptions: string[] = [];
@@ -44,9 +26,8 @@ export class ProprietaireComponent implements OnInit{
     }
   }
 
-  ngOnInit(): void {}
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  matcher = new MyErrorStateMatcher();
+  ngOnInit(): void { }
+
 
 
 }

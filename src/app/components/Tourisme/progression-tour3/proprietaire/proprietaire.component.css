@@ -5,10 +5,12 @@
   margin: 20px 20px 0px 0;
   width: 50%;
 }
- 
-.main-card{
+
+.main-card {
   flex: 1 1 100%; /* Prend toute la largeur */
+  padding: 20px;
   border: 1px solid rgb(234, 234, 234);
+  border-radius: 10px;
   margin-bottom: 0px; /* Espace entre les cartes */
   background-color: white;
 }
@@ -23,7 +25,10 @@
   width: 100%;
 }
 
-#phone, #full-name, #first-name, #email {
+#phone,
+#full-name,
+#first-name,
+#email {
   height: 30px;
   width: 100%; /* Prendre toute la largeur */
   margin: 10px 0;
@@ -32,7 +37,6 @@
 .form-field {
   margin: 20px 0;
 }
-
 
 .card-item {
   display: flex;
@@ -46,19 +50,22 @@
   height: auto; /* Maintient le ratio de l'image */
 }
 
-
-
+hr {
+  margin: 20px 0; /* Espace au-dessus et en dessous de la ligne */
+  border: none; /* Supprime la bordure par défaut */
+  border-top: 1px solid #ccc; /* Ligne grise */
+}
 
 @media (max-width: 768px) {
+  /* Réduction de la taille du texte */
+  .main-card p,
+  .main-card h3 {
+    font-size: 0.9em; /* Réduire la taille du texte */
+  }
 
-    /* Réduction de la taille du texte */
-    .main-card p, .main-card h3 {
-      font-size: 0.9em; /* Réduire la taille du texte */
-    }
-  
-    .joue {
-      margin-left: 0; /* Ajuste le margin pour la responsivité */
-    }
+  .joue {
+    margin-left: 0; /* Ajuste le margin pour la responsivité */
+  }
 
   .container {
     flex-direction: column;
@@ -66,7 +73,8 @@
     width: 95%;
   }
 
-  .main-card, .sub-card-container {
+  .main-card,
+  .sub-card-container {
     width: auto;
   }
 

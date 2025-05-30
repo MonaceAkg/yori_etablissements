@@ -1,48 +1,38 @@
 .container {
-  margin: 20px 20px 0px 0;
+  margin: 20px 0 0 0;
   background-color: inherit;
 }
 
-mat-label{
-  font-weight: 500;
+.main-card {
+  width: 61%;
+  padding: 20px;
+  border: 1px solid #efefef;
+  background-color: white;
+  border-radius: 10px;
 }
 
-
 .faq-item {
-  margin-bottom: 15px; /* Espace entre les questions */
+  margin-bottom: 20px;
 }
 
 .faq-item p {
   display: flex;
-  align-items: center; /* Aligne verticalement l'image et le texte */
+  align-items: center;
 }
 
-.paragraphe{
+.paragraphe {
   margin-left: 35px;
 }
 
-
-
 .faq-icon {
-  margin-right: 15px; /* Espace entre l'image et le texte */
-  width: 24px; /* Ajustez la taille de l'image si nécessaire */
-  height: auto; /* Maintient le ratio de l'image */
+  margin-right: 15px;
+  width: 24px;
+  height: auto;
 }
 
-
-
-.main-card {
-  width:  70%;
-  border: 1px solid rgb(234, 234, 234);
-  background-color: white;
-  /* margin-left: 20px; */
-}
-
-
-.title{
+.title {
   margin-bottom: 30px;
 }
-
 
 @media (max-width: 768px) {
   .container {
@@ -51,7 +41,7 @@ mat-label{
     width: 95%;
   }
 
-  .main-card{
+  .main-card {
     width: auto;
   }
 }
