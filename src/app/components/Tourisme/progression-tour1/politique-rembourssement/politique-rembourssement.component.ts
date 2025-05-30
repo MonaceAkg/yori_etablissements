@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatCardHeader, MatCardTitle, MatCardContent } from '@angular/material/card';
-import { MatRadioButton, MatRadioGroup, MatRadioModule } from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-politique-rembourssement',

@@ -73,7 +73,9 @@ button:hover {
 
 @media (max-width: 768px) {
   .container {
-    width: 100%;
+    width: 90%;
+    justify-content: center;
+
     padding: 20px;
   }
 

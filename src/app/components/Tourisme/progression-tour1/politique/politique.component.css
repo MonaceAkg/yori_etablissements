@@ -6,7 +6,7 @@
 
 .main-card {
   border: 1px solid rgb(234, 234, 234);
-  background-color: initial;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   width: 55.6%;
@@ -49,7 +49,7 @@
 }
 
 .chip-bouton {
-  background-color: initial;
+  background-color: white;
   border: none;
   cursor: pointer;
   color: #007bff;
