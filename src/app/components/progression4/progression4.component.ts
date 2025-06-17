@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { MatTab, MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 import { RouterLink, Router } from '@angular/router';
-import { ASavoirComponent } from '../hotels/a-savoir/a-savoir.component';
+import { ASavoirHotelComponent } from '../hotels/a-savoir-hotel/a-savoir-hotel.component';
 import { EtapeEnregistrementComponent } from '../hotels/etape-enregistrement/etape-enregistrement.component';
 import { PaiementComponent } from '../hotels/paiement/paiement.component';
 import { ProprietaireComponent } from '../hotels/proprietaire/proprietaire.component';
@@ -15,7 +15,7 @@ import { ProprietaireComponent } from '../hotels/proprietaire/proprietaire.compo
     MatTabGroup,
     CommonModule,
     PaiementComponent,
-    ASavoirComponent,
+    ASavoirHotelComponent,
     EtapeEnregistrementComponent,
     ProprietaireComponent,
     MatTabsModule,
