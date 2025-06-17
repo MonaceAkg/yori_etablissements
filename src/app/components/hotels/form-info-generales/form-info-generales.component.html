@@ -5,33 +5,45 @@
         <h2>Où se situe l'établissement que vous inscrivez</h2>
       </div>
       <div class="card-content">
-        <form class="form">
+        <form [formGroup]="form" class="form">
           <label class="full-width">
             <span>Pays/Région <span class="red">*</span></span>
-            <select required>
-              <option value="pays1">Gabon</option>
-              <option value="pays2">Congo</option>
-              <option value="pays3">Sénégal</option>
+            <select required formControlName="pays">
+              <option value="Gabon">Gabon</option>
+              <option value="Congo">Congo</option>
+              <option value="Senegal">Sénégal</option>
             </select>
           </label>
           <label class="full-width">
             <span>Ville <span class="red">*</span></span>
-            <input type="text" placeholder="Entrez la ville" required />
+            <input
+              type="text"
+              formControlName="ville"
+              placeholder="Champ obligatoire"
+            />
           </label>
           <label class="full-width">
             <span>Quartier <span class="red">*</span></span>
-            <input type="text" placeholder="Entrez le quartier" required />
+            <input
+              type="text"
+              formControlName="quartier"
+              placeholder="Champ obligatoire"
+            />
           </label>
           <label class="full-width">
             <span>Adresse <span class="red">*</span></span>
-            <input type="text" placeholder="Entrez l'adresse" required />
+            <input
+              type="text"
+              formControlName="adresse"
+              placeholder="Champ obligatoire"
+            />
           </label>
           <label class="full-width">
             <span>Téléphone (structure) <span class="red">*</span></span>
             <input
               type="tel"
-              placeholder="Entrez le numéro de téléphone"
-              required
+              formControlName="telephone"
+              placeholder="Champ obligatoire"
             />
           </label>
         </form>

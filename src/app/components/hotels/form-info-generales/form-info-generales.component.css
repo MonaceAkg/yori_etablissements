@@ -42,7 +42,8 @@
   flex-grow: 1;
 }
 
-.red {
+.red,
+.error-message {
   color: red !important;
 }
 
