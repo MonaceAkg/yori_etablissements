@@ -1,32 +1,46 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { StepFormInterface } from '../../../interfaces/step-form.interface';
 
 @Component({
   selector: 'app-type-etablissement',
   standalone: true,
-  imports: [
-    MatSelectModule,
-    FormsModule,
-    CommonModule,
-  ],
+  imports: [MatSelectModule, FormsModule, CommonModule, ReactiveFormsModule],
   templateUrl: './nom-structure.component.html',
-  styleUrl: './nom-structure.component.css'
+  styleUrl: './nom-structure.component.css',
 })
-export class NomStructureComponent { 
+export class NomStructureComponent implements OnInit, StepFormInterface  {
+  form!: FormGroup;
 
-  favoriteSeason: string | undefined;
-  seasons: string[] = ['N/A', '1 étoile', '2 étoiles', '3 étoiles', '4 étoiles', '5 étoiles'];
-  breakfastServed: any;
+  constructor(private fb: FormBuilder) {}
 
-  getStarArray(): number[] {
-    if (!this.favoriteSeason || this.favoriteSeason === 'N/A') {
-      return [];
-    }
-    const starCount = parseInt(this.favoriteSeason.split(' ')[0], 10);
-    return Array(starCount).fill(0);
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      type_propriete: ['', Validators.required],
+      etablissement_name: ['', Validators.required],
+      description: ['', Validators.required],
+      stars: ['', Validators.required],
+    });
   }
 
+  // Méthode pour exposer la validité du formulaire
+  isValid(): boolean {
+    this.form.markAllAsTouched();
+    return this.form.valid;
+  }
 
+  // Méthode pour récupérer les données
+  getData() {
+    return this.form.value;
+  }
+
+  
 }
