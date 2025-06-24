@@ -12,10 +12,24 @@
   width: 100%;
 }
 
+.form-group {
+  display: grid;
+  padding: 10px 0;
+}
+
 .main-card {
+  margin: 10px;
+  padding: 20px;
   background-color: white;
   width: 582px;
   border-radius: 10px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .example-radio-group {
@@ -38,12 +52,70 @@ mat-card-header {
   font-weight: 500;
 }
 
-mat-card-title {
+label {
   font-weight: 500;
 }
 
-label {
-  font-weight: 500;
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet le retour à la ligne */
+  gap: 10px; /* Espacement entre les boîtes */
+  justify-content: flex-start; /* Alignement à gauche */
+}
+
+.checkbox-box {
+  min-width: 120px; /* Largeur minimale pour éviter que ça soit trop petit */
+  /* padding: 10px 15px; */
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+  box-sizing: border-box;
+  height: 50px; /* Hauteur réduite */
+  line-height: 50px; /* Centrage vertical du texte */
+  overflow: hidden;
+}
+
+/* Cache la checkbox native */
+.checkbox-box input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Style quand cochée */
+.checkbox-box input[type="checkbox"]:checked + .checkbox-label-text {
+  background-color: #3f51b5;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  height: 100%;
+  padding: 0 10px;
+}
+
+/* Effet au survol */
+.checkbox-box:hover {
+  border-color: #3f51b5;
+}
+
+.checkbox-legend {
+  margin: 20px 0;
+}
+
+legend {
+  font-weight: bold;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #000000;
 }
 
 @media (max-width: 768px) {

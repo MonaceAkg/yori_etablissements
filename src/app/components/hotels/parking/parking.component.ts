@@ -1,51 +1,63 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatCardContent, MatCardTitle, MatCardHeader } from '@angular/material/card';
-import { MatDivider } from '@angular/material/divider';
-import { MatMenu, MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { Component, OnInit  } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
+import { StepFormInterface } from '../../../interfaces/step-form.interface';
 
 @Component({
   selector: 'app-parking',
   standalone: true,
   imports: [
-    MatCardContent,
-    MatCardTitle,
-    MatCardHeader,
     MatRadioModule,
     FormsModule,
-    MatDivider,
     CommonModule,
-    MatMenu,
-    MatMenuTrigger,
-    MatMenuModule
-  ],
+    MatMenuModule,
+    ReactiveFormsModule
+],
   templateUrl: './parking.component.html',
   styleUrl: './parking.component.css' 
 })
-export class ParkingComponent {
-  breakfastServed: string | undefined;
-  breakfastIncluded: string | undefined;
 
-  // Liste des types de petit-déjeuner
-  breakfastTypes: string[] = [
-    'A la carte',
-    'Africain',
-    'Americain',
-    'Asiatique',
-    'Buffet',
-    'Petit déjeuner à emporter',
-    'Continental',
-    'Végétalien',
-    'Casher',
-    'Végétarien',
-    'Sans gluten',
-    'Halal',
-    'Anglais / irlandais complet'
-  ];
 
-  // Liste des indices où un retour à la ligne est souhaité
-  lineBreakIndices: number[] = [4, 8]; // Les indices après "Buffet" et "Casher"
+export class ParkingComponent implements OnInit, StepFormInterface {
+  form!: FormGroup;
 
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.form = this.fb.group({
+      parkingAccess: ['', Validators.required],          // Equivalent à breakfastServed
+      reservationRequired: [''],                          // Réservation parking (conditionnel)
+      parkingLocation: [''],                              // Emplacement parking (conditionnel)
+      parkingType: [''],                                  // Type de parking (conditionnel)
+      parkingCost: [''],                                  // Coût parking (si moyennant)
+      parkingCostUnit: ['heure']                          // Unité coût (ex: par heure)
+    });
+
+    // Reset des champs conditionnels selon parkingAccess
+    this.form.get('parkingAccess')!.valueChanges.subscribe(value => {
+      if (value !== 'Oui' && value !== 'Moyennant') {
+        this.form.patchValue({
+          reservationRequired: '',
+          parkingLocation: '',
+          parkingType: '',
+          parkingCost: ''
+        });
+      }
+      if (value !== 'Moyennant') {
+        this.form.patchValue({ parkingCost: '' });
+      }
+    });
+  }
+
+  isValid(): boolean {
+    this.form.markAllAsTouched();
+    return this.form.valid;
+  }
+
+  getData() {
+    return this.form.value;
+  }
 }
+ 
