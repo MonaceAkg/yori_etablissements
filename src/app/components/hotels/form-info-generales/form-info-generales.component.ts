@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { Router } from '@angular/router';
 import { GoogleMapComponent } from '../google-map/google-map.component';
+import { StepFormInterface } from '../../../interfaces/step-form.interface';
 
 
 @Component({
@@ -21,7 +22,7 @@ import { GoogleMapComponent } from '../google-map/google-map.component';
   templateUrl: './form-info-generales.component.html',
   styleUrl: './form-info-generales.component.css',
 })
-export class FormInfoGeneralesComponent implements OnInit {
+export class FormInfoGeneralesComponent implements OnInit, StepFormInterface  {
   form!: FormGroup;
   constructor(private router: Router, private fb: FormBuilder) { }
 
