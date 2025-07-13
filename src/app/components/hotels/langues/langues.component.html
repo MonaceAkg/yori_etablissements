@@ -1,23 +1,30 @@
-<form action="">
+<form [formGroup]="form">
   <div class="container">
     <div class="main-card" id="grand">
-      <mat-card-header>
-        <mat-card-title>Quelles langues parlez-vous <br>(vous ou votre personnel)?</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-
-        <div *ngFor="let option of options" style="margin: 20px;">
-          <input
-            type="checkbox"
-            [value]="option"
-            (change)="onSelect(option, $event)"
-            id="{{option}}">
-          <label for="{{option}}">{{option}}</label>
+      <h2>Quelles langues parlez-vous <br />(vous ou votre personnel) ?</h2>
+      <section>
+        <div class="checkbox-group">
+          <div *ngFor="let langue of languagedOptions; let i = index">
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                [formControl]="getLanguageControl(i)"
+                
+              />
+              {{ langue }}
+            </label>
+          </div>
+          <div
+            *ngIf="
+              languagedOptionsArray.touched &&
+              getSelectedLanguages().length === 0
+            "
+            style="color: red"
+          >
+            Au moins une langue doit être sélectionnée.
+          </div>
         </div>
-
-        <p>Options sélectionnées : {{selectedOptions.join(', ')}}</p>
-      </mat-card-content>
+      </section>
     </div>
   </div>
-
 </form>

@@ -9,13 +9,15 @@
 }
 
 .main-card {
+  padding:20px;
   flex: 1 1 100%;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
-label {
-  margin-left: 10px;
+.checkbox-label{
+  font-size: 16px;
+  margin-top: 30px;
 }
 
 @media (max-width: 768px) {

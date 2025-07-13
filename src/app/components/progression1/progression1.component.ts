@@ -77,7 +77,7 @@ export class Progression1Component {
 nextTab() {
   const currentForm = this.stepForms.toArray()[this.activeTabIndex];
   if (currentForm && currentForm.isValid()) {
-    if (this.activeTabIndex < 3) {  // Limite aux deux premiers onglets (index 0 et 1)
+    if (this.activeTabIndex < 5) {  // Limite aux deux premiers onglets (index 0 et 1)
       this.activeTabIndex++;
     } else {
       // Après le deuxième onglet, appelle submit pour voir les données

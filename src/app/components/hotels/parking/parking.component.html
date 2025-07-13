@@ -1,112 +1,126 @@
 <div class="container">
   <form [formGroup]="form">
     <div class="main-card">
-      <header>
+      <header class="header">
         <h2 class="title">
           Parlez-nous des options de stationnement pour votre établissement
         </h2>
       </header>
-
-      <section>
-        <label>Les clients ont-ils accès à un parking ?</label><br />
-        <label
-          ><input type="radio" formControlName="parkingAccess" value="Oui" />
-          Oui, gratuitement</label
-        ><br />
-        <label
-          ><input
-            type="radio"
-            formControlName="parkingAccess"
-            value="Moyennant"
-          />
-          Oui, moyennant un supplément</label
-        ><br />
-        <label
-          ><input type="radio" formControlName="parkingAccess" value="Non" />
-          Non</label
-        ><br />
-        <div
-          *ngIf="
-            form.controls['parkingAccess'].touched ||
-            form.controls['parkingAccess'].invalid
-          "
-          style="color: red"
-        >
-          Ce champ est obligatoire.
-        </div>
-      </section>
-
-      <section
-        *ngIf="
-          form.value.parkingAccess === 'Oui' ||
-          form.value.parkingAccess === 'Moyennant'
-        "
-      >
-        <hr />
-        <section *ngIf="form.value.parkingAccess === 'Moyennant'">
-          <hr />
-          <label>Combien coûte le parking ?</label><br />
-          <input
-            type="number"
-            formControlName="parkingCost"
-            placeholder="Montant en FCA"
-            min="0"
-          /><br />
+      <div>
+        <section>
+          <h3 class="label-first">Les clients ont-ils accès à un parking ?</h3>
+          <br />
           <label>
-            <select formControlName="parkingCostUnit">
-              <option value="heure">par heure</option>
-              <option value="jour">par jour</option>
-              <option value="semaine">par semaine</option>
-            </select>
-          </label>
+            <input
+              type="radio"
+              formControlName="parkingAccess"
+              value="Oui, gratuitement"
+            />
+            Oui, gratuitement </label
+          ><br />
+          <label>
+            <input
+              type="radio"
+              formControlName="parkingAccess"
+              value="Oui, moyennant un supplément"
+            />
+            Oui, moyennant un supplément </label
+          ><br />
+          <label>
+            <input type="radio" formControlName="parkingAccess" value="Non" />
+            Non </label
+          ><br />
         </section>
-        <label>Est-il nécessaire de réserver une place de parking ?</label
-        ><br />
-        <label
-          ><input
-            type="radio"
-            formControlName="reservationRequired"
-            value="Oui"
-          />
-          Réservation nécessaire</label
-        ><br />
-        <label
-          ><input
-            type="radio"
-            formControlName="reservationRequired"
-            value="Non"
-          />
-          Sans réservation</label
-        ><br />
 
-        <label>Où se situe le parking ?</label><br />
-        <label
-          ><input
-            type="radio"
-            formControlName="parkingLocation"
-            value="Sur place"
-          />
-          Sur place</label
-        ><br />
-        <label
-          ><input
-            type="radio"
-            formControlName="parkingLocation"
-            value="À proximité"
-          />
-          À proximité</label
-        ><br />
+        <section
+          *ngIf="
+            form.value.parkingAccess === 'Oui, gratuitement' ||
+            form.value.parkingAccess === 'Oui, moyennant un supplément'
+          "
+        >
+          <hr />
+          <h3 class="title-label">
+            Est-il nécessaire de réserver une place de parking ?
+          </h3>
+          <br />
+          <div class="radio-group">
+            <label>
+              <input
+                type="radio"
+                formControlName="reservationRequired"
+                value="Oui"
+              />
+              Réservation nécessaire </label
+            ><br />
+            <label>
+              <input
+                type="radio"
+                formControlName="reservationRequired"
+                value="Non"
+              />
+              Sans réservation </label
+            ><br />
+          </div>
 
-        <label>De quel type de parking s'agit-il ?</label><br />
-        <label
-          ><input type="radio" formControlName="parkingType" value="Privé" />
-          Privé</label
-        ><br />
-        <label
-          ><input type="radio" formControlName="parkingType" value="Public" />
-          Public</label
-        ><br />
-      </section>
+          <h3 class="title-label">Où se situe le parking ?</h3>
+          <br />
+          <div class="radio-group">
+            <label>
+              <input
+                type="radio"
+                formControlName="parkingLocation"
+                value="Sur place"
+              />
+              Sur place </label
+            ><br />
+            <label>
+              <input
+                type="radio"
+                formControlName="parkingLocation"
+                value="À proximité"
+              />
+              À proximité </label
+            ><br />
+          </div>
+
+          <h3 class="title-label">De quel type de parking s'agit-il ?</h3>
+          <br />
+          <div class="radio-group">
+            <label>
+              <input type="radio" formControlName="parkingType" value="Privé" />
+              Privé </label
+            ><br />
+            <label>
+              <input
+                type="radio"
+                formControlName="parkingType"
+                value="Public"
+              />
+              Public </label
+            ><br />
+          </div>
+
+          <section
+            *ngIf="form.value.parkingAccess === 'Oui, moyennant un supplément'"
+          >
+            <hr />
+            <label>Combien coûte le parking ?</label><br />
+            <input
+              type="number"
+              formControlName="parkingCost"
+              placeholder="Montant en FCA"
+              min="0"
+            /><br />
+            <label>
+              <select formControlName="parkingCostUnit">
+                <option value="heure">par heure</option>
+                <option value="jour">par jour</option>
+                <option value="semaine">par semaine</option>
+              </select>
+            </label>
+          </section>
+        </section>
+      </div>
     </div>
   </form>
 </div>
