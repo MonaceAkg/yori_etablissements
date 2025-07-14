@@ -3,10 +3,11 @@
     <mat-tab-group
       (selectedTabChange)="onTabChange($event)"
       [selectedIndex]="activeTabIndex"
+      (click)="preventTabClick($event)"
     >
       <mat-tab>
         <ng-template mat-tab-label>
-          <div class="circle-container">
+          <div class="circle-container" (click)="preventTabClick($event)">
             <div class="circle" [ngClass]="{ active: activeTabIndex >= 0 }">
               1
             </div>
@@ -18,7 +19,7 @@
 
       <mat-tab>
         <ng-template mat-tab-label>
-          <div class="circle-container">
+          <div class="circle-container" (click)="preventTabClick($event)">
             <div class="circle" [ngClass]="{ active: activeTabIndex >= 1 }">
               2
             </div>
@@ -30,7 +31,7 @@
 
       <mat-tab>
         <ng-template mat-tab-label>
-          <div class="circle-container">
+          <div class="circle-container" (click)="preventTabClick($event)">
             <div class="circle" [ngClass]="{ active: activeTabIndex >= 2 }">
               3
             </div>
@@ -42,7 +43,7 @@
 
       <mat-tab>
         <ng-template mat-tab-label>
-          <div class="circle-container">
+          <div class="circle-container" (click)="preventTabClick($event)">
             <div class="circle" [ngClass]="{ active: activeTabIndex >= 3 }">
               4
             </div>
@@ -54,7 +55,7 @@
 
       <mat-tab>
         <ng-template mat-tab-label>
-          <div class="circle-container">
+          <div class="circle-container" (click)="preventTabClick($event)">
             <div class="circle" [ngClass]="{ active: activeTabIndex >= 4 }">
               5
             </div>
@@ -66,7 +67,7 @@
 
       <mat-tab>
         <ng-template mat-tab-label>
-          <div class="circle-container">
+          <div class="circle-container" (click)="preventTabClick($event)">
             <div class="circle" [ngClass]="{ active: activeTabIndex >= 5 }">
               6
             </div>
@@ -78,19 +79,19 @@
 
       <mat-tab>
         <ng-template mat-tab-label>
-          <div class="circle-container">
+          <div class="circle-container" (click)="preventTabClick($event)">
             <div class="circle" [ngClass]="{ active: activeTabIndex >= 6 }">
               7
             </div>
             <div class="circle-title">Politique de l'etablissement</div>
           </div>
         </ng-template>
-        <app-politique></app-politique>
+        <app-politique #stepForm></app-politique>
       </mat-tab>
 
       <mat-tab>
         <ng-template mat-tab-label>
-          <div class="circle-container">
+          <div class="circle-container" (click)="preventTabClick($event)">
             <div class="circle" [ngClass]="{ active: activeTabIndex >= 7 }">
               8
             </div>

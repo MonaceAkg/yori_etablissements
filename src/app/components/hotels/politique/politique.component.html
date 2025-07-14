@@ -1,82 +1,192 @@
-<div class="container">
-  <div class="main-card" id="grand">
+<form [formGroup]="form">
+  <div class="container">
+    <div class="main-card" id="grand">
       <h2>Politique de l'établissement</h2>
-    <div>
-      <label class="">Politique d'annulation</label><br>
-      <mat-radio-group
-        aria-labelledby=""
-        class="example-radio-group"
-        [(ngModel)]="breakfastServed">
-        <mat-radio-button class="example-radio-button" value="Oui">Remboursable</mat-radio-button><br>
-        <div *ngIf="breakfastServed === 'Oui'">
-          <label class="">Écrivez une condition de remboursement</label>
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>Message</mat-label>
-              <input matInput #message maxlength="256" placeholder="...">
-              <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-            </mat-form-field> 
-          </form>
+      <section>
+        <label class="title-label">Politique d'annulation</label><br />
+        <div class="radio-group">
+          <label>
+            <input type="radio" formControlName="cancellationPolicy" value="Oui" />
+            Remboursable
+          </label><br />
+          <label>
+            <input type="radio" formControlName="cancellationPolicy" value="Non" />
+            Non remboursable
+          </label><br />
+          <div
+            *ngIf="
+              form.controls['cancellationPolicy'].touched &&
+              form.controls['cancellationPolicy'].invalid
+            "
+            style="color: red"
+          >
+            Ce champ est obligatoire.
+          </div>
         </div>
-        <mat-radio-button class="example-radio-button" value="Non">Non remboursable</mat-radio-button>
-      </mat-radio-group>
 
-      <p>Quels sont vos horaires d'arrivée et de départ ?</p>
-      <div class="form-section">
-        <p>Arrivée</p>
-        <div class="time-selector">
-          <label for="arrival-start">De :</label>
-          <input type="time" id="arrival-start" name="arrival-start" min="06:00" max="12:00" placeholder="Ex: 08:00">
-          <label for="arrival-end">À :</label>
-          <input type="time" id="arrival-end" name="arrival-end" min="06:00" max="12:00" placeholder="Ex: 11:30">
+        <div *ngIf="form.value.cancellationPolicy === 'Oui'">
+          <label class="title-label">Écrivez une condition de remboursement</label>
+          <div class="form-section">
+            <input
+              type="text"
+              formControlName="cancellationCondition"
+              placeholder="..."
+              maxlength="256"
+            />
+            <div class="hint">{{ form.value.cancellationCondition?.length || 0 }} / 256</div>
+            <div
+              *ngIf="
+                form.controls['cancellationCondition'].touched &&
+                form.controls['cancellationCondition'].invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire.
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="form-section">
-        <p>Départ</p>
-        <div class="time-selector">
-          <label for="departure-start">De :</label>
-          <input type="time" id="departure-start" name="departure-start" min="18:00" max="23:00" placeholder="Ex: 19:00">
-          <label for="departure-end">À :</label>
-          <input type="time" id="departure-end" name="departure-end" min="18:00" max="23:00" placeholder="Ex: 22:30">
+      <hr />
+
+      <section>
+        <p class="title-label">Quels sont vos horaires d'arrivée et de départ ?</p>
+        <div class="form-section">
+          <p>Arrivée</p>
+          <div class="time-selector">
+            <label for="arrival-start">De :</label>
+            <input
+              type="time"
+              id="arrival-start"
+              formControlName="arrivalStart"
+              [min]="minArrivalTime"
+              [max]="maxArrivalTime"
+              placeholder="Ex: 08:00"
+            />
+            <div
+              *ngIf="
+                form.controls['arrivalStart'].touched &&
+                form.controls['arrivalStart'].invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire.
+            </div>
+            <label for="arrival-end">À :</label>
+            <input
+              type="time"
+              id="arrival-end"
+              formControlName="arrivalEnd"
+              [min]="minArrivalTime"
+              [max]="maxArrivalTime"
+              placeholder="Ex: 11:30"
+            />
+            <div
+              *ngIf="
+                form.controls['arrivalEnd'].touched &&
+                form.controls['arrivalEnd'].invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire.
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- <mat-divider></mat-divider> -->
-       <hr>
+        <div class="form-section">
+          <p>Départ</p>
+          <div class="time-selector">
+            <label for="departure-start">De :</label>
+            <input
+              type="time"
+              id="departure-start"
+              formControlName="departureStart"
+              [min]="minDepartureTime"
+              [max]="maxDepartureTime"
+              placeholder="Ex: 19:00"
+            />
+            <div
+              *ngIf="
+                form.controls['departureStart'].touched &&
+                form.controls['departureStart'].invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire.
+            </div>
+            <label for="departure-end">À :</label>
+            <input
+              type="time"
+              id="departure-end"
+              formControlName="departureEnd"
+              [min]="minDepartureTime"
+              [max]="maxDepartureTime"
+              placeholder="Ex: 22:30"
+            />
+            <div
+              *ngIf="
+                form.controls['departureEnd'].touched &&
+                form.controls['departureEnd'].invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire.
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <label class="">Acceptez-vous les enfants ?</label>
-      <mat-radio-group
-        aria-labelledby=""
-        class="example-radio-group"
-        [(ngModel)]="childrenAccepted"><br>
-        <mat-radio-button class="example-radio-button" value="Oui">Oui</mat-radio-button><br>
-        <mat-radio-button class="example-radio-button" value="Non">Non</mat-radio-button><br>
-      </mat-radio-group>
+      <hr />
 
-      <label class="">Acceptez-vous les animaux domestiques ?</label><br>
-      <mat-radio-group
-        aria-labelledby=""
-        class="example-radio-group"
-        [(ngModel)]="petsAccepted">
-        <mat-radio-button class="example-radio-button" value="Oui">Oui</mat-radio-button><br>
-        <mat-radio-button class="example-radio-button" value="Sur demande">Sur demande</mat-radio-button><br>
-        <mat-radio-button class="example-radio-button" value="Non">Non</mat-radio-button><br>
-      </mat-radio-group>
+      <section>
+        <label class="title-label">Acceptez-vous les enfants ?</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" formControlName="childrenAccepted" value="Oui" />
+            Oui
+          </label><br />
+          <label>
+            <input type="radio" formControlName="childrenAccepted" value="Non" />
+            Non
+          </label><br />
+          <div
+            *ngIf="
+              form.controls['childrenAccepted'].touched &&
+              form.controls['childrenAccepted'].invalid
+            "
+            style="color: red"
+          >
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <label class="title-label">Acceptez-vous les animaux domestiques ?</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" formControlName="petsAccepted" value="Oui" />
+            Oui
+          </label><br />
+          <label>
+            <input type="radio" formControlName="petsAccepted" value="Sur demande" />
+            Sur demande
+          </label><br />
+          <label>
+            <input type="radio" formControlName="petsAccepted" value="Non" />
+            Non
+          </label><br />
+          <div
+            *ngIf="
+              form.controls['petsAccepted'].touched &&
+              form.controls['petsAccepted'].invalid
+            "
+            style="color: red"
+          >
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </section>
     </div>
   </div>
-
-  <div class="sub-card">
-    <div id="haut">
-      <div>
-        <span class="material-symbols-outlined">lightbulb</span>
-        <p>Comment modifier mes règles de mon hôtel ?</p>
-      </div>
-      <mat-card-content>
-        <ul>
-          <li>Une fois votre inscription terminée, vous pourrez facilement personnaliser vos règles grâce aux options supplémentaires disponibles sur la page «Conditions» de votre extranet.</li>
-        </ul>
-      </mat-card-content>
-    </div>
-  </div>
-</div>
+</form>
