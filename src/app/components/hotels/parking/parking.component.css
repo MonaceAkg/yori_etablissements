@@ -1,5 +1,7 @@
 .container {
   display: flex;
+    padding: 10px;
+
   margin: 25px 25px 10px 0;
   width: 65%;
   border-radius: 10px;
@@ -7,14 +9,23 @@
   background-color: rgb(255, 255, 255);
 }
 
+.header {
+  padding-bottom: 40px;
+}
+
+.label-first{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.title-label{
+  margin-top: 20px;
+}
 
 .main-card {
   padding: 10px;
   border-radius: 10px;
 }
-
-
-
 
 @media (max-width: 768px) {
   .container {

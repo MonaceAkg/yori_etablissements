@@ -32,7 +32,7 @@ export class CommoditesComponent implements OnInit, StepFormInterface {
   ];
 
   filteredShoes: string[] = [];
-  form!: FormGroup;
+  form!: FormGroup; 
 
   constructor(private fb: FormBuilder) {}
 
@@ -40,7 +40,7 @@ export class CommoditesComponent implements OnInit, StepFormInterface {
     this.filteredShoes = [...this.typesOfShoes];
 
     this.form = this.fb.group({
-      searchTerm: [''],
+      searchTerm: [''], 
       selectedShoes: [[], Validators.required]  // tableau des options sélectionnées, obligatoire
     });
   }

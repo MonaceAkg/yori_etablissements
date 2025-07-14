@@ -14,15 +14,6 @@
             Non
           </label>
         </div>
-        <div
-          *ngIf="
-            form.controls['breakfastServed'].touched ||
-            form.controls['breakfastServed'].invalid
-          "
-          style="color: red"
-        >
-          Ce champ est obligatoire.
-        </div>
       </div>
 
       <div *ngIf="form.value.breakfastServed === 'Oui'">
@@ -48,16 +39,6 @@
               Non, il est en supplément.
             </label>
           </div>
-
-          <div
-            *ngIf="
-              form.controls['breakfastIncluded'].touched ||
-              form.controls['breakfastIncluded'].invalid
-            "
-            style="color: red"
-          >
-            Ce champ est obligatoire.
-          </div>
         </div>
         <hr />
         <div>
@@ -81,5 +62,4 @@
       </div>
     </div>
   </form>
-
 </div>
