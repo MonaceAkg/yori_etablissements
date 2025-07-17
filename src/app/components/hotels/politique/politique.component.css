@@ -17,6 +17,22 @@
   border-radius: 10px;
 }
 
+.title1 {
+  margin-bottom: 20px;
+}
+
+.title-label {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.radio-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
 .example-radio-group-label {
   margin: 10px 0;
 }
