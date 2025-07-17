@@ -1,126 +1,180 @@
 <div class="container">
   <form [formGroup]="form">
     <div class="main-card">
-      <header class="header">
-        <h2 class="title">
-          Parlez-nous des options de stationnement pour votre établissement
-        </h2>
-      </header>
-      <div>
-        <section>
-          <h3 class="label-first">Les clients ont-ils accès à un parking ?</h3>
-          <br />
+      <h2>Parking de l'établissement</h2>
+      <section>
+        <h3 class="label-first">Les clients ont-ils accès à un parking ?</h3>
+        <div class="radio-group">
           <label>
             <input
               type="radio"
               formControlName="parkingAccess"
-              value="Oui, gratuitement"
+              value="Oui, gratuitement" 
+              name="parkingAccess"
             />
-            Oui, gratuitement </label
-          ><br />
-          <label>
+            Oui, gratuitement
+          </label><br />
+          <div class="radio-option">
+            <label>
             <input
               type="radio"
               formControlName="parkingAccess"
               value="Oui, moyennant un supplément"
+              name="parkingAccess"
             />
-            Oui, moyennant un supplément </label
-          ><br />
+            Oui, moyennant un supplément
+          </label>
+          </div>
           <label>
-            <input type="radio" formControlName="parkingAccess" value="Non" />
-            Non </label
-          ><br />
-        </section>
-
-        <section
-          *ngIf="
-            form.value.parkingAccess === 'Oui, gratuitement' ||
-            form.value.parkingAccess === 'Oui, moyennant un supplément'
-          "
-        >
-          <hr />
-          <h3 class="title-label">
-            Est-il nécessaire de réserver une place de parking ?
-          </h3>
-          <br />
-          <div class="radio-group">
-            <label>
-              <input
-                type="radio"
-                formControlName="reservationRequired"
-                value="Oui"
-              />
-              Réservation nécessaire </label
-            ><br />
-            <label>
-              <input
-                type="radio"
-                formControlName="reservationRequired"
-                value="Non"
-              />
-              Sans réservation </label
-            ><br />
-          </div>
-
-          <h3 class="title-label">Où se situe le parking ?</h3>
-          <br />
-          <div class="radio-group">
-            <label>
-              <input
-                type="radio"
-                formControlName="parkingLocation"
-                value="Sur place"
-              />
-              Sur place </label
-            ><br />
-            <label>
-              <input
-                type="radio"
-                formControlName="parkingLocation"
-                value="À proximité"
-              />
-              À proximité </label
-            ><br />
-          </div>
-
-          <h3 class="title-label">De quel type de parking s'agit-il ?</h3>
-          <br />
-          <div class="radio-group">
-            <label>
-              <input type="radio" formControlName="parkingType" value="Privé" />
-              Privé </label
-            ><br />
-            <label>
-              <input
-                type="radio"
-                formControlName="parkingType"
-                value="Public"
-              />
-              Public </label
-            ><br />
-          </div>
-
-          <section
-            *ngIf="form.value.parkingAccess === 'Oui, moyennant un supplément'"
+            <input
+              type="radio"
+              formControlName="parkingAccess"
+              value="Non"
+              name="parkingAccess"
+            />
+            Non
+          </label><br />
+          <div
+            *ngIf="
+              form.controls['parkingAccess']?.touched &&
+              form.controls['parkingAccess']?.invalid
+            "
+            style="color: red"
           >
-            <hr />
-            <label>Combien coûte le parking ?</label><br />
+            Ce champ est obligatoire.
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="form.value.parkingAccess === 'Oui, gratuitement' || form.value.parkingAccess === 'Oui, moyennant un supplément'">
+        <hr />
+        <h3 class="label-first">Réservation requise ?</h3>
+        <div class="radio-group">
+          <label>
+            <input
+              type="radio"
+              formControlName="reservationRequired"
+              value="Oui"
+              name="reservationRequired"
+            />
+            Oui
+          </label><br />
+          <label>
+            <input
+              type="radio"
+              formControlName="reservationRequired"
+              value="Non"
+              name="reservationRequired"
+            />
+            Non
+          </label><br />
+          <div
+            *ngIf="
+              form.controls['reservationRequired']?.touched &&
+              form.controls['reservationRequired']?.invalid
+            "
+            style="color: red"
+          >
+            Ce champ est obligatoire.
+          </div>
+        </div>
+
+        <h3 class="label-first">Emplacement du parking</h3>
+        <div class="radio-group">
+          <label>
+            <input
+              type="radio"
+              formControlName="parkingLocation"
+              value="Sur place"
+              name="parkingLocation"
+            />
+            Sur place
+          </label><br />
+          <label>
+            <input
+              type="radio"
+              formControlName="parkingLocation"
+              value="À proximité"
+              name="parkingLocation"
+            />
+            À proximité
+          </label><br />
+          <div
+            *ngIf="
+              form.controls['parkingLocation']?.touched &&
+              form.controls['parkingLocation']?.invalid
+            "
+            style="color: red"
+          >
+            Ce champ est obligatoire.
+          </div>
+        </div>
+
+        <h3 class="label-first">Type de parking</h3>
+        <div class="radio-group">
+          <label>
+            <input
+              type="radio"
+              formControlName="parkingType"
+              value="Public"
+              name="parkingType"
+            />
+            Public
+          </label><br />
+          <label>
+            <input
+              type="radio"
+              formControlName="parkingType"
+              value="Privé"
+              name="parkingType"
+            />
+            Privé
+          </label><br />
+          <div
+            *ngIf="
+              form.controls['parkingType']?.touched &&
+              form.controls['parkingType']?.invalid
+            "
+            style="color: red"
+          >
+            Ce champ est obligatoire.
+          </div>
+        </div>
+
+        <div class="form-section" *ngIf="form.value.parkingAccess === 'Oui, moyennant un supplément'">
+          <label for="parking-cost">Coût du parking</label>
+          <div class="cost-group">
             <input
               type="number"
+              id="parking-cost"
               formControlName="parkingCost"
-              placeholder="Montant en FCA"
+              placeholder="Ex: 10"
               min="0"
-            /><br />
-            <label>
-              <select formControlName="parkingCostUnit">
-                <option value="heure">par heure</option>
-                <option value="jour">par jour</option>
-                <option value="semaine">par semaine</option>
-              </select>
-            </label>
-          </section>
-        </section>
-      </div>
+            />
+            <select formControlName="parkingCostUnit">
+              <option *ngFor="let unit of parkingCostUnits" [value]="unit">{{ unit }}</option>
+            </select>
+          </div>
+          <div
+            *ngIf="
+              form.controls['parkingCost']?.touched &&
+              form.controls['parkingCost']?.invalid
+            "
+            style="color: red"
+          >
+            Ce champ est obligatoire et doit être un nombre positif.
+          </div>
+          <div
+            *ngIf="
+              form.controls['parkingCostUnit']?.touched &&
+              form.controls['parkingCostUnit']?.invalid
+            "
+            style="color: red"
+          >
+            L'unité de coût est obligatoire.
+          </div>
+        </div>
+      </section>
     </div>
-  </form>
+</form>
 </div>

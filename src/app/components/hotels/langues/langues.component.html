@@ -1,15 +1,17 @@
 <form [formGroup]="form">
   <div class="container">
     <div class="main-card" id="grand">
-      <h2>Quelles langues parlez-vous <br />(vous ou votre personnel) ?</h2>
+      <div class="title">
+        <h2>Quelles langues parlez-vous <br />(vous ou votre personnel) ?</h2>
+      </div>
       <section>
         <div class="checkbox-group">
           <div *ngFor="let langue of languagedOptions; let i = index">
-            <label class="checkbox-label">
+            <label class="checkbox-label"> 
               <input
                 type="checkbox"
                 [formControl]="getLanguageControl(i)"
-                
+                class="checkbox-input"
               />
               {{ langue }}
             </label>

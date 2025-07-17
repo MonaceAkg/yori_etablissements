@@ -2,80 +2,106 @@
   <div class="main-card">
     <div>
       <div class="card-header">
-        <h3>Quel est le type de votre établissement?</h3>
+        <h3>Quel est le type de votre établissement ?</h3>
       </div>
       <div class="card-content">
         <div class="form">
           <form [formGroup]="form">
             <div class="selection">
-              <label for="property-type">Type de propriété</label>
-              <select
-                id="property-type"
-                formControlName="type_propriete"
-                
-              >
+              <h3 for="property-type" class="label-title">Type de propriété</h3>
+              <div class="select-container">
+                <select id="property-type" formControlName="type_propriete">
                 <option value="" disabled selected>Sélectionnez un type</option>
                 <option value="hotel">Hôtel</option>
                 <option value="motel">Motel</option>
                 <option value="appartement">Appartement</option>
               </select>
-
+              </div>
             </div>
 
             <div class="paragraphe">
-              <label for="establishment-name">Nom de l'établissement</label>
+              <h3 for="establishment-name" class="label-title">Nom de l'établissement</h3>
               <input
                 type="text"
                 formControlName="etablissement_name"
                 id="establishment-name"
-                
                 placeholder="Entrez le nom de l'établissement"
               />
-              <p>
+              <label class="info-text">
                 Nom visible pour les clients lors de la recherche d'hébergement.
-              </p>
+              </label>
             </div>
 
             <div class="description">
-              <label for="description">Description de l'établissement</label>
+              <h3 for="description" class="label-title">Description de l'établissement</h3>
               <textarea
                 formControlName="description"
                 id="description"
                 rows="4"
                 placeholder="Décrivez votre établissement..."
               ></textarea>
-
             </div>
 
             <div class="radio-group">
               <label>Nombre d'étoiles</label>
               <div>
                 <label class="radio-button">
-                  <input type="radio" formControlName="stars" value="na" /> N/A
+                  <input
+                    type="radio"
+                    formControlName="stars"
+                    value="na"
+                    name="stars"
+                  />
+                  N/A
                 </label>
                 <label class="radio-button">
-                  <input type="radio" formControlName="stars" value="1" /> 1
-                  étoile
+                  <input
+                    type="radio"
+                    formControlName="stars"
+                    value="1"
+                    name="stars"
+                  />
+                  1 étoile
                   <span class="star">⭐</span>
                 </label>
                 <label class="radio-button">
-                  <input type="radio" formControlName="stars" value="2" /> 2
-                  étoiles
+                  <input
+                    type="radio"
+                    formControlName="stars"
+                    value="2"
+                    name="stars"
+                  />
+                  2 étoiles
                   <span class="star">⭐⭐</span>
                 </label>
                 <label class="radio-button">
-                  <input type="radio" formControlName="stars" value="3" /> 3
-                  étoiles
+                  <input
+                    type="radio"
+                    formControlName="stars"
+                    value="3"
+                    name="stars"
+                  />
+                  3 étoiles
                   <span class="star">⭐⭐⭐</span>
                 </label>
                 <label class="radio-button">
-                  <input type="radio" formControlName="stars" value="4" /> 4
-                  étoiles
+                  <input
+                    type="radio"
+                    formControlName="stars"
+                    value="4"
+                    name="stars"
+                  />
+                  4 étoiles
                   <span class="star">⭐⭐⭐⭐</span>
                 </label>
                 <label class="radio-button">
-                  <input type="radio" formControlName="stars" value="5" /> 5
-                  étoiles
+                  <input
+                    type="radio"
+                    formControlName="stars"
+                    value="5"
+                    name="stars"
+                  />
+                  5 étoiles
                   <span class="star">⭐⭐⭐⭐⭐</span>
                 </label>
               </div>

@@ -3,7 +3,7 @@
     <mat-tab-group
       (selectedTabChange)="onTabChange($event)"
       [selectedIndex]="activeTabIndex"
-      (click)="preventTabClick($event)"
+      
     >
       <mat-tab>
         <ng-template mat-tab-label>
@@ -124,7 +124,7 @@
       <button (click)="nextTab()" class="btn-suivant">
         prochaine étape <span class="chevron">&#9654;</span>
       </button>
-      <!-- <button (click)="submit()" *ngIf="activeTabIndex === 0">Submit</button> -->
+      
     </div>
   </div>
 </body>

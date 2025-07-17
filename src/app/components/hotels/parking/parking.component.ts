@@ -28,77 +28,76 @@ import { StepFormInterface } from '../../../interfaces/step-form.interface';
 })
 export class ParkingComponent implements OnInit, StepFormInterface {
   form!: FormGroup;
-
-  lineBreakIndices: number[] = [2]; // Pour organiser l'affichage en groupes
+  lineBreakIndices: number[] = [2]; // Conservé, mais non utilisé dans ce contexte
+  parkingCostUnits: string[] = ['heure', 'jour'];
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.fb.group({
-      parkingAccess: ['', Validators.required], // Oui, gratuitement / Oui, moyennant un supplément / Non
-      reservationRequired: [''], // Requis si parkingAccess !== 'Non'
-      parkingLocation: [''], // Requis si parkingAccess !== 'Non'
-      parkingType: [''], // Requis si parkingAccess !== 'Non'
-      parkingCost: [''], // Requis si parkingAccess === 'Oui, moyennant un supplément'
-      parkingCostUnit: ['jour'], // Unité de coût
+      parkingAccess: ['', Validators.required],
+      reservationRequired: [''],
+      parkingLocation: [''],
+      parkingType: [''],
+      parkingCost: [''],
+      parkingCostUnit: ['heure', Validators.required] // Initialisé à 'jour' avec validation
     });
 
-    // Validation conditionnelle basée sur parkingAccess
-    this.form.get('parkingAccess')!.valueChanges.subscribe((value) => {
+    console.log('Formulaire initialisé:', this.form); // Débogage
+
+    // Validation conditionnelle
+    this.form.get('parkingAccess')?.valueChanges.subscribe(value => {
       const reservationControl = this.form.get('reservationRequired');
       const locationControl = this.form.get('parkingLocation');
       const typeControl = this.form.get('parkingType');
       const costControl = this.form.get('parkingCost');
-      const typesArray = this.form.get('parkingTypes') as FormArray;
+      const unitControl = this.form.get('parkingCostUnit');
 
       if (
         value === 'Oui, gratuitement' ||
         value === 'Oui, moyennant un supplément'
       ) {
-        reservationControl!.setValidators([Validators.required]);
-        locationControl!.setValidators([Validators.required]);
-        typeControl!.setValidators([Validators.required]);
-        typesArray.controls.forEach((control) =>
-          control.setValidators([Validators.requiredTrue])
-        );
+        reservationControl?.setValidators([Validators.required]);
+        locationControl?.setValidators([Validators.required]);
+        typeControl?.setValidators([Validators.required]);
       } else {
-        reservationControl!.clearValidators();
-        locationControl!.clearValidators();
-        typeControl!.clearValidators();
-        costControl!.clearValidators();
-        typesArray.controls.forEach((control) => control.clearValidators());
+        reservationControl?.clearValidators();
+        locationControl?.clearValidators();
+        typeControl?.clearValidators();
+        costControl?.clearValidators();
+        unitControl?.clearValidators();
         this.form.patchValue({
           reservationRequired: '',
           parkingLocation: '',
           parkingType: '',
           parkingCost: '',
+          parkingCostUnit: 'jour'
         });
       }
 
       if (value === 'Oui, moyennant un supplément') {
-        costControl!.setValidators([Validators.required, Validators.min(0)]);
+        costControl?.setValidators([Validators.required, Validators.min(0)]);
+        unitControl?.setValidators([Validators.required]);
       } else {
-        costControl!.clearValidators();
-        costControl!.setValue('');
+        costControl?.clearValidators();
+        unitControl?.clearValidators();
+        costControl?.setValue('');
+        unitControl?.setValue('jour');
       }
 
-      reservationControl!.updateValueAndValidity();
-      locationControl!.updateValueAndValidity();
-      typeControl!.updateValueAndValidity();
-      costControl!.updateValueAndValidity();
-      typesArray.updateValueAndValidity();
+      reservationControl?.updateValueAndValidity();
+      locationControl?.updateValueAndValidity();
+      typeControl?.updateValueAndValidity();
+      costControl?.updateValueAndValidity();
+      unitControl?.updateValueAndValidity();
     });
   }
 
-  get parkingTypesArray(): FormArray {
-    return this.form.get('parkingTypes') as FormArray;
-  }
-
-  getParkingTypeControl(index: number): FormControl {
-    return this.parkingTypesArray.at(index) as FormControl;
-  }
-
   isValid(): boolean {
+    if (!this.form) {
+      console.error('Formulaire non initialisé');
+      return false;
+    }
     this.form.markAllAsTouched();
     return this.form.valid;
   }
@@ -110,7 +109,7 @@ export class ParkingComponent implements OnInit, StepFormInterface {
       parkingLocation: this.form.value.parkingLocation,
       parkingType: this.form.value.parkingType,
       parkingCost: this.form.value.parkingCost,
-      parkingCostUnit: this.form.value.parkingCostUnit,
+      parkingCostUnit: this.form.value.parkingCostUnit
     };
   }
 }

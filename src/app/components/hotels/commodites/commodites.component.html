@@ -1,41 +1,46 @@
 <div class="container">
   <div class="main-card">
-<form [formGroup]="form">
-  <div class="form">
-    <h2 class="titre">
-      Quels équipements proposez-vous dans votre établissement?
-    </h2>
+    <form [formGroup]="form">
+      <div class="form">
+        <h2 class="titre">
+          Quels équipements proposez-vous <br> dans votre établissement?
+        </h2>
 
-    <div style="width: 100%; display: flex; justify-content: center">
-      <input
-        matInput
-        formControlName="searchTerm"
-        (input)="filterList()"
-        placeholder="Tapez pour filtrer..."
-        class="search-input"
-      />
-    </div>
+        <div style="width: 100%; display: flex; justify-content: center">
+          <input
+            matInput
+            formControlName="searchTerm"
+            (input)="filterList()"
+            placeholder="Tapez pour filtrer..."
+            class="search-input"
+          />
+        </div>
 
-    <mat-selection-list formControlName="selectedShoes" multiple>
-      <mat-list-option *ngFor="let shoe of filteredShoes" [value]="shoe">
-        {{ shoe }}
-      </mat-list-option>
-      <mat-list-option *ngIf="filteredShoes.length === 0" disabled>
-        Aucun résultat trouvé
-      </mat-list-option>
-    </mat-selection-list>
+        <mat-selection-list formControlName="selectedShoes" multiple>
+          <mat-list-option *ngFor="let shoe of filteredShoes" [value]="shoe">
+            {{ shoe }}
+          </mat-list-option>
+          <mat-list-option *ngIf="filteredShoes.length === 0" disabled>
+            Aucun résultat trouvé
+          </mat-list-option>
+        </mat-selection-list>
 
-    <div *ngIf="form.controls['selectedShoes'].invalid && form.controls['selectedShoes'].touched" style="color:red">
-      Veuillez sélectionner au moins un équipement.
-    </div>
+        <div
+          *ngIf="
+            form.controls['selectedShoes'].invalid &&
+            form.controls['selectedShoes'].touched
+          "
+          style="color: red"
+        >
+          Veuillez sélectionner au moins un équipement.
+        </div>
 
-    <p class="para">
-      Options sélectionnées: {{ form.controls['selectedShoes'].value?.length || 0 }}
-    </p>
-  </div>
-</form>
-
-
+        <p class="para">
+          Options sélectionnées:
+          {{ form.controls["selectedShoes"].value?.length || 0 }}
+        </p>
+      </div>
+    </form>
   </div>
 
   <div class="sub-card">

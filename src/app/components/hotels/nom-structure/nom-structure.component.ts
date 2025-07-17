@@ -17,7 +17,7 @@ import { StepFormInterface } from '../../../interfaces/step-form.interface';
   templateUrl: './nom-structure.component.html',
   styleUrl: './nom-structure.component.css',
 })
-export class NomStructureComponent implements OnInit, StepFormInterface  {
+export class NomStructureComponent implements OnInit, StepFormInterface {
   form!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -25,22 +25,18 @@ export class NomStructureComponent implements OnInit, StepFormInterface  {
   ngOnInit(): void {
     this.form = this.fb.group({
       type_propriete: ['', Validators.required],
-      etablissement_name: ['', Validators.required],
-      description: ['', Validators.required],
-      stars: ['', Validators.required],
+      etablissement_name: ['', [Validators.required, Validators.minLength(2)]],
+      description: ['', [Validators.required, Validators.maxLength(500)]],
+      stars: ['', Validators.required]
     });
   }
 
-  // Méthode pour exposer la validité du formulaire
   isValid(): boolean {
     this.form.markAllAsTouched();
     return this.form.valid;
   }
 
-  // Méthode pour récupérer les données
   getData() {
     return this.form.value;
   }
-
-  
 }
