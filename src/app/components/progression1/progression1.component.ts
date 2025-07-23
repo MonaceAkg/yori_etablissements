@@ -66,7 +66,7 @@ export class Progression1Component {
   }
 
   // Sélectionne un onglet programmatiquement
-  selectTab(index: number): void {
+  selectTab(index: number): void { 
     this.activeTabIndex = index;
     localStorage.setItem('activeTabIndex', index.toString());
     this.tabGroup.selectedIndex = index;
