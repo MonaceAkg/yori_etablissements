@@ -5,140 +5,201 @@
       <br />
     </div>
     <div class="container">
-      <form>
-        <div style="display: grid">
-          <label for="hebergement">Nom de l'hébergement</label>
-          <select [(ngModel)]="selectedOption" style="width: 50%; height: 150%">
-            <option *ngFor="let option of options" [value]="option.value">
-              {{ option.viewValue }}
-            </option>
-          </select>
-        </div>
+      <form [formGroup]="form">
+        <h2>Type de chambre</h2>
+        <section>
+          <h3 class="label-first">Nom de l'hébergement</h3>
+          <div class="form-section">
+            <select formControlName="hebergement">
+              <option *ngFor="let option of options" [value]="option.value">
+                {{ option.viewValue }}
+              </option>
+            </select>
+            <div
+              *ngIf="
+                form.controls['hebergement']?.touched &&
+                form.controls['hebergement']?.invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire.
+            </div>
+          </div>
+        </section>
 
-        <div style="margin-top: 5%">
-          <p>
-            Combien d'hébergements de ce type (hébergement) <br />
-            possédez-vous?
-          </p>
-          <input
-            type="number"
-            name="number"
-            id="inputNumber"
-            placeholder="0"
-            style="width: 10%; margin-bottom: 20px; height: 150%"
-          />
-        </div>
-        <mat-divider style="margin-bottom: 20px"></mat-divider>
-        <mat-label>Quels lits sont disponibles dans cette catégorie ?</mat-label
-        ><br /><br />
-        <div
-          *ngFor="let lit of lits; let i = index"
-          class="example-card"
-          appearance="outlined"
-        >
-          <div style="display: flex; justify-content: space-between">
-            <div>
-              <div>
-                <div class="lit-info">
-                  <img
-                    mat-card-sm-image
-                    src="assets/img/lit.png"
-                    class="lit-image"
-                  />
-                  <span class="lit-details"
-                    >{{ lit.name }} <br />
-                    {{ lit.size }}</span
+        <section>
+          <h3 class="label-first">
+            Combien d'hébergements de ce type possédez-vous ?
+          </h3>
+          <div class="form-section">
+            <input
+              type="number"
+              formControlName="numberHebergements"
+              placeholder="0"
+              min="1"
+            />
+            <div
+              *ngIf="
+                form.controls['numberHebergements']?.touched &&
+                form.controls['numberHebergements']?.invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire et doit être supérieur ou égal à 1.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="label-first">
+            Quels lits sont disponibles dans cette catégorie ?
+          </h3>
+          <div *ngFor="let lit of lits; let i = index" class="example-card">
+            <div class="lit-container">
+              <div class="lit-info">
+                <img
+                  src="assets/img/lit.png"
+                  class="lit-image"
+                  alt="Icône de lit"
+                />
+                <span class="lit-details">
+                  {{ lit.name }} <br />
+                  {{ lit.size }}
+                </span>
+              </div>
+              <div class="quantity-container">
+                <div class="quantity">
+                  <button
+                    type="button"
+                    (click)="decrementQuantity(i)"
+                    class="btn btn-black"
+                    [disabled]="litsQuantitiesArray.at(i).value <= 0"
                   >
+                    <strong>-</strong>
+                  </button>
+                  <input
+                    class="inputbox"
+                    type="text"
+                    [value]="litsQuantitiesArray.at(i).value"
+                    disabled
+                  />
+                  <button
+                    type="button"
+                    (click)="incrementQuantity(i)"
+                    class="btn btn-blue"
+                  >
+                    <strong>+</strong>
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="quantity-container">
-              <div class="quantity">
-                <button
-                  type="button"
-                  (click)="quantity('min', i)"
-                  class="btn btn-black"
-                  [disabled]="productQuantities[i] <= 1"
-                >
-                  <strong>-</strong>
-                </button>
-                <input
-                  class="inputbox"
-                  type="text"
-                  [value]="productQuantities[i]"
-                  id=""
-                  disabled
-                />
-                <button
-                  type="button"
-                  (click)="quantity('max', i)"
-                  class="btn btn-blue"
-                >
-                  <strong>+</strong>
-                </button>
-              </div>
-            </div>
           </div>
-        </div>
-        <div style="margin: 40px">
-          <p>
-            Combien de personnes peuvent séjourner dans cette catégorie
-            hébergement ?
-          </p>
-          <div class="quantity-container" style="width: 140px">
+          <div
+            *ngIf="litsQuantitiesArray.touched && litsQuantitiesArray.invalid"
+            style="color: red"
+          >
+            Au moins un lit doit être sélectionné.
+          </div>
+        </section>
+
+        <section>
+          <h3 class="label-first">
+            Combien de personnes peuvent séjourner dans cette catégorie ?
+          </h3>
+          <div class="quantity-container quantity-container-personnes">
             <div class="quantity">
               <button
                 type="button"
-                (click)="quantity1('min')"
+                (click)="decrementPersonnes()"
                 class="btn btn-black"
-                [disabled]="productquantity <= 1"
+                [disabled]="form.get('personnes')?.value <= 1"
               >
                 <strong>-</strong>
               </button>
               <input
                 class="inputbox"
                 type="text"
+                [value]="form.get('personnes')?.value || 0"
                 disabled
-                [value]="productquantity"
-                id=""
               />
               <button
                 type="button"
-                (click)="quantity1('max')"
+                (click)="incrementPersonnes()"
                 class="btn btn-blue"
               >
                 <strong>+</strong>
               </button>
             </div>
+            <div
+              *ngIf="
+                form.controls['personnes']?.touched &&
+                form.controls['personnes']?.invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire et doit être supérieur ou égal à 1.
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div style="margin: 40px">
-          <p>Quelle est la superficie de cet hébergement ?</p>
-          <div style="display: flex; gap: 5px">
+        <section>
+          <h3 class="label-first">
+            Quelle est la superficie de cet hébergement ?
+          </h3>
+          <div class="form-section superficie-group">
             <input
               type="number"
-              name=""
-              id="inputNumber"
+              formControlName="superficie"
               placeholder="0"
-              style="height: 25px"
+              min="1"
             />
-            <select id="fruits" name="fruits" style="height: 25px">
-              <option value="apple">mètres carrés</option>
-              <option value="banana">pieds carrés</option>
+            <select formControlName="measureUnit">
+              <option *ngFor="let unit of measureUnits" [value]="unit">
+                {{ unit }}
+              </option>
             </select>
+            <div
+              *ngIf="
+                form.controls['superficie']?.touched &&
+                form.controls['superficie']?.invalid
+              "
+              style="color: red"
+            >
+              Ce champ est obligatoire et doit être supérieur ou égal à 1.
+            </div>
+            <div
+              *ngIf="
+                form.controls['measureUnit']?.touched &&
+                form.controls['measureUnit']?.invalid
+              "
+              style="color: red"
+            >
+              L'unité de mesure est obligatoire.
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div style="margin: 40px">
-          <p>Est-il possible de fumer dans cet hébergement ?</p>
-          <div>
-            <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group>
+        <section>
+          <h3 class="label-first">
+            Est-il possible de fumer dans cet hébergement ?
+          </h3>
+          <mat-radio-group
+            formControlName="smokingAllowed"
+            aria-label="Fumer autorisé"
+          >
+            <mat-radio-button value="Oui">Oui</mat-radio-button>
+            <mat-radio-button value="Non">Non</mat-radio-button>
+          </mat-radio-group>
+          <div
+            *ngIf="
+              form.controls['smokingAllowed']?.touched &&
+              form.controls['smokingAllowed']?.invalid
+            "
+            style="color: red"
+          >
+            Ce champ est obligatoire.
           </div>
-        </div>
+        </section>
       </form>
     </div>
   </div>
